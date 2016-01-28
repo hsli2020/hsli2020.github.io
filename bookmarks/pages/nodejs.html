@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>NodeJS</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      [
+        { url: "https://nodejs.org/en/", desc: "NodeJS" },
+        { url: "https://www.npmjs.com/", desc: "NPM" },
+      ],
+      { url: "http://expressjs.com/en/index.html", desc: "ExpressJS" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

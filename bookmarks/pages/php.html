@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>PHP</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      { url: "http://www.phptherightway.com/", desc: "PHP The Right Way" },
+      [
+        { url: "http://phpunit.de/", desc: "PHPUnit" },
+        { url: "http://behat.org/", desc: "Behat" },
+      ],
+      { url: "http://laravel.com/", desc: "Laravel Framework" },
+      [
+        { url: "http://silex.sensiolabs.org/", desc: "Silex Framework" },
+        { url: "http://pimple.sensiolabs.org/", desc: "Pimple" },
+        { url: "http://twig.sensiolabs.org/", desc: "Twig" },
+      ],[
+        { url: "http://symfony.com/", desc: "Symfony Framework" },
+        { url: "http://symfony.com/doc/current/reference/index.html", desc: "Symfony Reference" },
+        { url: "http://knpbundles.com/", desc: "Bundles for Symfony2" },
+      ],[
+        { url: "https://phalconphp.com/en/", desc: "Phalcon Framework" },
+        { url: "http://docs.phalconphp.com/en/latest/index.html", desc: "Phalcon Doc" },
+      ],
+      [
+        { url: "http://www.doctrine-project.org/", desc: "Doctrine Project" },
+        { url: "http://propelorm.org/", desc: "Propel" },
+      ],
+      { url: "http://www.slimframework.com/", desc: "Slim Framework" },
+      { url: "http://flightphp.com/", desc: "Flight MicroFramework" },
+      { url: "http://cakephp.org/", desc: "CakePHP" },
+      { url: "http://codeigniter.com/", desc: "CodeIgniter" },
+      { url: "http://www.yiiframework.com", desc: "Yii Framework" },
+      { url: "http://nette.org/", desc: "Nette" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+<!--
+      { url: "http://www.phing.info/", desc: "Phing" },
+      { url: "https://github.com/zend-dev/ZendOptimizerPlus/", desc: "Zend Optimizer Plus" },
+      { url: "http://cs.sensiolabs.org/", desc: "PHP Coding Standards Fixer" },
+      { url: "http://micromvc.com/", desc: "MicroMVC Framework" },
+      { url: "http://bcosca.github.com/fatfree/", desc: "Fat-Free" },
+      { url: "http://limonade-php.github.com/", desc: "Limonade" },
+      { url: "http://tinymvc.com/", desc: "Tiny MVC" },
+      { url: "http://bulletphp.com/", desc: "Bullet" },
+   
+      { url: "http://kohanaframework.org/", desc: "Kohana Framework" },
+      { url: "http://www.recessframework.org/", desc: "Recess Framework" },
+      { url: "http://www.firephp.org/", desc: "FirePHP" },
+   
+      { url: "http://fuelphp.com/", desc: "FuelPHP" },
+      { url: "http://lithify.me/", desc: "Lithium" },
+      { url: "http://solarphp.com/", desc: "SolarPHP" },
+      { url: "http://www.thinkphp.cn", desc: "ThinkPHP" },
+      { url: "http://www.qeephp.com", desc: "QeePHP" },
+   
+      { url: "http://www.akelos.org/", desc: "Akelos" },
+      { url: "http://seleniumhq.org/", desc: "Selenium" },
+      { url: "http://auraphp.github.com/", desc: "Aura" },
+      { url: "http://www.ppi.io/", desc: "PPI" },
+      { url: "http://flow.typo3.org/", desc: "TYPO3 Flow" },
+  
+      { url: "http://zanphp.com/", desc: "ZanPHP Framework" },
+      { url: "http://www.yafdev.com/", desc: "Yaf - Yet Another Framework" },
+-->
+</body>
+</html>

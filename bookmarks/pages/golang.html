@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>GoLang</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      [
+        { url: "https://golang.org/", desc: "Go Programming Language" },
+        { url: "http://godoc.org/", desc: "Go Doc" },
+      ],
+      { url: "https://github.com/adonovan/gopl.io/", desc: "Source Code for Book" },
+      { url: "https://github.com/astaxie/beego", desc: "beego - Go Framework" },
+      { url: "http://golang.org/doc/articles/wiki/", desc: "Go Lang Web App" },
+      { url: "https://gin-gonic.github.io/gin/", desc: "Gin Gonic Framework" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

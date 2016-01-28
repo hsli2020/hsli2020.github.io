@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>JavaScript</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+        [
+          { url: "https://developer.mozilla.org/en-US/", desc: "Mozilla Developer Network" },
+          { url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference", desc: "JavaScript Reference in Mozilla" },
+        ],
+        { url: "http://speakingjs.com/es5/index.html", desc: "Speaking JavaScript" }, 
+        { url: "http://bonsaiden.github.io/JavaScript-Garden/", desc: "JavaScript Garden" }, 
+        { url: "-", desc: "" },
+        [
+          { url: "https://jquery.com/", desc: "#jQuery" },
+          { url: "https://jqueryui.com/", desc: "jQuery UI" },
+          { url: "https://jquerymobile.com/", desc: "jQuery Mobile" },
+          { url: "http://learn.jquery.com/", desc: "jQuery Learning Center" },
+          { url: "http://jquery-plugins.net/", desc: "jQuery-Plugins " },
+        ],
+        [
+          { url: "https://angularjs.org/", desc: "AngularJS" },
+          { url: "https://facebook.github.io/react/", desc: "ReactJS" },
+          { url: "http://emberjs.com/", desc: "EmberJS" },
+          { url: "http://requirejs.org/", desc: "RequireJS" },
+        ],
+        [
+          { url: "https://babeljs.io/", desc: "Babel The Compiler" },
+          { url: "http://www.typescriptlang.org/", desc: "TypeScript" },
+          { url: "https://lodash.com/", desc: "Lodash" },
+        ],
+        [
+          { url: "http://nodejs.org/", desc: "Node JS" },
+          { url: "https://github.com/mishoo/UglifyJS", desc: "UglifyJS" },
+          { url: "https://github.com/jshint/jshint/", desc: "jshint" },
+          { url: "http://www.jslint.com/", desc: "JSLint" },
+          { url: "http://gruntjs.com/", desc: "GruntJS" },
+          { url: "http://gulpjs.com/", desc: "Gulp" },
+
+        ],
+        { url: "-", desc: "" },
+        [
+          { url: "http://addyosmani.com/resources/essentialjsdesignpatterns/book/", desc: "#<b>Learning JavaScript Design Patterns</b>" },
+          { url: "http://todomvc.com/", desc: "TodoMVC" },
+          { url: "http://eloquentjavascript.net/", desc: "<b>Eloquent JavaScript</b>" },
+        ],
+        [
+          { url: "http://documentcloud.github.io/backbone/", desc: "#<b>Backbone Official</b>" },
+          { url: "http://underscorejs.org/", desc: "<b>Underscore.js</b>" },
+          { url: "http://addyosmani.github.io/backbone-fundamentals/", desc: "<b>Developing Backbone.js Applications</b>" },
+        ],
+        [
+          { url: "http://arturadib.com/hello-backbonejs/", desc: "#Hello Backbone" },
+          { url: "http://ricostacruz.com/backbone-patterns/", desc: "Backbone Patterns" },
+          { url: "http://code.tutsplus.com/series/getting-to-know-backbonejs--net-24408", desc: "Get To Know Backbone" },
+          { url: "http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/", desc: "Backbone.js Wine Cellar" },
+        ],
+        [
+          { url: "http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/", desc: "#Backbone for beginners" },
+          { url: "http://victorsavkin.com/post/59496656297/building-large-backbone-applications", desc: "Build Large Backbone App" },
+          { url: "https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-using-modules", desc: "Using require.js in Backbon App" },
+        ],
+        { url: "-", desc: "" },
+        { url: "http://addyosmani.com/writing-modular-js/", desc: "#Writing Modular JavaScript With AMD, CommonJS & ES Harmony" },
+        [
+          { url: "http://ejohn.org/blog/javascript-micro-templating/", desc: "#JavaScript Micro-Templating" },
+          { url: "http://www.phpied.com/3-ways-to-define-a-javascript-class/", desc: "3 ways to define a JavaScript class" },
+        ],
+        [
+          { url: "https://jqueryboilerplate.com/", desc: "#jQuery Boilerplate" },
+          { url: "http://headjs.com/", desc: "HeadJS" },
+          { url: "https://developer.spotify.com/web-api/", desc: "Spotify Web API" },
+        ],
+        { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

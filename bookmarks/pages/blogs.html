@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Blogs</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      { url: "http://ejohn.org/", desc: "John Resig" },
+      [
+        { url: "http://www.cnblogs.com/", desc: "博客园" },
+        { url: "http://www.iteye.com/blogs", desc: "ITeye Blogs" },
+        { url: "http://www.coolshell.cn", desc: "Cool Shell" },
+      ],
+      { url: "http://www.ruanyifeng.com/blog", desc: "阮一峰的blog" },
+      [ 
+        { url: "http://www.laruence.com/", desc: "风雪之隅" },
+        { url: "http://stoneydream.com/", desc: "云岩·关注前端" },
+        { url: "http://www.williamlong.info", desc: "月光博客(IT类)" },
+      ],[ 
+        { url: "http://blog.codingnow.com/", desc: "云风的 BLOG" },
+        { url: "http://heeroluo.net/", desc: "Heero's blog" },
+        { url: "http://macshuo.com", desc: "MacTalk-池建强的随想录" },
+      ],[
+        { url: "http://spf13.com/post/", desc: "SPF13 Blog" },
+        { url: "http://spf13.com/post/ultimate-vim-config", desc: "Ultimate Vim Config" },
+        { url: "https://github.com/spf13/spf13-vim", desc: "spf13-vim" },
+      ],[
+        { url: "http://adrianmejia.com/", desc: "Adrian Mejia's Blog" },
+        { url: "http://blog.jmoz.co.uk/", desc:"James Morris - JMOZ" },
+      ],[
+        { url: "http://www.phpied.com/", desc:"Stoyan's phpied.com" },
+        { url: "http://www.reecefowell.com/", desc:"Reece Fowells Blog" },
+      ],
+      { url: "-", desc: "" },
+      [
+        { url: "http://blog.ifeng.com/930978.html", desc:"#冯学荣读史" },
+        { url: "http://blog.wenxuecity.com/myblog/35538/56487.html", desc:"南山松 英文笑话" },
+        { url: "http://blog.wenxuecity.com/myblog/55817/all.html", desc:"文革图文" },
+        { url: "http://blog.wenxuecity.com/myindex/69791/", desc:"国府深深" },
+        { url: "http://blog.wenxuecity.com/myoverview/55354/", desc:"枫叶琴缘(好音乐)" },
+        { url: "http://blog.wenxuecity.com/myblog/48304/all.html", desc:"怡然楓嬅" },
+      ],
+      { url: "-", desc: "" },
+      [
+        { url: "http://tonybai.com/category/technical-notes/", desc:"#Tony Bai 的技术志 (Go)" },
+        { url: "http://0x1.im/", desc:"Scholer's Blog (PHP)" },
+        { url: "http://huoding.com/", desc:"火丁笔记" },
+      ],[
+        { url: "http://www.chrisyue.com/tag/symfony2", desc:"#Chrisyue's Blog (Symfony)" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-1.html", desc:"Day 1" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-2.html", desc:"Day 2" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-3.html", desc:"Day 3" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-4.html", desc:"Day 4" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-5.html", desc:"Day 5" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-6.html", desc:"Day 6" },
+      ],[
+        { url: "http://symfony.cn/docs-contrib/1/best_practices/introduction.html", desc:"#Symfony框架最佳实践" },
+        { url: "http://www.chrisyue.com/translation-create-your-own-framework-on-top-of-the-symfony2-components-index.html", desc:"使用Symfony2的组件创建自己的PHP框架" },
+        { url: "http://blog.it985.com/?s=Symfony2%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91", desc:"Symfony2官方文档翻译" },
+      ],[
+        { url: "https://yplam.com/", desc:"#YPLam Blog" },
+        { url: "http://wiki.jikexueyuan.com/project/symfony-cookbook/", desc:"Symfony Cookbook (zh)" },
+        { url: "http://gosymfony.com/", desc:"{go}Symfony" },
+        { url: "http://www.newlifeclan.com/symfony/", desc:"New Life Clan" },
+      ],[
+        { url: "http://www.chenjingkun.com/", desc:"#陈境坤的个人博客" },
+        { url: "http://blog.it985.com/4498.html", desc:"IT985博客" },
+        { url: "http://colobu.com/", desc:"鸟窝" },
+        { url: "http://weekly.manong.io/issues/", desc:"码农周刊" },
+        { url: "http://www.tuicool.com/mags", desc:"编程狂人" },
+        { url: "http://ifeve.com/", desc:"并发编程网" },
+      ],
+      { url: "-", desc: "" },
+      { url: "http://www.cppblog.com/life02/archive/2011/12/15/162188.html", desc: "Android Auto Dialer" },
+      { url: "http://blog.millermedeiros.com/amd-is-better-for-the-web-than-commonjs-modules/", desc: "#AMD is better than CommonJS" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

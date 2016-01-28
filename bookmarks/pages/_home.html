@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>热点链接</title>
+<base target="_blank">
+<link rel="stylesheet" type="text/css" href="bookmarks.css" />
+<script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>常用链接</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      { url: "https://developer.mozilla.org/en-US/", desc: "Mozilla Developer Network" },
+      { url: "https://readthedocs.org/", desc: "Read The Docs" },
+      [
+        { url: "http://www.oschina.net", desc: "osChina" },
+        { url: "http://www.tuicool.com/", desc: "推酷" },
+        { url: "http://www.zhihu.com/", desc: "知乎-知识分享" },
+      ],[
+        { url: "http://toutiao.io/", desc: "开发者头条" },
+        { url: "http://www.cnbeta.com", desc: "cnBeta" },
+        { url: "http://www.cnblogs.com/", desc: "博客园" },
+        { url: "http://www.delicious.com/lihsca", desc: "Delicious" },
+      ],[
+        { url: "http://www.sitepoint.com/", desc: "SitePoint" },
+        { url: "http://symfony.com/doc/current/reference/index.html", desc: "Symfony Reference" },
+      ],
+      { url: "---" },
+      [
+        { url: "http://www.google.com", desc: "#Google" },
+        { url: "http://mail.google.com", desc: "邮箱" },
+        { url: "http://map.google.com", desc: "地图" },
+        { url: "http://translate.google.com/#zh-CN/en/", desc: "汉译英" },
+        { url: "http://translate.google.com/#en/zh-CN/", desc: "英译汉" },
+        { url: "http://drive.google.com/keep/", desc: "Keep" },
+        { url: "https://drive.google.com/drive/my-drive", desc: "Drive" },
+        { url: "http://plus.google.com/", desc: "Plus" },
+        { url: "http://www.google.ca/bookmarks", desc: "Bookmarks" },
+      ],[
+        { url: "http://pan.baidu.com/", desc: "#百度云" },
+        { url: "http://www.whatismyip.com/", desc: "What's My IP" },
+        { url: "http://whatismyipaddress.com", desc: "My IP Address" },
+        { url: "http://who.is/", desc: "Who Is" },
+        { url: "http://www.name.com/", desc: "Name.com" },
+        { url: "http://www.godaddy.com/", desc: "GoDaddy" },
+      ],
+      { url: "---" },
+      [
+        { url: "http://freetranslation.com/", desc: "#Free Translation" },
+        { url: "http://it-ebooks.info/", desc: "IT Books" },
+        { url: "http://www.w3schools.com/", desc: "W3Schools" },
+        { url: "http://sourcemaking.com/design_patterns", desc: "Design Patterns" },
+        { url: "http://naotu.baidu.com/", desc: "KityMinder" },
+      ],
+      [
+        { url: "http://solidot.org/", desc: "#Solidot" },
+        { url: "http://www.infoq.com/cn/", desc: "InfoQ" },
+        { url: "http://www.smashingmagazine.com/", desc: "Smashing Magazine" },
+
+      ],
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+</body>
+</html>

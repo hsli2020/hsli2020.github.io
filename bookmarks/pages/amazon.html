@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Amazon</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      [ 
+        { url: "http://aws.amazon.com/", desc: "Amazon AWS" },
+        { url: "http://aws.amazon.com/documentation/", desc: "Amazon AWS Doc" },
+      ],
+      { url: "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html", desc: "#Amazon EC2 Doc" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

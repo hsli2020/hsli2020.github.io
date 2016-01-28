@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Android</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      [ 
+        { url: "http://hukai.me/android-training-course-in-chinese/index.html", desc: "#Android官方培训课程中文版" },
+        { url: "http://colobu.com/2014/08/15/android-components-collection/", desc: "最流行的android组件大全" },
+      ],[
+        { url: "http://www.netmite.com/android/mydroid/", desc: "#Browse Android source code online" },
+        { url: "http://www.netmite.com/android/mydroid/packages/apps/Phone/", desc: "Phone Call" },
+      ],
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>
+

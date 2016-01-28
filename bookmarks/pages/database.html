@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Database</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      { url: "http://dev.mysql.com/doc/", desc: "MySQL Doc" },
+      { url: "http://www.postgresql.org/", desc: "PostgreSQL" },
+      { url: "https://www.sqlite.org/", desc: "SQLite" },
+      { url: "https://www.mongodb.org/", desc: "MongoDB" },
+      { url: "http://redis.io/", desc: "Redis" },
+      { url: "-", desc: "" },
+      { url: "https://www.elastic.co/products/elasticsearch", desc: "ElasticSearch" },
+      { url: "http://sphinxsearch.com/", desc: "SphinxSearch" },
+      { url: "-", desc: "" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>

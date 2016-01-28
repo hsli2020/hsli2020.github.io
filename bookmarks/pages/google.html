@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="gb2312">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Google</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [
+      { url: "http://www.google.com", desc: "Google Search" },
+      { url: "http://mail.google.com", desc: "gmail" },
+      { url: "http://map.google.com", desc: "Google Map" },
+      [
+        { url: "http://translate.google.com/", desc: "Google Translation" },
+        { url: "http://translate.google.com/#zh-CN/en/", desc: "汉译英" },
+        { url: "http://translate.google.com/#en/zh-CN/", desc: "英译汉" },
+      ],
+      { url: "http://drive.google.com/keep/", desc: "Google Keep" },
+      { url: "https://drive.google.com/drive/my-drive", desc: "Google Drive" },
+      { url: "http://plus.google.com/", desc: "Google Plus" },
+      { url: "http://www.google.ca/bookmarks", desc: "Google Bookmarks" },
+      { url: "https://developers.google.com/", desc: "Google Developers" },
+      { url: "https://console.developers.google.com/", desc: "Google Developers Console" },
+      [
+        { url: "https://hangouts.google.com/", desc: "Google Hangouts" },
+        { url: "https://developers.google.com/+/hangouts/getting-started", desc: "Hangouts API Get Started" },
+      ],
+      { url: "https://takeout.google.com/settings/takeout", desc: "Google Takeout (Download Your Data)" },
+      { url: "----", desc: "" },
+      { url: "https://www.google.ca/intl/en/about/products/", desc: "Google Products" },
+    ];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+</body>
+</html>
