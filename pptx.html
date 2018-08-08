@@ -112,7 +112,7 @@ function openTab(evt, tabId) {
 
 </head>
 <body>
-<h2>Fast Make PowerPoint</h2>
+<h1>Fast Make PowerPoint</h1>
 <div class="container">
 
     <div class="tab">
@@ -223,27 +223,41 @@ $(document).ready(function() {
 
     $(download).click(function(e) {
         var pptx = new PptxGenJS();
-        for (var i=1; i<=6; i++) {
-            var song = $('#song' + i + ' textarea').val();
+
+        for (var s=1; s<=6; s++) {
+            var song = $('#song' + s + ' textarea').val();
             if (song.length < 10) continue;
 
             var pages = song.split('\n\n');
 
-            for (var text of pages) {
+            for (var p=0; p<pages.length; p++) {
                 var slide = pptx.addNewSlide();
-                slide.addText(text, {
-                    shape:     pptx.shapes.RECTANGLE,
-                    align:     'c',
-                    x:         0,
-                    y:         0,
-                    w:         '100%',
-                    h:         '80%',
-                  //fill:      '0088CC',
-                    fontSize:  48,
-                    bold:      true,
-                    breakLine: true,
-                    color:     '363636'
-                });
+                var text = pages[p];
+                var lines = text.split('\n');
+
+                if (p == 0 && lines.length > 1) {
+                    slide.addText(
+                        [
+                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true } },
+                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true } }
+                        ],
+                        { x: 0, y: 0, w: '100%', h: '80%' }
+                    );
+                } else {
+                    slide.addText(text, {
+                        shape:     pptx.shapes.RECTANGLE,
+                        align:     'c',
+                        x:         0,
+                        y:         0,
+                        w:         '100%',
+                        h:         '80%',
+                      //fill:      '0088CC',
+                        fontSize:  48,
+                        bold:      true,
+                        breakLine: true,
+                        color:     '363636'
+                    });
+                }
             }
         }
 
