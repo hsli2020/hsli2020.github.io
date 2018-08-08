@@ -131,23 +131,31 @@ function openTab(evt, tabId) {
         <textarea>『有一位神』
 (「讚美之泉」之「讓讚美飛揚」)
 
-有一位神，有權能創造宇宙萬物，
+有一位神，
+有權能創造宇宙萬物，
 也有溫柔雙手安慰受傷靈魂。
 
-有一位神，有權柄審判一切罪惡，
+有一位神，
+有權柄審判一切罪惡，
 也有慈悲體貼人的軟弱。(副歌)
 
-副歌：有一位神，我們的神，唯一的神，名叫耶和華。
-有權威榮光，有恩典慈愛，是昔在今在永在的神。
+副歌：有一位神，我們的神，
+唯一的神，名叫耶和華。
+有權威榮光，有恩典慈愛，
+是昔在今在永在的神。
 
-有一位神，有權能創造宇宙萬物，
+有一位神，
+有權能創造宇宙萬物，
 也有溫柔雙手安慰受傷靈魂。
 
-有一位神，高坐在榮耀的寶座，
+有一位神，
+高坐在榮耀的寶座，
 卻死在十架挽救人墮落。(副歌)
 
-副歌：有一位神，我們的神，唯一的神，名叫耶和華。
-有權威榮光，有恩典慈愛，是昔在今在永在的神。
+副歌：有一位神，我們的神，
+唯一的神，名叫耶和華。
+有權威榮光，有恩典慈愛，
+是昔在今在永在的神。
 </textarea>
     </div>
 
@@ -155,17 +163,24 @@ function openTab(evt, tabId) {
         <textarea>『這裡有神的同在』
 (詩集：迦南全集第129首)
 
-這裡有神的同在噢噢，這裡有神的言語，
-這裡有聖靈的恩膏，這裡是另一個天地。
+這裡有神的同在噢噢，
+這裡有神的言語，
+這裡有聖靈的恩膏，
+這裡是另一個天地。
 
-看哪弟兄和睦同居，何等的善何等的美，
-如同那黑門的甘露，降在錫安山地。
+看哪弟兄和睦同居，
+何等的善何等的美，
+如同那黑門的甘露，
+降在錫安山地。
 
-愛在這裡，和平在這裡，
-光明在這裡，生命在這裡，
+愛在這裡，
+和平在這裡，
+光明在這裡，
+生命在這裡，
 
 耶和華所命定的福都在這裡，
-你若想要得到他，在耶穌基督裡。
+你若想要得到他，
+在耶穌基督裡。
 </textarea>
     </div>
 
@@ -173,11 +188,19 @@ function openTab(evt, tabId) {
         <textarea>『我的神我敬拜祢』
 (「我心旋律」之「生命的執著－為祢而活」)
 
-我的神我要敬拜祢，我的心深深地愛祢，
-在祢的座前，我思想祢恩典，我的心讚美敬拜祢。
+我的神我要敬拜祢，
+我的心深深地愛祢，
 
-祢是我心靈的滿足，祢是我唯一的喜樂。
-在祢的座前，我思想祢恩典，我的神我要敬拜祢。</textarea>
+在祢的座前，
+我思想祢恩典，
+我的心讚美敬拜祢。
+
+祢是我心靈的滿足，
+祢是我唯一的喜樂。
+
+在祢的座前，
+我思想祢恩典，
+我的神我要敬拜祢。</textarea>
     </div>
 
     <div id="song5" class="tabcontent">
@@ -199,12 +222,32 @@ $(document).ready(function() {
 
     $(download).click(function(e) {
         var pptx = new PptxGenJS();
+        for (var i=1; i<=6; i++) {
+            var song = $('#song' + i + ' textarea').val();
+            if (song.length < 10) continue;
 
-        var sections = song.split('\n\n');
-        for (var section of sections) {
-            var slide = pptx.addNewSlide();
-            slide.addText(section, { x:1.5, y:1.5, fontSize:48, color:'363636' });
+            var pages = song.split('\n\n');
+
+            for (var text of pages) {
+                var slide = pptx.addNewSlide();
+                slide.addText(text, {
+                    shape:     pptx.shapes.RECTANGLE,
+                    align:     'c',
+                    x:         0.2,
+                    y:         '25%',
+                    w:         '100%',
+                  //h:         3,
+                  //fill:      '0088CC',
+                  //line:      '000000',
+                  //lineSize:  3,
+                    fontSize:  48,
+                    bold:      true,
+                    breakLine: true,
+                    color:     '363636'
+                });
+            }
         }
+
         pptx.save(formatDate(new Date()));
     })
 
