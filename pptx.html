@@ -4,15 +4,22 @@
 <meta charSet="utf-8"/>
 <title>Make Powerpoint</title>
 <style>
-body { width: 50%; margin: 0 auto; }
-textarea {
-    padding:5px 0px;
-    margin:5px 5px 5px 0px;
-    border: 1px solid #1c97f3;
-	margin-bottom:14px;
-    text-align: center;
-    font-size:18px;
+* { box-sizing: border-box }
+body {
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Lato", sans-serif;
 }
+textarea {
+    padding: 10px 0;
+    border: none;
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    height: 495px;
+    resize: none;
+}
+
 .btn {
     background-color: #1c97f3;
     border: none;
@@ -26,22 +33,53 @@ textarea {
     cursor: pointer;
 	border:1px solid #186dad;
 }
+.right { position: relative; left: 50%; }
 
-.delete {
-    background-color: #fd1200;
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 20%;
+    height: 500px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
     border: none;
-    color: white;
-    padding: 5px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
+    outline: none;
+    text-align: left;
     cursor: pointer;
-    position: relative;
-    top: -100px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 500px;
 }
 </style>
+
 <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script -->
 <script lang="javascript" src="https://cdn.rawgit.com/gitbrent/PptxGenJS/v2.0.0/dist/pptxgen.bundle.js"></script>
 
@@ -55,60 +93,42 @@ function formatDate(date) {
   return monthNames[monthIndex] + '-' + day + '-' + year;
 }
 //console.log(formatDate(new Date()));
+
+function openTab(evt, tabId) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.className += " active";
+}
 </script>
 
-<script>
-$(document).ready(function() {
-    var maxfields = 5;
-    var wrapper   = $(".container");
-    var addbtn    = $("#addfield");
-    var download  = $("#download");
-    var newfield  = '<div><textarea cols="40" rows="10"></textarea><a href="#" class="delete">Delete</a></div>';
-
-    var x = 1;
-    $(addbtn).click(function(e) {
-        e.preventDefault();
-        if (x++ < maxfields) {
-            $(wrapper).append(newfield);
-        }
-		else {
-            alert('You Reached the limits')
-		}
-    });
-
-    $(wrapper).on("click", ".delete", function(e) {
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-
-    $(download).click(function(e) {
-        var pptx = new PptxGenJS();
-
-        var sections = song.split('\n\n');
-        for (var section of sections) {
-            var slide = pptx.addNewSlide();
-            slide.addText(section, { x:1.5, y:1.5, fontSize:48, color:'363636' });
-        }
-        pptx.save(formatDate(new Date()));
-    })
-});
-</script>
 </head>
 <body>
 <h2>Fast Make PowerPoint</h2>
 <div class="container">
-    <button class="btn" id="addfield">Add Song &nbsp;&#x271A;</button>
-    <button class="btn" id="download">Download &nbsp;&#x2714;</button>
-    <div>
-        <textarea cols="40" rows="10">『我的神我敬拜祢』
-(「我心旋律」之「生命的執著－為祢而活」)
 
-我的神我要敬拜祢，我的心深深地愛祢，
-在祢的座前，我思想祢恩典，我的心讚美敬拜祢。
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'song1')" id="defaultOpen">Song - 1</button>
+      <button class="tablinks" onclick="openTab(event, 'song2')">Song - 2</button>
+      <button class="tablinks" onclick="openTab(event, 'song3')">Song - 3</button>
+      <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
+      <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
+      <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
+    </div>
 
-祢是我心靈的滿足，祢是我唯一的喜樂。
-在祢的座前，我思想祢恩典，我的神我要敬拜祢。</textarea>
+    <div id="song1" class="tabcontent">
+        <textarea></textarea>
+    </div>
 
-        <textarea cols="40" rows="10">『有一位神』
+    <div id="song2" class="tabcontent">
+        <textarea>『有一位神』
 (「讚美之泉」之「讓讚美飛揚」)
 
 有一位神，有權能創造宇宙萬物，
@@ -129,8 +149,10 @@ $(document).ready(function() {
 副歌：有一位神，我們的神，唯一的神，名叫耶和華。
 有權威榮光，有恩典慈愛，是昔在今在永在的神。
 </textarea>
+    </div>
 
-        <textarea cols="40" rows="10">『這裡有神的同在』
+    <div id="song3" class="tabcontent">
+        <textarea>『這裡有神的同在』
 (詩集：迦南全集第129首)
 
 這裡有神的同在噢噢，這裡有神的言語，
@@ -146,6 +168,49 @@ $(document).ready(function() {
 你若想要得到他，在耶穌基督裡。
 </textarea>
     </div>
+
+    <div id="song4" class="tabcontent">
+        <textarea>『我的神我敬拜祢』
+(「我心旋律」之「生命的執著－為祢而活」)
+
+我的神我要敬拜祢，我的心深深地愛祢，
+在祢的座前，我思想祢恩典，我的心讚美敬拜祢。
+
+祢是我心靈的滿足，祢是我唯一的喜樂。
+在祢的座前，我思想祢恩典，我的神我要敬拜祢。</textarea>
+    </div>
+
+    <div id="song5" class="tabcontent">
+        <textarea></textarea>
+    </div>
+
+    <div id="song6" class="tabcontent">
+        <textarea></textarea>
+    </div>
+
+    <div style="float: clear;"></div>
+
+    <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
 </div>
+
+<script>
+$(document).ready(function() {
+    var download  = $("#download");
+
+    $(download).click(function(e) {
+        var pptx = new PptxGenJS();
+
+        var sections = song.split('\n\n');
+        for (var section of sections) {
+            var slide = pptx.addNewSlide();
+            slide.addText(section, { x:1.5, y:1.5, fontSize:48, color:'363636' });
+        }
+        pptx.save(formatDate(new Date()));
+    })
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+});
+</script>
 </body>
 </html>
