@@ -219,10 +219,11 @@ function openTab(evt, tabId) {
 
 <script>
 $(document).ready(function() {
-    var download  = $("#download");
 
-    $(download).click(function(e) {
+    $("#download").click(function(e) {
         var pptx = new PptxGenJS();
+
+        var bkcolors = [ '0088CC', '36ABFF', '99ABCC', '7AB800', '#666666', 'A9A9A9' ];
 
         for (var s=1; s<=6; s++) {
             var song = $('#song' + s + ' textarea').val();
@@ -235,11 +236,14 @@ $(document).ready(function() {
                 var text = pages[p];
                 var lines = text.split('\n');
 
+                slide.back = bkcolors[s-1];
+                slide.color = 'FFFFFF';
+
                 if (p == 0 && lines.length > 1) {
                     slide.addText(
                         [
-                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true } },
-                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true } }
+                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true, color:'FFFFFF' } },
+                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true, color:'FFFFFF' } }
                         ],
                         { x: 0, y: 0, w: '100%', h: '80%' }
                     );
@@ -255,7 +259,7 @@ $(document).ready(function() {
                         fontSize:  48,
                         bold:      true,
                         breakLine: true,
-                        color:     '363636'
+                        color:     'FFFFFF'
                     });
                 }
             }
