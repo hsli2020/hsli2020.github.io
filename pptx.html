@@ -124,105 +124,25 @@ function openTab(evt, tabId) {
       <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
     </div>
 
-    <div id="song1" class="tabcontent">
-        <textarea></textarea>
-    </div>
+    <div id="song1" class="tabcontent"><textarea></textarea></div>
+    <div id="song2" class="tabcontent"><textarea></textarea></div>
+    <div id="song3" class="tabcontent"><textarea></textarea></div>
+    <div id="song4" class="tabcontent"><textarea></textarea></div>
+    <div id="song5" class="tabcontent"><textarea></textarea></div>
+    <div id="song6" class="tabcontent"><textarea></textarea></div>
 
-    <div id="song2" class="tabcontent">
-        <textarea>『有一位神』
-(「讚美之泉」之「讓讚美飛揚」)
-
-有一位神，
-有權能創造宇宙萬物，
-也有溫柔雙手安慰受傷靈魂。
-
-有一位神，
-有權柄審判一切罪惡，
-也有慈悲體貼人的軟弱。(副歌)
-
-副歌：有一位神，我們的神，
-唯一的神，名叫耶和華。
-有權威榮光，有恩典慈愛，
-是昔在今在永在的神。
-
-有一位神，
-有權能創造宇宙萬物，
-也有溫柔雙手安慰受傷靈魂。
-
-有一位神，
-高坐在榮耀的寶座，
-卻死在十架挽救人墮落。(副歌)
-
-副歌：有一位神，我們的神，
-唯一的神，名叫耶和華。
-有權威榮光，有恩典慈愛，
-是昔在今在永在的神。
-</textarea>
-    </div>
-
-    <div id="song3" class="tabcontent">
-        <textarea>『這裡有神的同在』
-(詩集：迦南全集第129首)
-
-這裡有神的同在噢噢，
-這裡有神的言語，
-這裡有聖靈的恩膏，
-這裡是另一個天地。
-
-看哪弟兄和睦同居，
-何等的善何等的美，
-如同那黑門的甘露，
-降在錫安山地。
-
-愛在這裡，
-和平在這裡，
-光明在這裡，
-生命在這裡，
-
-耶和華所命定的福都在這裡，
-你若想要得到他，
-在耶穌基督裡。
-</textarea>
-    </div>
-
-    <div id="song4" class="tabcontent">
-        <textarea>『我的神我敬拜祢』
-(「我心旋律」之「生命的執著－為祢而活」)
-
-我的神我要敬拜祢，
-我的心深深地愛祢，
-
-在祢的座前，
-我思想祢恩典，
-我的心讚美敬拜祢。
-
-祢是我心靈的滿足，
-祢是我唯一的喜樂。
-
-在祢的座前，
-我思想祢恩典，
-我的神我要敬拜祢。</textarea>
-    </div>
-
-    <div id="song5" class="tabcontent">
-        <textarea></textarea>
-    </div>
-
-    <div id="song6" class="tabcontent">
-        <textarea></textarea>
-    </div>
-
-    <div style="float: clear;"></div>
+    <div style="float: clear; margin-top: 10px;"></div>
 
     <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
 </div>
 
 <script>
 $(document).ready(function() {
-    var download  = $("#download");
 
-    $(download).click(function(e) {
+    $("#download").click(function(e) {
         var pptx = new PptxGenJS();
+
+        var bkcolors = [ '0088CC', '36ABFF', '99ABCC', '7AB800', '#666666', 'A9A9A9' ];
 
         for (var s=1; s<=6; s++) {
             var song = $('#song' + s + ' textarea').val();
@@ -235,11 +155,14 @@ $(document).ready(function() {
                 var text = pages[p];
                 var lines = text.split('\n');
 
+                slide.back = bkcolors[s-1];
+                slide.color = 'FFFFFF';
+
                 if (p == 0 && lines.length > 1) {
                     slide.addText(
                         [
-                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true } },
-                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true } }
+                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true, color:'FFFFFF' } },
+                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true, color:'FFFFFF' } }
                         ],
                         { x: 0, y: 0, w: '100%', h: '80%' }
                     );
@@ -255,7 +178,7 @@ $(document).ready(function() {
                         fontSize:  48,
                         bold:      true,
                         breakLine: true,
-                        color:     '363636'
+                        color:     'FFFFFF'
                     });
                 }
             }
