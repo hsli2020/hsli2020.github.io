@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta charSet="utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Make Powerpoint</title>
 <style>
 * { box-sizing: border-box }
@@ -153,7 +156,8 @@ function createThemes(pptx) {
         });
     }
 
-    var bkcolors = shuffle([ '0088CC', '36ABFF', '99ABCC', '7AB800', '#666666', 'A9A9A9' ]);
+    var bkcolors = shuffle([ '0088CC', '36ABFF', '99ABCC', '7AB800', '666666',
+        'A9A9A9', '003366', '0099CC', '336699', '666699', '669999', '339999' ]);
     return bkcolors;
 }
 
