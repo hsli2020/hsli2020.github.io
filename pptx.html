@@ -144,60 +144,70 @@ function openTab(evt, tabId) {
     document.getElementById(tabId).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+function createThemes(pptx) {
+    for (var i=0; i<10; i++) {
+        pptx.defineSlideMaster({
+            title: 'THEME_' + i,
+            bkgd: { path: 'http://hongshuan.github.io/images/' + i + '.jpg' },
+        });
+    }
+
+    var bkcolors = shuffle([ '0088CC', '36ABFF', '99ABCC', '7AB800', '#666666', 'A9A9A9' ]);
+    return bkcolors;
+}
+
+function createSong(pptx, song, theme) {
+
+    var pages = song.split('\n\n');
+
+    for (var p=0; p<pages.length; p++) {
+        var slide = pptx.addNewSlide();
+        var text = pages[p];
+        var lines = text.split('\n');
+        var textcolor = 'FFFFFF';
+
+        slide.back = theme;
+      //slide.color = 'FFFFFF';
+
+        if (p == 0 && lines.length > 1) {
+            slide.addText(
+                [
+                    { text: lines[0], options: { align: 'c', fontSize: 48, bold: true, color:textcolor } },
+                    { text: lines[1], options: { align: 'c', fontSize: 24, bold: true, color:textcolor } }
+                ],
+                { x: 0, y: 0, w: '100%', h: '80%' }
+            );
+        } else {
+            slide.addText(text, {
+              //shape:     pptx.shapes.RECTANGLE,
+                align:     'c',
+                x:         0,
+                y:         0,
+                w:         '100%',
+                h:         '80%',
+              //fill:      '0088CC',
+                fontSize:  48,
+                bold:      true,
+                breakLine: true,
+                color:     textcolor
+            });
+        }
+    }
+}
 </script>
 
 <script>
 $(document).ready(function() {
-
     $("#download").click(function(e) {
         var pptx = new PptxGenJS();
 
-        var bkcolors = shuffle([ '0088CC', '36ABFF', '99ABCC', '7AB800', '#666666', 'A9A9A9' ]);
+        var themes = createThemes(pptx);
 
-        for (var i=1; i<=6; i++) {
-            pptx.defineSlideMaster({
-                title: 'THEME_' + i,
-                bkgd: { path: 'http://hongshuan.github.io/images/' + i + '.jpg' },
-            });
-        }
-
-        for (var s=1; s<=6; s++) {
-            var song = $('#song' + s + ' textarea').val();
-            if (song.length < 2) continue;
-
-            var pages = song.split('\n\n');
-
-            for (var p=0; p<pages.length; p++) {
-                var slide = pptx.addNewSlide('THEME_' + s);
-                var text = pages[p];
-                var lines = text.split('\n');
-
-              //slide.back = bkcolors[s-1];
-              //slide.color = 'FFFFFF';
-
-                if (p == 0 && lines.length > 1) {
-                    slide.addText(
-                        [
-                            { text: lines[0], options: { align: 'c', fontSize: 48, bold: true, color:'FFFFFF' } },
-                            { text: lines[1], options: { align: 'c', fontSize: 24, bold: true, color:'FFFFFF' } }
-                        ],
-                        { x: 0, y: 0, w: '100%', h: '80%' }
-                    );
-                } else {
-                    slide.addText(text, {
-                        shape:     pptx.shapes.RECTANGLE,
-                        align:     'c',
-                        x:         0,
-                        y:         0,
-                        w:         '100%',
-                        h:         '80%',
-                      //fill:      '0088CC',
-                        fontSize:  48,
-                        bold:      true,
-                        breakLine: true,
-                        color:     'FFFFFF'
-                    });
-                }
+        for (var i=0; i<6; i++) {
+            var song = $('#song' + (i+1) + ' textarea').val();
+            if (song.length > 10) {
+                createSong(pptx, song, themes[i]);
             }
         }
 
