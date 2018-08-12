@@ -52,7 +52,7 @@ textarea {
     display: block;
     background-color: inherit;
     color: black;
-    padding: 22px 16px;
+    padding: 16px;
     width: 100%;
     border: none;
     outline: none;
@@ -94,6 +94,9 @@ textarea {
       <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
       <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
       <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
+      <button class="tablinks" onclick="openTab(event, 'song7')">Song - 7</button>
+      <button class="tablinks" onclick="openTab(event, 'song8')">Song - 8</button>
+      <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
     </div>
 
     <div id="song1" class="tabcontent"><textarea></textarea></div>
@@ -102,6 +105,9 @@ textarea {
     <div id="song4" class="tabcontent"><textarea></textarea></div>
     <div id="song5" class="tabcontent"><textarea></textarea></div>
     <div id="song6" class="tabcontent"><textarea></textarea></div>
+    <div id="song7" class="tabcontent"><textarea></textarea></div>
+    <div id="song8" class="tabcontent"><textarea></textarea></div>
+    <div id="song9" class="tabcontent"><textarea></textarea></div>
 
     <div style="float: clear; margin-top: 10px;"></div>
 
@@ -207,7 +213,7 @@ $(document).ready(function() {
 
         var themes = createThemes(pptx);
 
-        for (var i=0; i<6; i++) {
+        for (var i=0; i<9; i++) {
             var song = $('#song' + (i+1) + ' textarea').val();
             if (song.length > 10) {
                 createSong(pptx, song, themes[i]);
