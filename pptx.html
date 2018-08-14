@@ -121,9 +121,10 @@ textarea {
 <script>
 function formatDate(date) {
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
+  var nextSunday = new Date(date.getFullYear(), date.getMonth(), date.getDate() + (7-date.getDay()));
+  var day = nextSunday.getDate();
+  var monthIndex = nextSunday.getMonth();
+  var year = nextSunday.getFullYear();
 
   return monthNames[monthIndex] + '-' + day + '-' + year;
 }
