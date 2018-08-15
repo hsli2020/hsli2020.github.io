@@ -52,7 +52,7 @@ textarea {
     display: block;
     background-color: inherit;
     color: black;
-    padding: 22px 16px;
+    padding: 16px;
     width: 100%;
     border: none;
     outline: none;
@@ -94,6 +94,9 @@ textarea {
       <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
       <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
       <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
+      <button class="tablinks" onclick="openTab(event, 'song7')">Song - 7</button>
+      <button class="tablinks" onclick="openTab(event, 'song8')">Song - 8</button>
+      <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
     </div>
 
     <div id="song1" class="tabcontent"><textarea></textarea></div>
@@ -102,6 +105,9 @@ textarea {
     <div id="song4" class="tabcontent"><textarea></textarea></div>
     <div id="song5" class="tabcontent"><textarea></textarea></div>
     <div id="song6" class="tabcontent"><textarea></textarea></div>
+    <div id="song7" class="tabcontent"><textarea></textarea></div>
+    <div id="song8" class="tabcontent"><textarea></textarea></div>
+    <div id="song9" class="tabcontent"><textarea></textarea></div>
 
     <div style="float: clear; margin-top: 10px;"></div>
 
@@ -115,9 +121,10 @@ textarea {
 <script>
 function formatDate(date) {
   var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
+  var nextSunday = new Date(date.getFullYear(), date.getMonth(), date.getDate() + (7-date.getDay()));
+  var day = nextSunday.getDate();
+  var monthIndex = nextSunday.getMonth();
+  var year = nextSunday.getFullYear();
 
   return monthNames[monthIndex] + '-' + day + '-' + year;
 }
@@ -175,25 +182,23 @@ function createSong(pptx, song, theme) {
         slide.back = theme;
       //slide.color = 'FFFFFF';
 
-        if (p == 0 && lines.length > 1) {
+        if (p == 0 && lines.length == 2) {
             slide.addText(
                 [
-                    { text: lines[0], options: { align: 'c', fontSize: 48, bold: true, color:textcolor } },
-                    { text: lines[1], options: { align: 'c', fontSize: 24, bold: true, color:textcolor } }
+                    { text: lines[0], options: { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:textcolor } },
+                    { text: lines[1], options: { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:textcolor } }
                 ],
                 { x: 0, y: 0, w: '100%', h: '80%' }
             );
         } else {
             slide.addText(text, {
-              //shape:     pptx.shapes.RECTANGLE,
                 align:     'c',
                 x:         0,
                 y:         0,
                 w:         '100%',
                 h:         '80%',
-              //fill:      '0088CC',
                 fontSize:  48,
-                bold:      true,
+                fontFace:  "微软雅黑",
                 breakLine: true,
                 color:     textcolor
             });
@@ -209,7 +214,7 @@ $(document).ready(function() {
 
         var themes = createThemes(pptx);
 
-        for (var i=0; i<6; i++) {
+        for (var i=0; i<9; i++) {
             var song = $('#song' + (i+1) + ' textarea').val();
             if (song.length > 10) {
                 createSong(pptx, song, themes[i]);
