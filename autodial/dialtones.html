@@ -129,7 +129,7 @@ function playTones(id) {
     if (lic.length > 1) {
         for (var i=0; i<lic.length; i++) {
             var c = lic.charAt(i);
-            doTimeout(c, 500*i);
+            doTimeout(c, 1000*i);
         }
     }
     return false;
