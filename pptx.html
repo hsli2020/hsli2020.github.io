@@ -217,6 +217,13 @@ $(document).ready(function() {
     $("#download").click(function(e) {
         var pptx = new PptxGenJS();
 
+        // pptx.setLayout('LAYOUT_16x9');
+        // 'LAYOUT_4x3'
+        // 'LAYOUT_16x9'
+        // 'LAYOUT_16x10'
+        // 'LAYOUT_WIDE'
+        // 'LAYOUT_USER'
+
         var themes = createThemes(pptx);
 
         for (var i=0; i<9; i++) {
