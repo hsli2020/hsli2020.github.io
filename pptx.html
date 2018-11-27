@@ -8,10 +8,17 @@
 <title>Make Powerpoint</title>
 <style>
 * { box-sizing: border-box }
+html, body { height: 100%; }
 body {
     width: 80%;
     margin: 0 auto;
     font-family: "Lato", sans-serif;
+}
+section {
+    display: grid;
+    align-items: stretch;
+    height: calc(100% - 20px);
+    grid-template-rows: min-content auto 50px;
 }
 textarea {
     padding: 10px 0;
@@ -19,10 +26,10 @@ textarea {
     text-align: center;
     font-size: 24px;
     width: 100%;
-    height: 545px;
+    height: calc(100% - 2px);
     resize: none;
 }
-
+.container { overflow: auto; }
 .btn {
     background-color: #1c97f3;
     border: none;
@@ -44,7 +51,7 @@ textarea {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 20%;
-    height: 550px;
+    height: 100%;
 }
 
 /* Style the buttons inside the tab */
@@ -77,41 +84,46 @@ textarea {
     float: left;
     /*padding: 0px 10px;*/
     border: 1px solid #ccc;
-    width: 70%;
+    width: 80%;
     border-left: none;
-    height: 550px;
+    height: 100%;
 }
 </style>
 </head>
 <body>
-<h1>Fast Make PowerPoint</h1>
-<div class="container">
+    <section>
+      <header>
+        <h1>Fast Make PowerPoint</h1>
+      </header>
 
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'song1')" id="defaultOpen">Song - 1</button>
-      <button class="tablinks" onclick="openTab(event, 'song2')">Song - 2</button>
-      <button class="tablinks" onclick="openTab(event, 'song3')">Song - 3</button>
-      <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
-      <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
-      <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
-      <button class="tablinks" onclick="openTab(event, 'song7')">Song - 7</button>
-      <button class="tablinks" onclick="openTab(event, 'song8')">Song - 8</button>
-      <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
-    </div>
+      <div class="container">
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'song1')" id="defaultOpen">Song - 1</button>
+          <button class="tablinks" onclick="openTab(event, 'song2')">Song - 2</button>
+          <button class="tablinks" onclick="openTab(event, 'song3')">Song - 3</button>
+          <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
+          <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
+          <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
+          <button class="tablinks" onclick="openTab(event, 'song7')">Song - 7</button>
+          <button class="tablinks" onclick="openTab(event, 'song8')">Song - 8</button>
+          <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
+        </div>
 
-    <div id="song1" class="tabcontent"><textarea></textarea></div>
-    <div id="song2" class="tabcontent"><textarea></textarea></div>
-    <div id="song3" class="tabcontent"><textarea></textarea></div>
-    <div id="song4" class="tabcontent"><textarea></textarea></div>
-    <div id="song5" class="tabcontent"><textarea></textarea></div>
-    <div id="song6" class="tabcontent"><textarea></textarea></div>
-    <div id="song7" class="tabcontent"><textarea></textarea></div>
-    <div id="song8" class="tabcontent"><textarea></textarea></div>
-    <div id="song9" class="tabcontent"><textarea></textarea></div>
+        <div id="song1" class="tabcontent"><textarea></textarea></div>
+        <div id="song2" class="tabcontent"><textarea></textarea></div>
+        <div id="song3" class="tabcontent"><textarea></textarea></div>
+        <div id="song4" class="tabcontent"><textarea></textarea></div>
+        <div id="song5" class="tabcontent"><textarea></textarea></div>
+        <div id="song6" class="tabcontent"><textarea></textarea></div>
+        <div id="song7" class="tabcontent"><textarea></textarea></div>
+        <div id="song8" class="tabcontent"><textarea></textarea></div>
+        <div id="song9" class="tabcontent"><textarea></textarea></div>
+      </div>
 
-    <div style="float: clear; margin-top: 10px;"></div>
-
-    <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
+      <footer style="margin-top: 10px;">
+         <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
+      </footer>
+    </section>
 </div>
 
 <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script -->
