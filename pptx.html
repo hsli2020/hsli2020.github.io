@@ -222,6 +222,132 @@ function createSong(pptx, song, theme) {
         }
     }
 }
+
+function createOverture(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '000080';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '『主在聖殿中』',
+        '(哈巴谷書2:20)',
+        '主在聖殿中，主在聖殿中，',
+        '普天下的人，在主面前都應當',
+        '肅靜，肅靜，肅靜，',
+        '應當肅靜。阿們。'
+    ];
+
+    var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+    var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: font48 },
+            { text: lines[1], options: font24 },
+            { text: '',       options: font48 },
+            { text: lines[2], options: font48 },
+            { text: lines[3], options: font48 },
+            { text: lines[4], options: font48 },
+            { text: lines[5], options: font48 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
+}
+
+function createOffering(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '000080';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '獻 禮 文',
+        '(歷代志上29:14下)',
+        '萬物都是從主而來，',
+        '我們把從主而來的，',
+        '獻給主。阿們。',
+    ];
+
+    var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+    var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: font48 },
+            { text: lines[1], options: font24 },
+            { text: '',       options: font48 },
+            { text: lines[2], options: font48 },
+            { text: lines[3], options: font48 },
+            { text: lines[4], options: font48 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
+}
+
+function createTrinity(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '000080';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '三 一 頌',
+        '普天之下萬國萬民，',
+        '齊聲讚美父、子、聖靈，',
+        '三位一體，同榮同尊，',
+        '萬有之源，萬福之本。',
+        '阿們。',
+    ];
+
+    var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+    var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: font48 },
+            { text: ' ',      options: font24 },
+            { text: lines[1], options: font48 },
+            { text: lines[2], options: font48 },
+            { text: lines[3], options: font48 },
+            { text: lines[4], options: font48 },
+            { text: lines[5], options: font48 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '85%' }
+    );
+}
+
+function createGlory(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '000080';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '榮 耀 頌',
+        '但願榮耀歸與',
+        '父子聖靈，父子聖靈',
+        '起初這樣，現在這樣',
+        '以後也這樣，永無窮盡。',
+        '阿們，阿們。',
+    ];
+
+    var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+    var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: font48 },
+            { text: ' ',      options: font24 },
+            { text: lines[1], options: font48 },
+            { text: lines[2], options: font48 },
+            { text: lines[3], options: font48 },
+            { text: lines[4], options: font48 },
+            { text: lines[5], options: font48 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '85%' }
+    );
+}
 </script>
 
 <script>
@@ -237,12 +363,20 @@ $(document).ready(function() {
 
         var themes = createThemes(pptx);
 
+        createOverture(pptx);
+
         for (var i=0; i<9; i++) {
             var song = $('#song' + (i+1) + ' textarea').val();
             if (song.length > 10) {
                 createSong(pptx, song, themes[i]);
             }
+            if (i == 2) {
+                createOffering(pptx);
+            }
         }
+
+        createTrinity(pptx);
+        createGlory(pptx);
 
         pptx.save(formatDate(new Date()));
     })
