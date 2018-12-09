@@ -98,28 +98,28 @@ textarea {
 
       <div class="container">
         <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'song0')">Prelude</button>
-          <button class="tablinks" onclick="openTab(event, 'song1')" id="defaultOpen">Song - 1</button>
-          <button class="tablinks" onclick="openTab(event, 'song2')">Song - 2</button>
-          <button class="tablinks" onclick="openTab(event, 'song3')">Song - 3</button>
-          <button class="tablinks" onclick="openTab(event, 'song4')">Song - 4</button>
-          <button class="tablinks" onclick="openTab(event, 'song5')">Song - 5</button>
-          <button class="tablinks" onclick="openTab(event, 'song6')">Song - 6</button>
-          <button class="tablinks" onclick="openTab(event, 'song7')">Song - 7</button>
-          <button class="tablinks" onclick="openTab(event, 'song8')">Song - 8</button>
-          <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
+          <button class="tablinks" onclick="openTab(event, 'tab0')">Prelude</button>
+          <button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen">Hymn - 1</button>
+          <button class="tablinks" onclick="openTab(event, 'tab2')">Hymn - 2</button>
+          <button class="tablinks" onclick="openTab(event, 'tab3')">Hymn - 3</button>
+          <button class="tablinks" onclick="openTab(event, 'tab4')">Offering</button>
+          <button class="tablinks" onclick="openTab(event, 'tab5')">Prayer</button>
+          <button class="tablinks" onclick="openTab(event, 'tab6')">Scripture Reading</button>
+          <button class="tablinks" onclick="openTab(event, 'tab7')">Hymn of Praise</button>
+          <button class="tablinks" onclick="openTab(event, 'tab8')">Sermon</button>
+          <button class="tablinks" onclick="openTab(event, 'tab9')">Hymn of Response</button>
         </div>
 
-        <div id="song0" class="tabcontent"><textarea>安靜默禱</textarea></div>
-        <div id="song1" class="tabcontent"><textarea></textarea></div>
-        <div id="song2" class="tabcontent"><textarea></textarea></div>
-        <div id="song3" class="tabcontent"><textarea></textarea></div>
-        <div id="song4" class="tabcontent"><textarea></textarea></div>
-        <div id="song5" class="tabcontent"><textarea></textarea></div>
-        <div id="song6" class="tabcontent"><textarea></textarea></div>
-        <div id="song7" class="tabcontent"><textarea></textarea></div>
-        <div id="song8" class="tabcontent"><textarea></textarea></div>
-        <div id="song9" class="tabcontent"><textarea></textarea></div>
+        <div id="tab0" class="tabcontent"><textarea></textarea></div>
+        <div id="tab1" class="tabcontent"><textarea></textarea></div>
+        <div id="tab2" class="tabcontent"><textarea></textarea></div>
+        <div id="tab3" class="tabcontent"><textarea></textarea></div>
+        <div id="tab4" class="tabcontent"><textarea></textarea></div>
+        <div id="tab5" class="tabcontent"><textarea>牧者之禱</textarea></div>
+        <div id="tab6" class="tabcontent"><textarea>今日經課</textarea></div>
+        <div id="tab7" class="tabcontent"><textarea></textarea></div>
+        <div id="tab8" class="tabcontent"><textarea>證 道</textarea></div>
+        <div id="tab9" class="tabcontent"><textarea></textarea></div>
       </div>
 
       <footer style="margin-top: 10px;">
@@ -388,12 +388,12 @@ $(document).ready(function() {
         createPrelude(pptx);
         createOverture(pptx);
 
-        for (var i=0; i<9; i++) {
-            var song = $('#song' + i + ' textarea').val();
-            if (song.length > 10) {
+        for (var i=0; i<=9; i++) {
+            var song = $('#tab' + i + ' textarea').val();
+            if (song.length > 2) {
                 createSong(pptx, song, themes[i]);
             }
-            if (i == 2) {
+            if (i == 3) {
                 createOffering(pptx);
             }
         }
