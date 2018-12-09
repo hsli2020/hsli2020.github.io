@@ -98,6 +98,7 @@ textarea {
 
       <div class="container">
         <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'song0')">Prelude</button>
           <button class="tablinks" onclick="openTab(event, 'song1')" id="defaultOpen">Song - 1</button>
           <button class="tablinks" onclick="openTab(event, 'song2')">Song - 2</button>
           <button class="tablinks" onclick="openTab(event, 'song3')">Song - 3</button>
@@ -109,6 +110,7 @@ textarea {
           <button class="tablinks" onclick="openTab(event, 'song9')">Song - 9</button>
         </div>
 
+        <div id="song0" class="tabcontent"><textarea>安靜默禱</textarea></div>
         <div id="song1" class="tabcontent"><textarea></textarea></div>
         <div id="song2" class="tabcontent"><textarea></textarea></div>
         <div id="song3" class="tabcontent"><textarea></textarea></div>
@@ -221,6 +223,26 @@ function createSong(pptx, song, theme) {
             });
         }
     }
+}
+
+function createPrelude(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '000080';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '安靜默禱',
+    ];
+
+    var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: fontLG },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
 }
 
 function createOverture(pptx) {
@@ -363,10 +385,11 @@ $(document).ready(function() {
 
         var themes = createThemes(pptx);
 
+        createPrelude(pptx);
         createOverture(pptx);
 
         for (var i=0; i<9; i++) {
-            var song = $('#song' + (i+1) + ' textarea').val();
+            var song = $('#song' + i + ' textarea').val();
             if (song.length > 10) {
                 createSong(pptx, song, themes[i]);
             }
