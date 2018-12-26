@@ -228,7 +228,7 @@ function createSong(pptx, song, theme) {
 function createPrelude(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '563d7c';
+    slide.back = '7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -248,7 +248,7 @@ function createPrelude(pptx) {
 function createOverture(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '563d7c';
+    slide.back = '7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -280,7 +280,7 @@ function createOverture(pptx) {
 function createOffering(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '563d7c';
+    slide.back = '7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -310,7 +310,7 @@ function createOffering(pptx) {
 function createTrinity(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '563d7c';
+    slide.back = '7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -342,7 +342,7 @@ function createTrinity(pptx) {
 function createGlory(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '563d7c';
+    slide.back = '7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -377,8 +377,8 @@ $(document).ready(function() {
     $("#download").click(function(e) {
         var pptx = new PptxGenJS();
 
-        // pptx.setLayout('LAYOUT_16x9');
-        pptx.setLayout('LAYOUT_4x3');
+        pptx.setLayout('LAYOUT_16x9');
+        // pptx.setLayout('LAYOUT_4x3');
         // 'LAYOUT_16x10'
         // 'LAYOUT_WIDE'
         // 'LAYOUT_USER'
