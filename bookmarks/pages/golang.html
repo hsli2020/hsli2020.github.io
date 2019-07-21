@@ -18,18 +18,88 @@
     var bookmarks = [
       [
         { url: "https://golang.org/", desc: "Go Programming Language" },
-        { url: "http://godoc.org/", desc: "Go Doc" },
+        { url: "https://godoc.org/", desc: "Go Doc" },
       ],
       { url: "https://github.com/adonovan/gopl.io/", desc: "Source Code for Book" },
-      { url: "https://github.com/astaxie/beego", desc: "beego - Go Framework" },
-      { url: "http://golang.org/doc/articles/wiki/", desc: "Go Lang Web App" },
-      { url: "https://gin-gonic.github.io/gin/", desc: "Gin Gonic Framework" },
-      { url: "-", desc: "" },
+      { url: "https://gopm.io/", desc: "Gopm Registry" },
+      { url: "http://go-database-sql.org/", desc: "Go database/sql tutorial" },
     ];
 
     var container = document.getElementById("container");
     render(bookmarks, container);
   </script>
 
+<!-- ------------------------------------------------------------ -->
+<h3>Frameworks</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="framework"></div>
+
+  <script type="text/javascript">
+    var framework = [
+      [
+        { url: "https://github.com/gobuffalo/buffalo", desc: "Buffalo" },
+        { url: "https://github.com/gobuffalo/packr", desc: "Packr" },
+        { url: "https://github.com/gobuffalo/pop", desc: "Pop" },
+        { url: "https://github.com/gobuffalo/plush", desc: "Plush" },
+        { url: "https://github.com/gobuffalo/envy", desc: "Envy" },
+        { url: "https://github.com/gobuffalo/tags", desc: "Tags" },
+      ],
+      { url: "https://github.com/astaxie/beego", desc: "beego" },
+      { url: "https://github.com/kataras/iris", desc: "iris" },
+      { url: "https://gin-gonic.github.io/gin/", desc: "Gin Gonic" },
+      { url: "https://www.vugu.org/doc/start", desc: "Go Frontend Framework" },
+    ];
+
+    var container = document.getElementById("framework");
+    render(framework, container);
+  </script>
+
+<!-- ------------------------------------------------------------ -->
+<h3>Libraries</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="library"></div>
+
+  <script type="text/javascript">
+    var library = [
+      { url: "https://github.com/gorilla", desc: "Gorilla" },
+      { url: "https://github.com/PuerkitoBio/goquery", desc: "GoQuery" },
+      { url: "https://github.com/ying32/govcl", desc: "Go VCL" },
+      { url: "https://github.com/go-ini/ini", desc: "Go Ini" },
+      { url: "https://github.com/joho/godotenv/", desc: "Go dotEnv" },
+      { url: "https://github.com/emersion/go-imap", desc: "Go IMAP" },
+      { url: "https://github.com/masterminds/squirrel", desc: "Fluent SQL generation for Go" },
+      { url: "https://github.com/bloom42/sane-go", desc: "Simple And NEeded TOML/YAML alternative" },
+      { url: "https://github.com/flosch/pongo2", desc: "Django-syntax like template-engine" },
+    ];
+
+    var container = document.getElementById("library");
+    render(library, container);
+  </script>
+
+<!-- ------------------------------------------------------------ -->
+<h3>Applications & Tools</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="apps"></div>
+
+  <script type="text/javascript">
+    var apps = [
+      { url: "https://github.com/mattermost/mattermost-server", desc: "MatterMost (Slack clone)" },
+      { url: "https://github.com/swaggo/swag", desc: "Swagger For Go" },
+      { url: "https://github.com/elsesiy/qrgo", desc: "Make QR code" },
+      { url: "https://github.com/markbates/grift", desc: "Go based task runner" },
+      { url: "https://github.com/golangci/golangci-lint", desc: "Linters Runner for Go" },
+      { url: "https://github.com/miku/zek", desc: "XML to Go" },
+      { url: "https://github.com/writeas/writefreely", desc: "A simple, federated blogging platform" },
+    ];
+
+    var container = document.getElementById("apps");
+    render(apps, container);
+  </script>
 </body>
+<!--
+      { url: "http://golang.org/doc/articles/wiki/", desc: "Go Lang Web App" },
+-->
 </html>
