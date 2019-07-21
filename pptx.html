@@ -98,27 +98,27 @@ textarea {
 
       <div class="container">
         <div class="tab">
-          <button class="tablinks" onclick="openTab(event, 'tab0')">Prelude</button>
-          <button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen">Hymn - 1</button>
-          <button class="tablinks" onclick="openTab(event, 'tab2')">Hymn - 2</button>
-          <button class="tablinks" onclick="openTab(event, 'tab3')">Hymn - 3</button>
-          <button class="tablinks" onclick="openTab(event, 'tab4')">Offering</button>
-          <button class="tablinks" onclick="openTab(event, 'tab5')">Prayer</button>
-          <button class="tablinks" onclick="openTab(event, 'tab6')">Scripture Reading</button>
-          <button class="tablinks" onclick="openTab(event, 'tab7')">Hymn of Praise</button>
-          <button class="tablinks" onclick="openTab(event, 'tab8')">Sermon</button>
-          <button class="tablinks" onclick="openTab(event, 'tab9')">Hymn of Response</button>
+          <button class="tablinks" onclick="openTab(event, 'tab0')" id="defaultOpen">圣诗一</button>
+          <button class="tablinks" onclick="openTab(event, 'tab1')">圣诗二</button>
+          <button class="tablinks" onclick="openTab(event, 'tab2')">圣诗三</button>
+          <button class="tablinks" onclick="openTab(event, 'tab3')">牧者之祷</button>
+          <button class="tablinks" onclick="openTab(event, 'tab4')">今日经课</button>
+          <button class="tablinks" onclick="openTab(event, 'tab5')">献诗</button>
+          <button class="tablinks" onclick="openTab(event, 'tab6')">赞美诗</button>
+          <button class="tablinks" onclick="openTab(event, 'tab7')">证道</button>
+          <button class="tablinks" onclick="openTab(event, 'tab8')">圣餐</button>
+          <button class="tablinks" onclick="openTab(event, 'tab9')">回应诗</button>
         </div>
 
         <div id="tab0" class="tabcontent"><textarea></textarea></div>
         <div id="tab1" class="tabcontent"><textarea></textarea></div>
         <div id="tab2" class="tabcontent"><textarea></textarea></div>
-        <div id="tab3" class="tabcontent"><textarea></textarea></div>
-        <div id="tab4" class="tabcontent"><textarea></textarea></div>
-        <div id="tab5" class="tabcontent"><textarea>牧者之禱</textarea></div>
-        <div id="tab6" class="tabcontent"><textarea>今日經課</textarea></div>
-        <div id="tab7" class="tabcontent"><textarea></textarea></div>
-        <div id="tab8" class="tabcontent"><textarea>證 道</textarea></div>
+        <div id="tab3" class="tabcontent"><textarea>牧者之禱</textarea></div>
+        <div id="tab4" class="tabcontent"><textarea>今日經課</textarea></div>
+        <div id="tab5" class="tabcontent"><textarea></textarea></div>
+        <div id="tab6" class="tabcontent"><textarea></textarea></div>
+        <div id="tab7" class="tabcontent"><textarea>證 道：吳荔峰牧師</textarea></div>
+        <div id="tab8" class="tabcontent"><textarea>聖 餐</textarea></div>
         <div id="tab9" class="tabcontent"><textarea></textarea></div>
       </div>
 
@@ -392,7 +392,7 @@ $(document).ready(function() {
             if (song.length > 2) {
                 createSong(pptx, song, themes[i]);
             }
-            if (i == 3) {
+            if (i == 2) {
                 createOffering(pptx);
             }
         }
