@@ -41,20 +41,8 @@
         { url: "http://xiaorui.cc/category/golang/", desc: "Golang个人blog" },
         { url: "https://go101.org/article/101.html", desc: "Go 101" },
       ],
-    ];
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
-  </script>
-
-<!-- ------------------------------------------------------------ -->
-<h3>Frameworks</h3>
-<!-- ------------------------------------------------------------ -->
-
-  <div id="framework"></div>
-
-  <script type="text/javascript">
-    var framework = [
+      "=Frameworks",
       [
         { url: "https://github.com/gobuffalo/buffalo", desc: "Buffalo" },
         { url: "https://github.com/gobuffalo/packr", desc: "Packr" },
@@ -72,20 +60,8 @@
         { url: "https://github.com/go-chi/chi", desc: "Go-chi" },
       ],
       { url: "https://www.vugu.org/doc/start", desc: "Go Frontend Framework" },
-    ];
 
-    var container = document.getElementById("framework");
-    render(framework, container);
-  </script>
-
-<!-- ------------------------------------------------------------ -->
-<h3>Libraries</h3>
-<!-- ------------------------------------------------------------ -->
-
-  <div id="library"></div>
-
-  <script type="text/javascript">
-    var library = [
+      "=Libraries",
       [
         { url: "https://github.com/gorilla", desc: "Gorilla" },
         { url: "https://gorm.io/docs/", desc: "GORM Guides" },
@@ -104,20 +80,8 @@
         { url: "https://github.com/PuerkitoBio/goquery", desc: "GoQuery" },
         { url: "http://go-colly.org/", desc: "Go-Colly" },
       ],
-    ];
 
-    var container = document.getElementById("library");
-    render(library, container);
-  </script>
-
-<!-- ------------------------------------------------------------ -->
-<h3>Applications & Tools</h3>
-<!-- ------------------------------------------------------------ -->
-
-  <div id="apps"></div>
-
-  <script type="text/javascript">
-    var apps = [
+      "=Applications & Tools",
       { url: "https://github.com/mattermost/mattermost-server", desc: "MatterMost (Slack clone)" },
       { url: "https://github.com/swaggo/swag", desc: "Swagger For Go" },
       { url: "https://github.com/elsesiy/qrgo", desc: "Make QR code" },
@@ -128,9 +92,10 @@
       { url: "https://nsq.io/", desc: "NSQ" },
     ];
 
-    var container = document.getElementById("apps");
-    render(apps, container);
+    var container = document.getElementById("container");
+    render(bookmarks, container);
   </script>
+
 </body>
 <!--
       { url: "http://golang.org/doc/articles/wiki/", desc: "Go Lang Web App" },
