@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <script src="bookmarks.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- ------------------------------------------------------------ -->
+<h3>Trash</h3>
+<!-- ------------------------------------------------------------ -->
+
+  <div id="container"></div>
+
+  <script type="text/javascript">
+    var bookmarks = [/*
+        { url: "https://www.easypost.com/", desc: "EasyPost" },
+        { url: "https://shippingeasy.readme.io/docs/php-getting-started", desc: "ShippingEasy API" },
+        { url: "https://docs.rocketship.it/php/1-0/getting-started.html", desc: "RocketShipIt" },
+        { url: "https://github.com/JeremyDunn/php-fedex-api-wrapper", desc: "Fedex API PHP wrapper" },
+        { url: "https://www.fedex.com/us/developer/WebHelp/ws/2016/html/WebServicesLandingPage.html", desc: "Fedex API Docs" },
+        { url: "https://www.quotewerks.com/helpfile/qwhelp.htm?importingingrammicropricefiles.htm", desc: "QuoteWerks Docs" },
+        { url: "https://www.shipwire.com/w/developers/", desc: "ShipWire API" },
+
+        { url: "https://www.canadapost.ca/cpo/mc/business/productsservices/developers/soap/codesamples.jsf", desc: "Canada Post CodeSamples" },
+        { url: "https://www.ups.com/upsdeveloperkit?loc=en_US", desc: "UPS Developer Kit" },
+        { url: "https://www.ups.com/content/ca/en/resources/techsupport/worldship/documents/index.html", desc: "WorldShip Docs" },
+        { url: "https://www.ups.com/worldshiphelp/WS17/ENU/AppHelp/CONNECT/Automatic_Batch_Processing_Minimum_Required_Fields.htm", desc: "WorldShip Help" },
+        { url: "https://www.ups.com/worldshiphelp/WS11/ENU/AppHelp/CONNECT/Shipment_Data_Field_Descriptions.htm", desc: "Shipment Data Field Descriptions" },
+        { url: "https://www.ups.com/content/us/en/shipping/create/shipping/create/batch_file.html", desc: "Importing Batch Shipping Files" },
+
+        { url: "https://community.intuit.com/articles/1199530-intuit-interchange-format-iif-files", desc: "QuickBooks IIF" },
+        { url: "http://support.intuit.ca/quickbooks/en-ca/iq/Import-and-Export/Intuit-Interchange-Format---IIF--files-/HOW12778.html", desc: "QuickBooks IIF" },
+
+        { url: "http://www.ebay.ca/sch/allcategories/all-categories", desc: "eBay Categories" },
+        { url: "http://www.isoldwhat.com/getcats/fullcategorytree.php", desc: "eBay Categories Tree" },
+        { url: "http://www.isoldwhat.com/getcats/index.php", desc: "eBay Category Tree" },
+        { url: "http://pages.ebay.com/turbo_lister/csv.html", desc: "eBay Importing and Exporting Records" },
+        { url: "http://pages.ebay.ca/file_exchange/SMP_selecttemplate.html?id=1&ssPageName=STRK:ME:LNLK", desc: "eBay File Exchange" },
+        { url: "http://developer.ebay.com/Devzone/XML/docs/Reference/ebay/index.html", desc: "eBay Trading API" },
+        { url: "https://go.developer.ebay.com/api-documentation", desc: "eBay Seller API (new)" },
+        { url: "https://go.developer.ebay.com/api-documentation", desc: "eBayAPI Documentation" },
+        { url: "http://developer.ebay.com/devzone/xml/docs/reference/ebay/getorders.html", desc: "eBayAPI-GetOrders" },
+
+        { url: "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/awslanguages.html", desc: "AWS API for langs" },
+        { url: "https://sellercentral.amazon.com/gp/help/201576440", desc: "Templates for Specific Categories" },
+        { url: "https://sellercentral.amazon.com/listing/classify", desc: "Listing Classify" },
+
+        { url: "http://projectreactor.mydoc.io/", desc: "Reactor 指南中文版 V2.0 JVM" },
+        { url: "http://www.paihat.com/blog/guoger%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BAim%E5%90%8E%E5%8F%B0-ejabberd%E7%AF%87.html", desc: "搭建IM后台-ejabberd" },
+        { url: "http://golang-china.github.io/gopl-zh/", desc: "#《The Go Programming Language》读书笔记" }, 
+        { url: "http://wiki.jikexueyuan.com/project/html5/quick-guide.html", desc: "HTML5 快速指南" },
+        { url: "http://documentcloud.github.io/backbone/", desc: "#<b>Backbone Official</b>" },
+        { url: "http://underscorejs.org/", desc: "<b>Underscore.js</b>" },
+        { url: "http://addyosmani.github.io/backbone-fundamentals/", desc: "Developing Backbone.js Applications" },
+        { url: "https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-using-modules", desc: "#Using require.js" },
+        { url: "http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/", desc: "Backbone for beginners" },
+        { url: "http://code.tutsplus.com/series/getting-to-know-backbonejs--net-24408", desc: "Get To Know Backbone" },
+        { url: "https://cdnjs.com/libraries/backbone.js/tutorials/", desc: "#Backbone Tutorial" },
+        { url: "https://backbonetutorials.com/", desc: "Backbone Tutorial" },
+        { url: "http://arturadib.com/hello-backbonejs/", desc: "Hello Backbone" },
+        { url: "http://ricostacruz.com/backbone-patterns/", desc: "Backbone Patterns" },
+        { url: "http://www.codeproject.com/Articles/795965/BackBone-Tutorial-Part-Introduction-to-Backbone-Js", desc: "#Backbone Tutorial" },
+        { url: "http://www.tutorialspoint.com/backbonejs/", desc: "Backbone Tutorial" },
+        { url: "http://victorsavkin.com/post/59496656297/building-large-backbone-applications", desc: "Build Large App" },
+        { url: "http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/", desc: "Backbone.js Wine Cellar" },
+        { url: "http://ejohn.org/blog/javascript-micro-templating/", desc: "#JavaScript Micro-Templating" },
+        { url: "http://zhuanlan.zhihu.com/purerender", desc: "React 系列" }, 
+        { url: "https://git-scm.com/book/zh/v2/", desc: "#Git Book 中文版" },
+        { url: "http://git.oschina.net/progit/", desc: "Pro Git（中文版）" },
+        { url: "http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000", desc: "Git教程" },
+        { url: "http://gitbook.liuhui998.com/", desc: "Git Community Book 中文版" },
+        { url: "http://wiki.jikexueyuan.com/project/git-community-book/", desc: "Git Community Book 中文版" },
+        { url: "http://hukai.me/android-training-course-in-chinese/index.html", desc: "Android官方培训课程" },
+        { url: "http://golang-china.github.io/gopl-zh", desc: "Go语言圣经" },
+        { url: "http://api.symfony.com/2.6/index.html", desc: "#Symfony API" },
+        { url: "https://symfony.com/doc/master/bundles/FOSUserBundle/index.html", desc: "Getting Started With FOSUserBundle" },
+        { url: "https://symfony.com/doc/current/book/security.html", desc: "Symfony Security" }, 
+        { url: "https://symfony.com/doc/current/cookbook/security/index.html", desc: "#Recipes about Security " }, 
+        { url: "https://symfony.com/doc/master/bundles/FOSUserBundle/configuration_reference.html", desc: "FOSUserBundle Configuration Reference" },
+        { url: "http://www.newlifeclan.com/symfony/archives/702", desc: "#从数据库中读取用户" },
+        { url: "http://www.newlifeclan.com/symfony/archives/696", desc: "怎样使用API密钥验证用户" },
+        { url: "https://yplam.com/post/16", desc: "FOSUserBundle 入门" }, 
+        { url: "https://github.com/Atlantic18/DoctrineExtensions/blob/master/doc/symfony2.md", desc: "#Install Gedmo Doctrine2 extensions in Symfony2" }, 
+        { url: "http://www.symfony2cheatsheet.com/", desc: "Symfony2 Cheatsheet" },
+        { url: "http://www.chrisyue.com/dig-into-symfony-2-framework-authentication.html", desc: "#深入Symfony2框架用户身份验证" },
+        { url: "http://www.newlifeclan.com/symfony/archives/507", desc: "Symfony Security Voters" },
+
+        { url: "http://blog.jmoz.co.uk/", desc:"James Morris - JMOZ" },
+        { url: "http://adrianmejia.com/", desc: "Adrian Mejia's Blog" },
+        { url: "http://www.phpied.com/", desc:"Stoyan's phpied.com" },
+        { url: "http://www.reecefowell.com/", desc:"Reece Fowells Blog" },
+        { url: "http://spf13.com/post/", desc: "SPF13 Blog" },
+        { url: "http://spf13.com/post/ultimate-vim-config", desc: "Ultimate Vim Config" },
+        { url: "https://github.com/spf13/spf13-vim", desc: "spf13-vim" },
+        { url: "http://0x1.im/", desc:"Scholer's Blog (PHP)" },
+        { url: "http://www.cppblog.com/life02/archive/2011/12/15/162188.html", desc: "Android Auto Dialer" },
+        { url: "http://blog.millermedeiros.com/amd-is-better-for-the-web-than-commonjs-modules/", desc: "#AMD is better than CommonJS" },
+        { url: "http://blog.it985.com/4498.html", desc:"IT985博客" },
+        { url: "http://ejohn.org/", desc: "John Resig" },
+        { url: "http://symfony.cn/docs-contrib/1/best_practices/introduction.html", desc:"#Symfony框架最佳实践" },
+        { url: "http://www.chrisyue.com/translation-create-your-own-framework-on-top-of-the-symfony2-components-index.html", desc:"使用Symfony2的组件创建自己的PHP框架" },
+        { url: "http://blog.it985.com/?s=Symfony2%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91", desc:"Symfony2官方文档翻译" },
+        { url: "http://wiki.jikexueyuan.com/project/symfony-cookbook/", desc:"Symfony Cookbook (zh)" },
+        { url: "http://gosymfony.com/", desc:"{go}Symfony" },
+        { url: "http://www.newlifeclan.com/symfony/", desc:"New Life Clan" },
+        { url: "http://www.chrisyue.com/tag/symfony2", desc:"#Chrisyue's Blog (Symfony)" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-1.html", desc:"Day 1" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-2.html", desc:"Day 2" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-3.html", desc:"Day 3" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-4.html", desc:"Day 4" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-5.html", desc:"Day 5" },
+        { url: "http://www.chrisyue.com/symfony2-in-action-day-6.html", desc:"Day 6" },
+        { url: "http://blog.wenxuecity.com/myoverview/55354/", desc:"枫叶琴缘(好音乐)" },
+
+        { url: "http://documentcloud.github.io/backbone/", desc: "#<b>Backbone Official</b>" },
+        { url: "http://underscorejs.org/", desc: "<b>Underscore.js</b>" },
+        { url: "http://addyosmani.github.io/backbone-fundamentals/", desc: "<b>Developing Backbone.js Applications</b>" },
+        { url: "http://arturadib.com/hello-backbonejs/", desc: "#Hello Backbone" },
+        { url: "http://ricostacruz.com/backbone-patterns/", desc: "Backbone Patterns" },
+        { url: "http://code.tutsplus.com/series/getting-to-know-backbonejs--net-24408", desc: "Get To Know Backbone" },
+        { url: "http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/", desc: "Backbone.js Wine Cellar" },
+        { url: "http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/", desc: "#Backbone for beginners" },
+        { url: "http://victorsavkin.com/post/59496656297/building-large-backbone-applications", desc: "Build Large Backbone App" },
+        { url: "https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-using-modules", desc: "Using require.js in Backbon App" },
+        { url: "https://jquery.com/", desc: "#jQuery" },
+        { url: "https://jqueryui.com/", desc: "jQuery UI" },
+        { url: "https://jquerymobile.com/", desc: "jQuery Mobile" },
+        { url: "http://learn.jquery.com/", desc: "jQuery Learning Center" },
+        { url: "http://jquery-plugins.net/", desc: "jQuery-Plugins " },
+        { url: "https://jquery.com/", desc: "jQuery" },
+        { url: "http://ejohn.org/blog/javascript-micro-templating/", desc: "#JavaScript Micro-Templating" },
+        { url: "https://jqueryboilerplate.com/", desc: "#jQuery Boilerplate" },
+        { url: "http://addyosmani.com/writing-modular-js/", desc: "#Writing Modular JavaScript With AMD, CommonJS & ES Harmony" },
+        { url: "http://www.phpied.com/3-ways-to-define-a-javascript-class/", desc: "#3 ways to define a JavaScript class" },
+        { url: "http://headjs.com/", desc: "#HeadJS" },
+        { url: "http://gijgo.com/Dialog/Demos", desc: "Gijgo.com" },
+
+        { url: "https://github.com/KnpLabs/", desc: "KnpLabs" },
+        { url: "https://github.com/FriendsOfPHP", desc: "FriendsOfPHP pickle/Goutte/Sami" },
+        { url: "https://github.com/KnpLabs/KnpBundles", desc: "The unofficial listing of Symfony2 bundles" },
+        { url: "https://github.com/FriendsOfSymfony", desc: "#FriendsOfSymfony" },
+        { url: "https://github.com/FriendsOfSymfony/FOSUserBundle", desc: "FOSUserBundle" },
+        { url: "https://github.com/dustin10/VichUploaderBundle", desc: "VichUploaderBundle" },
+        { url: "https://github.com/Atlantic18/DoctrineExtensions", desc: "DoctrineExtensions" },
+        { url: "https://github.com/stof/StofDoctrineExtensionsBundle", desc: "#StofDoctrineExtensionsBundle" },
+        { url: "https://github.com/symfony/symfony-demo", desc: "symfony-demo" },
+        { url: "https://github.com/escapestudios/EscapeWSSEAuthenticationBundle", desc: "EscapeWSSEAuthenticationBundle" },
+        { url: "https://github.com/Masterminds/glide", desc: "Vendor Package Management for Golang" },
+        { url: "https://github.com/vuejs/vue", desc: "Vue" },
+        { url: "https://github.com/Clouda-team/touch.code.baidu.com", desc: "Clouda Touch.js" },
+
+    */];
+
+    var container = document.getElementById("container");
+    render(bookmarks, container);
+  </script>
+
+<!--
+<li class="level3"><a href="./pages/java.html">Java</a></li>
+<li class="level3"><a href="./pages/android.html">Android</a></li>
+<li class="level3"><a href="./pages/services.html">Online Services</a></li>
+<li class="level3"><a href="./pages/ruby.html">Ruby</a></li>
+<li class="level3"><a href="./pages/python.html">Python</a></li>
+<li class="level3"><a href="./pages/nodejs.html">NodeJS</a></li>
+
+<li class="level2">People</li>
+-->
+
+</body>
+</html>
+
