@@ -8,18 +8,39 @@
   <script src="bookmarks.js" type="text/javascript"></script>
 </head>
 <body>
-<!-- ------------------------------------------------------------ -->
-<h3>Readings</h3>
-<!-- ------------------------------------------------------------ -->
-
   <div id="container"></div>
 
   <script type="text/javascript">
     var bookmarks = [
+        "=Javascript",
         [
-          { url: "http://speakingjs.com/es5/index.html", desc: "Speaking JavaScript" }, 
+          { url: "http://speakingjs.com/es5/index.html", desc: "#Speaking JavaScript" }, 
           { url: "http://eloquentjavascript.net/", desc: "<b>Eloquent JavaScript</b>" },
+          { url: "http://exploringjs.com/es6/index.html", desc: "Exploring ES6" },
+          { url: "http://addyosmani.com/resources/essentialjsdesignpatterns/book/", desc: "<b>Learning JavaScript Design Patterns</b>" },
+          { url: "http://todomvc.com/", desc: "TodoMVC" },
         ],
+        [
+            { url: "https://davidwalsh.name/", desc: "#David Walsh Blog" },
+            { url: "https://zhuanlan.zhihu.com/p/33298555", desc: "最棒的 JavaScript 学习指南" },
+            { url: "https://zh.javascript.info/", desc: "现代Javascript教程" },
+            { url: "https://jkchao.github.io/typescript-book-chinese/", desc: "深入理解TypeScript" },
+        ],
+        [
+            { url: "https://frontendmasters.com/books/front-end-handbook/2019/", desc: "#Frontend Handbook 2019" },
+            { url: "https://www.yuque.com/yuque/blog/yuque-info-tech-encyclopedia", desc: "语雀IT百科" },
+            { url: "https://github.com/yygmind/blog", desc: "前端面试重难点" },
+            { url: "http://javascript.ruanyifeng.com/", desc: "Javascript标准参考教程" },
+            { url: "https://pptr.dev/#?product=Puppeteer", desc: "Puppeteer" },
+        ],
+        [
+            { url: "https://javascript.info/", desc: "#Javascript.Info" },
+            { url: "https://github.com/ljianshu/Blog", desc: "FrontEnd Engineer" },
+            { url: "https://github.com/mbeaudru/modern-js-cheatsheet", desc: "Morden JS Cheatsheet" },
+            { url: "https://github.com/wearehive/project-guidelines/blob/master/README-zh.md", desc: "Project Guidelines" },
+            { url: "http://wangdoc.com/javascript/index.html", desc: "JavaScript 教程" },
+        ],
+        "-",
         [
           { url: "http://requirejs.org/docs/why.html", desc: "#Why Web Modules?" },
           { url: "http://requirejs.org/docs/whyamd.html", desc: "Why AMD?" },
@@ -30,16 +51,7 @@
           { url: "https://www.devbridge.com/articles/understanding-amd-requirejs/", desc: "#Understanding AMD & RequireJS" },
           { url: "http://www.phpied.com/3-ways-to-define-a-javascript-class/", desc: "3 ways to define a JavaScript class" }, 
         ],
-        [
-          { url: "http://addyosmani.com/resources/essentialjsdesignpatterns/book/", desc: "#<b>Learning JavaScript Design Patterns</b>" },
-          { url: "http://todomvc.com/", desc: "TodoMVC" },
-        ],
-        "-",
-        [
-          { url: "http://es.xiaoleilu.com/index.html", desc: "#Elasticsearch 权威指南" },
-          { url: "https://sourcemaking.com/design_patterns", desc: "Design Patterns" },
-          { url: "http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm", desc: "RESTful" },
-        ],
+
         "=Golang",
         { url: "http://colobu.com/2017/12/28/top-golang-articles-of-2017/", desc: "Top Golang Articles of 2017" },
         { url: "https://www.programming-books.io/essential/go/", desc: "Book:Essential Go" },
@@ -49,6 +61,17 @@
         { url: "https://chai2010.gitbooks.io/advanced-go-programming-book/content/", desc: "Go语言高级编程" },
         { url: "https://goquiz.github.io/", desc: "Go语言经典笔试题" },
         { url: "http://www.oschina.net/news/69536/flynn-doc-cn", desc: "《 Flynn 文档中文版》" },
+        { url: "https://dengxiaolong.com/caddy/zh/", desc: "Caddy中文文档" },
+        { url: "http://www.gohugo.org/", desc: "Hugo中文文档" },
+
+        "-",
+        [
+          { url: "http://es.xiaoleilu.com/index.html", desc: "#Elasticsearch 权威指南" },
+          { url: "https://sourcemaking.com/design_patterns", desc: "Design Patterns" },
+          { url: "http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm", desc: "RESTful" },
+        ],
+        "-",
+        { url: "https://cstack.github.io/db_tutorial/", desc: "Writing a sqlite clone from scratch in C" },
     ];
 
     var container = document.getElementById("container");
