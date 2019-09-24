@@ -382,12 +382,12 @@ function createMessage(pptx) {
     ];
 
     var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+    var fontSM = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
 
     slide.addText(
         [
             { text: lines[0], options: fontLG },
-            { text: lines[0], options: fontSM },
+            { text: lines[1], options: fontSM },
         ],
         { x: 0, y: 0, w: '100%', h: '80%' }
     );
