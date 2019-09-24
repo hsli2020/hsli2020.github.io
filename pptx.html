@@ -373,18 +373,21 @@ function createGlory(pptx) {
 function createMessage(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = '#7719aa'; //'68217a'; //'563d7c';
     slide.color = 'FFFFFF';
 
     var lines = [
-        '牧区信息',
+        '牧區訊息',
+        '彼此代禱',
     ];
 
     var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
+    var fontSM = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
 
     slide.addText(
         [
             { text: lines[0], options: fontLG },
+            { text: lines[0], options: fontSM },
         ],
         { x: 0, y: 0, w: '100%', h: '80%' }
     );
