@@ -183,6 +183,8 @@ function createThemes(pptx) {
 }
 
 var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+var font32 = { align: 'c', fontSize: 32, fontFace: "微软雅黑", color:'FFFFFF' };
+var font40 = { align: 'c', fontSize: 40, fontFace: "微软雅黑", color:'FFFFFF' };
 var font44 = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
 var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
 var font64 = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
@@ -276,12 +278,33 @@ function createOverture(pptx) {
 }
 
 function createOffering(pptx) {
+    // Slide 1
     var slide = pptx.addNewSlide();
 
     slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
+        '奉  獻',
+        '『將你最好的獻與主』',
+    ];
+
+    slide.addText(
+        [
+            { text: lines[0], options: font48 },
+            { text: '',       options: font48 },
+            { text: lines[1], options: font32 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
+
+    // Slide 2
+    slide = pptx.addNewSlide();
+
+    slide.back = bkcolor;
+    slide.color = 'FFFFFF';
+
+    lines = [
         '獻 禮 文',
         '(歷代志上29:14下)',
         '萬物都是從主而來，',
