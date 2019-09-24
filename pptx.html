@@ -369,6 +369,26 @@ function createGlory(pptx) {
         { x: 0, y: 0, w: '100%', h: '90%' }
     );
 }
+
+function createMessage(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '牧区信息',
+    ];
+
+    var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
+
+    slide.addText(
+        [
+            { text: lines[0], options: fontLG },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
+}
 </script>
 
 <script>
@@ -376,8 +396,8 @@ $(document).ready(function() {
     $("#download").click(function(e) {
         var pptx = new PptxGenJS();
 
-        pptx.setLayout('LAYOUT_16x9');
-        // pptx.setLayout('LAYOUT_4x3');
+        pptx.setLayout('LAYOUT_4x3');
+        // pptx.setLayout('LAYOUT_16x9');
         // 'LAYOUT_16x10'
         // 'LAYOUT_WIDE'
         // 'LAYOUT_USER'
@@ -399,6 +419,7 @@ $(document).ready(function() {
 
         createTrinity(pptx);
         createGlory(pptx);
+        createMessage(pptx);
 
         pptx.save(formatDate(new Date()));
     })
