@@ -14,6 +14,10 @@
     var bookmarks = [
       "=Online Tools",
       [
+        { url: "https://devdocs.io/", desc: "DevDocs" },
+        { url: "https://devhints.io/", desc: "DevHits" },
+      ],
+      [
         { url: "https://translate.google.com/", desc: "Google Translate" },
         { url: "https://www.bing.com/translator", desc: "Bing Translator" },
         { url: "https://fanyi.baidu.com/", desc: "Baidu Translate" },
@@ -21,82 +25,79 @@
       [
         { url: "https://regex101.com/", desc: "Regex 101" },
         { url: "https://regexr.com/", desc: "RegExr" },
+      ],
+      { url: "https://closure-compiler.appspot.com/home", desc: "Closure Compiler" },
+      { url: "https://webassembly.studio/", desc: "WebAssembly Studio" },
+      { url: "https://code.labstack.com/go", desc: "Playground" },
+      { url: "https://www.sassmeister.com/", desc: "SASS Playground" },
+      { url: "https://dartpad.dartlang.org/", desc: "Dart Pad" },
+      { url: "https://babeljs.io/repl", desc: "Babel REPL" },
+      "-",
+      [
+        { url: "http://www.atoolbox.net/", desc: "A ToolBox" },
+        { url: "https://oktools.net/", desc: "OkTools" },
+        { url: "https://www.toolfk.com/", desc: "ToolFk" },
+      ],
+      "=Code Generator",
+      [
+        { url: "https://app.quicktype.io/", desc: "#Quick Type" },
         { url: "https://www.onlinetool.io/xmltogo/", desc: "Xml-To-Go" },
         { url: "https://mholt.github.io/json-to-go/", desc: "Json-To-Go" },
+        { url: "https://yaml2go.prasadg.dev/", desc: "Yaml-To-Go" },
+        { url: "https://mholt.github.io/curl-to-go/", desc: "Curl-To-Go" },
+        { url: "https://incarnate.github.io/curl-to-php/", desc: "Curl-To-PHP" },
+        { url: "https://curl.trillworks.com/", desc: "Curl-To-Code" },
       ],
-      "-",
+      [
+        { url: "https://cssminifier.com/", desc: "#CSS Minifier" },
+        { url: "http://www.vvveb.com/vvvebjs/editor.html", desc: "VvvebJs" },
+        { url: "https://grapesjs.com/", desc: "GrapesJS" },
+        { url: "https://i18ns.com/", desc: "i18ns.com" },
+      ],
+      "=Hash Tools",
       [
         { url: "http://passwordsgenerator.net/md5-hash-generator/", desc: "#Hash Generator" },
         { url: "https://emn178.github.io/online-tools/", desc: "Online Encode/Encode" },
         { url: "https://keccak-256.cloxy.net/", desc: "Keccak-256 Online Hash" },
-        { url: "https://closure-compiler.appspot.com/home", desc: "Closure Compiler" },
-      ],
-      [
-        { url: "https://oktools.net/", desc: "#OkTools" },
         { url: "https://helloacm.com/tools/string-hash/", desc: "String Hash" },
-        { url: "https://www.toolfk.com/", desc: "ToolFk" },
-        { url: "https://bpmn.io/toolkit/bpmn-js/", desc: "BPMN 2.0" },
+        { url: "https://hat.sh", desc: "Hat.sh - File Encryption" },
       ],
-      "-",
+      "=Image Tools",
       [
-        { url: "https://browserleaks.com/", desc: "#BrowserLeaks" },
         { url: "https://www.photopea.com/", desc: "Photopea (PS-like)" },
         { url: "https://ps.gaoding.com/", desc: "PS (PS-like)" },
-        { url: "https://www.noteflight.com/", desc: "NoteFlight" },
-        { url: "https://www.draw.io/", desc: "draw.io" },
-        { url: "https://webassembly.studio/", desc: "WebAssembly Studio" },
-      ],
-      [
-        { url: "http://strapdownjs.com/", desc: "#StrapDown.js" },
-        { url: "https://incarnate.github.io/curl-to-php/", desc: "Curl-To-PHP" },
-        { url: "https://mholt.github.io/curl-to-go/", desc: "Curl-To-Go" },
-        { url: "https://curl.trillworks.com/", desc: "Curl-To-Code" },
-        { url: "http://lindell.me/JsBarcode/", desc: "JsBarcode" },
         { url: "https://www.remove.bg/", desc: "Remove.Bg" },
       ],
+      "=Chart Tools",
       [
-        { url: "https://app.quicktype.io/", desc: "#Quick Type" },
-        { url: "https://cssminifier.com/", desc: "CSS Minifier" },
-        { url: "https://grapesjs.com/", desc: "GrapesJS" },
+        { url: "https://www.desmos.com/calculator", desc: "#Func Chart" },
+        { url: "https://bpmn.io/toolkit/bpmn-js/", desc: "BPMN 2.0" },
+        { url: "https://www.draw.io/", desc: "draw.io" },
         { url: "https://dbdiagram.io/home", desc: "DB Diagram" },
-        { url: "https://www.sassmeister.com/", desc: "SASS Playground" },
-        { url: "https://dartpad.dartlang.org/", desc: "Dart Pad" },
-        { url: "https://babeljs.io/repl", desc: "Babel REPL" },
+      ],
+      "=Misc Tools",
+      [
       ],
       [
-        { url: "https://getavataaars.com/", desc: "#Get Avataaars" },
-        { url: "https://i18ns.com/", desc: "i18ns.com" },
-        { url: "https://hat.sh", desc: "Hat.sh - File Encryption" },
-        { url: "http://www.autopiano.cn/", desc: "AutoPiano" },
         { url: "https://dogedoge.com/", desc: "DogeDoge Search" },
-        { url: "https://www.desmos.com/calculator", desc: "Func Chart" },
+        { url: "https://getavataaars.com/", desc: "Get Avataaars" },
+        { url: "http://www.autopiano.cn/", desc: "AutoPiano" },
+        { url: "https://www.noteflight.com/", desc: "NoteFlight" },
       ],
       [
-        { url: "http://www.atoolbox.net/", desc: "#A ToolBox" },
         { url: "https://cnbible.com/", desc: "CN Bible" },
-        { url: "https://devdocs.io/sqlite/", desc: "DevDocs" },
-        { url: "http://krook.org/jsdom/", desc: "JS Dom" },
-        { url: "https://androidpal.com/studio/about", desc: "AP Studio IDE" },
-        { url: "http://gitblit.com/", desc: "gitblit" },
-        { url: "http://kr.github.io/beanstalkd/", desc: "Beanstalk" },
+        { url: "https://browserleaks.com/", desc: "BrowserLeaks" },
         { url: "https://github.com/dhamaniasad/HeadlessBrowsers", desc: "Headless Browsers" },
-      ],
-      "-",
-      [
-        { url: "https://gopry.rice.sh/", desc: "#Go Pry" },
-        { url: "https://gowalker.org/", desc: "GoWalker" },
-        { url: "https://tabnine.com/", desc: "TabNine" },
-        { url: "http://www.vvveb.com/vvvebjs/editor.html", desc: "VvvebJs" },
-        { url: "https://devhints.io/", desc: "DevHits" },
-        { url: "https://github.com/magic-FE/translate-man", desc: "Translate-Man" },
-        { url: "https://www.base-api.io/", desc: "Base API" },
-        { url: "https://code.labstack.com/go", desc: "Playground" },
       ],
     ];
 
     var container = document.getElementById("container");
     render(bookmarks, container);
   </script>
-
+<!--
+    { url: "http://krook.org/jsdom/", desc: "JS Dom" },
+    { url: "https://www.base-api.io/", desc: "Base API" },
+    { url: "https://github.com/magic-FE/translate-man", desc: "Translate-Man" },
+-->
 </body>
 </html>
