@@ -1,317 +1,519 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name=viewport content="width=device-width,initial-scale=1">
 <title>Go Packages</title>
-<base target="_blank">
+<!-- { -->
 <style>
-  body { font-family: Segoe UI,Helvetica,Arial,sans-serif; font-size: 16px; line-height: 1.5; word-wrap: break-word; background-color: #ccc; }
-  main { width: 960px; margin:0 auto; background-color:white; padding: 20px; }
-  pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: #eee; border-radius: 3px; }
-  table { border-spacing: 0; border-collapse: collapse; }
-  td, th { border: 1px solid #ddd; padding: 4px 8px; }
-  dt { text-decoration: underline; color: blue; }
-  dd { margin-bottom: 10px; }
+body {
+    font-family: Tahoma;
+    font-size: 12pt;
+    line-height: 150%;
+    padding: 0 10pt;
+}
+
+nav {
+    background: lightslategray;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+}
+
+header { padding-left: 200px; }
+header .banner { margin: 0 0 10px 0; }
+header .banner a { color: #777; font-weight: bold; }
+
+header h1 {
+    background: #ccffcc;
+    border-radius: 15px;
+    color: #006600;
+    font-size: 18pt;
+    margin: 0;
+    padding: 1.5em;
+    text-align: center;
+}
+
+article { padding-left: 240px; }
+
+article h2 {
+    border-bottom: dotted 1px #777;
+    color: #006600;
+    font-size: 12pt;
+/*  margin: 4em 0 1em 0;*/
+    padding: 0 0 0.3em 0;
+}
+
+article h3 {
+/*  border-left: 4px solid #ff6666;*/
+    color: #000;
+    font-size: 11pt;
+    line-height: 100%;
+    margin: 1em 0;
+/*  padding: 0 0 0 0.5em;*/
+}
+
+article h4 {
+    color: #000;
+    font-size: 10pt;
+    margin: 1em 0;
+    padding: 0;
+}
+
+article p { margin: 1em 0; }
+article p code { background: #eee; border: 1px solid #ccc; }
+article p strong { color: #f00; }
+
+article pre {
+    background: #eee;
+    border-left: solid 2px #3c0;
+    color: #000;
+    margin: 1em 0;
+    padding: 0 0 0 1em;
+    overflow-x: auto;
+    overflow-y: padding;
+}
+
+article blockquote {
+    background: #fff;
+    border: dashed 1px #777;
+    border-left: solid 2px #777;
+    color: #000;
+    margin: 0;
+    padding: 0 0 0 1em;
+}
+
+article div[id] { display: none; }
+article div[id]:target { display: block; }
+
+nav ul { margin: 10px; padding: 0; }
+nav a { color: white; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+nav li { list-style: none; margin: 0; padding: 0; }
+
+nav .level2 { font-size: 11pt; font-weight: bold; margin-top: 1em; }
+nav .level3 { padding-left: 1em; }
+nav .level3:before { content: "» "; }
+nav .level4 { padding-left: 2em; }
+nav .level4:before { content: "› "; }
+
+dd { margin-bottom: 10px; }
+
+footer { padding-left: 200px; }
 </style>
+<!-- } -->
 </head>
 <body>
-<main>
 
-    <h1>Go Packages</h1>
-    <dl>
-      <dt>https://github.com/gorilla</dt>
-      <dd>Gorilla Web Toolkit</dd>
+<!-- { -->
+<nav>
+<ul>
+<li class="level2"><a href="#useful">Go Packages</a></li>
+<li class="level3"><a href="#useful">Most Useful Packages</a></li>
+<li class="level3"><a href="#webframe">Web Frameworks</a></li>
+<li class="level3"><a href="#webdev">Web Development</a></li>
+<li class="level3"><a href="#crawler">Web Crawler</a></li>
+<li class="level3"><a href="#db">Database</a></li>
+<li class="level3"><a href="#distributed">Distributed</a></li>
+<li class="level3"><a href="#microsvc">Microservice</a></li>
+<li class="level3"><a href="#apps">Applications in Go</a></li>
+<li class="level3"><a href="#testing">Go Testing</a></li>
+<li class="level3"><a href="#util">Utility</a></li>
+<li class="level3"><a href="#tools">Tools</a></li>
+<li class="level2"><a href="#gophers">Gophers</a></li>
+<li class="level3"><a href="#baffulo">Baffulo</a></li>
+<li class="level2"><a href="#examples">Good Examples</a></li>
+<li class="level3"><a href="#"></a></li>
+</ul>
+</nav>
+<!-- } -->
 
-      <dt>https://github.com/joho/godotenv</dt>
-      <dd>A Go port of Ruby's dotenv library (Loads environment variables from `.env`.)</dd>
+<article>
 
-      <dt>https://github.com/gin-gonic/gin</dt>
-      <dd>Gin is a HTTP web framework written in Go</dd>
+<!-- { -->
+<div id="useful">
+    <h2>Most Useful Packages</h2>
 
-      <dt>https://github.com/PuerkitoBio/goquery</dt>
-      <dd>A little like that j-thing, only in Go</dd>
+    <dt>https://github.com/kr/pretty</dt>
+    <dd>Pretty printing for Go values</dd>
 
-      <dt>https://github.com/gobuffalo/buffalo</dt>
-      <dd>Rapid Web Development w/ Go http://gobuffalo.io</dd>
+    <dt>https://github.com/joho/godotenv</dt>
+    <dd>A Go port of Ruby's dotenv library (Loads environment variables from `.env`.)</dd>
 
-      <dt>https://github.com/gobuffalo/packr</dt>
-      <dd>Packr - The simple and easy way to embed static files into Go binaries.</dd>
+    <dt>https://github.com/stretchr/testify</dt>
+    <dd>A toolkit with common assertions and mocks that plays nicely with the standard library</dd>
 
-      <dt>https://github.com/gobuffalo/pop</dt>
-      <dd>Pop- A Tasty Treat For All Your Database Needs</dd>
+    <dt>https://github.com/urfave/cli</dt>
+    <dd>A simple, fast, and fun package for building command line apps in Go</dd>
 
-      <dt>https://github.com/gobuffalo/fizz</dt>
-      <dd>Fizz - A Common DSL for Migrating Databases</dd>
+    <dt>https://github.com/spf13/cobra</dt>
+    <dd>A Commander for modern Go CLI interactions</dd>
 
-      <dt>https://github.com/gobuffalo/plush</dt>
-      <dd>Plush - The powerful template system that Go needs</dd>
+    <dt>https://github.com/spf13/viper</dt>
+    <dd>Go configuration with fangs</dd>
 
-      <dt>https://github.com/gobuffalo/envy</dt>
-      <dd>Envy - Envy makes working with ENV variables in Go trivial.</dd>
+    <dt>https://github.com/Sirupsen/logrus</dt>
+    <dd>Structured, pluggable logging for Go</dd>
 
-      <dt>https://github.com/gobuffalo/tags</dt>
-      <dd>Tags - Easily create HTML tags in Go</dd>
+    <dt>https://github.com/uber-go/zap</dt>
+    <dd>Blazing fast, structured, leveled logging in Go</dd>
 
-      <dt>https://github.com/markbates/goth</dt>
-      <dd>Goth - A simple, clean, and idiomatic way to write authentication packages for Go web applications.</dd>
+    <dt>https://github.com/360EntSecGroup-Skylar/excelize</dt>
+    <dd>Golang library for reading and writing Microsoft Excel™ (XLSX) files</dd>
 
-      <dt>https://github.com/markbates/grift</dt>
-      <dd>Grift - Go based task runner</dd>
+    <dt>https://github.com/signintech/gopdf</dt>
+    <dd>A simple library for generating PDF written in Go lang</dd>
 
-      <dt>https://github.com/go-chi/chi</dt>
-      <dd>Lightweight, idiomatic and composable router for building Go HTTP services </dd>
+    <dt>https://github.com/unidoc/unioffice</dt>
+    <dd>Pure go library for creating and processing Office Word (.docx), Excel (.xlsx) and Powerpoint (.pptx) documents</dd>
+</div>
+<!-- } -->
 
-      <dt>https://gorm.io/docs/</dt>
-      <dd>The fantastic ORM library for Golang, aims to be developer friendly</dd>
+<!-- { -->
+<div id="webframe">
+    <h2>Web Frameworks</h2>
 
-      <dt>https://github.com/kataras/iris</dt>
-      <dd>The fastest community-driven web framework for Go</dd>
+    <dt>https://github.com/gin-gonic/gin</dt>
+    <dd>Gin is a HTTP web framework written in Go</dd>
 
-      <dt>https://github.com/jmoiron/sqlx</dt>
-      <dd>General purpose extensions to golang's database/sql</dd>
+    <dt>https://github.com/go-chi/chi</dt>
+    <dd>Lightweight, idiomatic and composable router for building Go HTTP services </dd>
 
-      <dt>https://github.com/stretchr/testify</dt>
-      <dd>A toolkit with common assertions and mocks that plays nicely with the standard library</dd>
+    <dt>https://github.com/kataras/iris</dt>
+    <dd>The fastest community-driven web framework for Go</dd>
 
-      <dt>https://gitea.com/xorm/xorm</dt>
-      <dd>Simple and Powerful ORM for Go, support mysql,postgres,tidb,sqlite3,mssql,oracle</dd>
+    <dt>https://github.com/labstack/echo</dt>
+    <dd>High performance, minimalist Go web framework</dd>
 
-      <dt>https://github.com/lib/pq</dt>
-      <dd>Pure Go Postgres driver for database/sql</dd>
+    <dt>https://github.com/astaxie/beego</dt>
+    <dd>Beego is an open-source, high-performance web framework for the Go programming language</dd>
 
-      <dt>https://github.com/mattn/go-sqlite3</dt>
-      <dd>Sqlite3 driver for go using database/sql</dd>
+    <dt>https://github.com/revel/revel</dt>
+    <dd>Revel - A high productivity, full-stack web framework for the Go language.</dd>
 
-      <dt>https://github.com/mongodb/mongo-go-driver</dt>
-      <dd>The Go driver for MongoDB</dd>
+    <dt>https://github.com/gofiber/fiber</dt>
+    <dd>Fiber is an Express inspired web framework written in Go</dd>
 
-      <dt>https://github.com/elastic/go-elasticsearch</dt>
-      <dd>The official Go client for Elasticsearch</dd>
+    <dt>https://github.com/dinever/golf</dt>
+    <dd>The Golf web framework</dd>
 
-      <dt>https://github.com/masterminds/squirrel</dt>
-      <dd>Fluent SQL generation for golang</dd>
+    <dt>https://gitee.com/zhucheer/orange</dt>
+    <dd>一款基于 Golang 语言的 web 开发框架</dd>
 
-      <dt>https://github.com/urfave/cli</dt>
-      <dd>A simple, fast, and fun package for building command line apps in Go</dd>
+    <dt>https://github.com/forgoer/thinkgo</dt>
+    <dd>A lightweight MVC framework written in Go</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/spf13/cobra</dt>
-      <dd>A Commander for modern Go CLI interactions</dd>
+<!-- { -->
+<div id="webdev">
+    <h2>Web Development</h2>
 
-      <dt>https://github.com/spf13/viper</dt>
-      <dd>Go configuration with fangs</dd>
+    <dt>https://github.com/gorilla</dt>
+    <dd>Gorilla Web Toolkit</dd>
 
-      <dt>https://github.com/Sirupsen/logrus</dt>
-      <dd>Structured, pluggable logging for Go</dd>
+    <dt>https://github.com/dgrijalva/jwt-go</dt>
+    <dd>Golang implementation of JSON Web Tokens (JWT)</dd>
 
-      <dt>https://github.com/uber-go/zap</dt>
-      <dd>Blazing fast, structured, leveled logging in Go</dd>
+    <dt>https://github.com/uber-go/ratelimit</dt>
+    <dd>A Golang blocking leaky-bucket rate limit implementation</dd>
 
-      <dt>https://github.com/360EntSecGroup-Skylar/excelize</dt>
-      <dd>Golang library for reading and writing Microsoft Excel™ (XLSX) files</dd>
+    <dt>https://www.vugu.org/doc/start</dt>
+    <dd>Vugu is Go library which makes it easy to write web user interfaces in Go.</dd>
 
-      <dt>https://github.com/signintech/gopdf</dt>
-      <dd>A simple library for generating PDF written in Go lang</dd>
+    <dt>https://gqlgen.com/</dt>
+    <dd>GraphQL - Type-safe GraphQL for Go</dd>
 
-      <dt>https://github.com/unidoc/unioffice</dt>
-      <dd>Pure go library for creating and processing Office Word (.docx), Excel (.xlsx) and Powerpoint (.pptx) documents</dd>
+    <dt>https://github.com/flosch/pongo2</dt>
+    <dd>Pongo2 - Django-syntax like template-engine for Go</dd>
 
-      <dt>https://github.com/SebastiaanKlippert/go-wkhtmltopdf</dt>
-      <dd>Golang commandline wrapper for wkhtmltopdf</dd>
+    <dt>https://goa.design/</dt>
+    <dd>Goa - A holistic approach for developing remote APIs and microservices in Go.</dd>
 
-      <dt>https://github.com/fireworq/fireworq</dt>
-      <dd>Fireworq is a lightweight, high-performance, language-independent job queue system.</dd>
+    <dt>https://github.com/Shpota/goxygen</dt>
+    <dd>Generate a modern Web project with Go and Angular, React or Vue in seconds</dd>
 
-      <dt>http://go-colly.org/</dt>
-      <dd>Colly provides a clean interface to write any kind of crawler/scraper/spider</dd>
+    <dt>https://github.com/henvic/httpretty</dt>
+    <dd>Prints the HTTP requests you make with Go pretty on your terminal.</dd>
 
-      <dt>https://github.com/MontFerret/ferret</dt>
-      <dd>Declarative web scraping. https://www.montferret.dev/</dd>
+    <dt>https://github.com/alibaba/sentinel-golang</dt>
+    <dd>Sentinel Go version (Reliability & Resilience) by alibaba</dd>
 
-      <dt>https://github.com/uber-go/ratelimit</dt>
-      <dd>A Golang blocking leaky-bucket rate limit implementation</dd>
+    <dt>https://github.com/casbin/casbin</dt>
+    <dd>An authorization library that supports access control models like ACL, RBAC, ABAC in Golang</dd>
 
-      <dt>https://github.com/dgrijalva/jwt-go</dt>
-      <dd>Golang implementation of JSON Web Tokens (JWT)</dd>
+    <dt>https://github.com/bxcodec/faker</dt>
+    <dd>Golang Fake Data Generator for Struct</dd>
 
-      <dt>https://upper.io/db.v3/</dt>
-      <dd>Productive data access layer for Go</dd>
+    <dt>https://github.com/swaggo/swag</dt>
+    <dd>Swagger For Go</dd>
 
-      <dt>https://github.com/labstack/echo</dt>
-      <dd>High performance, minimalist Go web framework</dd>
+    <dt>https://github.com/qor/qor</dt>
+    <dd>QOR - a set of libraries written in Go that abstracts common features needed for business applications, CMSs, and E-commerce systems.</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/astaxie/beego</dt>
-      <dd>Beego is an open-source, high-performance web framework for the Go programming language</dd>
+<!-- { -->
+<div id="crawler">
+    <h2>Web Crawler</h2>
 
-      <dt>https://github.com/si3nloong/sqlike</dt>
-      <dd>Golang Sequel ORM that support Enum, JSON, Spatial and many more</dd>
+    <dt>https://github.com/PuerkitoBio/goquery</dt>
+    <dd>A little like that j-thing, only in Go</dd>
 
-      <dt>http://www.flogo.io/</dt>
-      <dd>Open source ecosystem for event-driven apps</dd>
+    <dt>http://go-colly.org/</dt>
+    <dd>Colly provides a clean interface to write any kind of crawler/scraper/spider</dd>
 
-      <dt>https://www.vugu.org/doc/start</dt>
-      <dd>Vugu is Go library which makes it easy to write web user interfaces in Go.</dd>
+    <dt>https://github.com/MontFerret/ferret</dt>
+    <dd>Declarative web scraping. https://www.montferret.dev/</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/google/uuid</dt>
-      <dd>Go package for UUIDs based on RFC 4122 and DCE 1.1: Authentication and Security Services.</dd>
+<!-- { -->
+<div id="distributed">
+    <h2>Distributed</h2>
 
-      <dt>https://nsq.io/</dt>
-      <dd>A realtime distributed messaging platform</dd>
+    <dt>https://nats.io/</dt>
+    <dd>NATS - a simple, secure and high performance open source messaging system</dd>
 
-      <dt>https://github.com/miku/zek</dt>
-      <dd>Zek - Xml-to-Go</dd>
+    <dt>https://github.com/fireworq/fireworq</dt>
+    <dd>Fireworq is a lightweight, high-performance, language-independent job queue system.</dd>
 
-      <dt>https://github.com/syncthing/syncthing</dt>
-      <dd>Syncthing - Open Source Continuous File Synchronization</dd>
+    <dt>http://www.flogo.io/</dt>
+    <dd>Open source ecosystem for event-driven apps</dd>
 
-      <dt>https://github.com/ThreeDotsLabs/watermill</dt>
-      <dd>WaterMill - Building event-driven applications the easy way in Go.</dd>
+    <dt>https://nsq.io/</dt>
+    <dd>A realtime distributed messaging platform</dd>
 
-      <dt>https://gqlgen.com/</dt>
-      <dd>GraphQL - Type-safe GraphQL for Go</dd>
+    <dt>https://github.com/ThreeDotsLabs/watermill</dt>
+    <dd>WaterMill - Building event-driven applications the easy way in Go.</dd>
+</div>
+<!-- } -->
 
-      <dt>https://nats.io/</dt>
-      <dd>NATS - a simple, secure and high performance open source messaging system</dd>
+<!-- { -->
+<div id="db">
+    <h2>Database</h2>
 
-      <dt>https://github.com/writeas/writefreely</dt>
-      <dd>WriteFreely - A platform for writing communities</dd>
+    <dt>https://github.com/go-sql-driver/mysql</dt>
+    <dd>Go MySQL Driver is a MySQL driver for Go's (golang) database/sql package</dd>
 
-      <dt>https://github.com/mattermost/mattermost-server</dt>
-      <dd>MatterMost (Slack clone)</dd>
+    <dt>https://github.com/jmoiron/sqlx</dt>
+    <dd>General purpose extensions to golang's database/sql</dd>
 
-      <dt>https://github.com/swaggo/swag</dt>
-      <dd>Swagger For Go</dd>
+    <dt>https://github.com/lib/pq</dt>
+    <dd>Pure Go Postgres driver for database/sql</dd>
 
-      <dt>https://github.com/elsesiy/qrgo</dt>
-      <dd>Make QR code - Fast & simple service to generate QR codes from your CLI.</dd>
+    <dt>https://github.com/mattn/go-sqlite3</dt>
+    <dd>Sqlite3 driver for go using database/sql</dd>
 
-      <dt>https://github.com/golangci/golangci-lint</dt>
-      <dd>Linters Runner for Go</dd>
+    <dt>https://gorm.io/docs/</dt>
+    <dd>The fantastic ORM library for Golang, aims to be developer friendly</dd>
 
-      <dt>https://github.com/flosch/pongo2</dt>
-      <dd>Pongo2 - Django-syntax like template-engine for Go</dd>
+    <dt>https://gitea.com/xorm/xorm</dt>
+    <dd>Simple and Powerful ORM for Go, support mysql,postgres,tidb,sqlite3,mssql,oracle</dd>
 
-      <dt>https://github.com/qor/qor</dt>
-      <dd>QOR - a set of libraries written in Go that abstracts common features needed for business applications, CMSs, and E-commerce systems.</dd>
+    <dt>https://github.com/mongodb/mongo-go-driver</dt>
+    <dd>The Go driver for MongoDB</dd>
 
-      <dt>https://github.com/jaegertracing/jaeger</dt>
-      <dd>Jaeger, a Distributed Tracing Platform</dd>
+    <dt>https://github.com/elastic/go-elasticsearch</dt>
+    <dd>The official Go client for Elasticsearch</dd>
 
-      <dt>https://goa.design/</dt>
-      <dd>Goa - A holistic approach for developing remote APIs and microservices in Go.</dd>
+    <dt>https://github.com/masterminds/squirrel</dt>
+    <dd>Fluent SQL generation for golang</dd>
 
-      <dt>https://github.com/revel/revel</dt>
-      <dd>Revel - A high productivity, full-stack web framework for the Go language.</dd>
+    <dt>https://upper.io/db.v3/</dt>
+    <dd>Productive data access layer for Go</dd>
 
-      <dt>https://github.com/xuri/xgen</dt>
-      <dd>XSD (XML Schema Definition) parser and Go/C/Java/Rust/TypeScript code generator</dd>
+    <dt>https://github.com/si3nloong/sqlike</dt>
+    <dd>Golang Sequel ORM that support Enum, JSON, Spatial and many more</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/droyo/go-xml</dt>
-      <dd>Utility and code-generation libraries for XML</dd>
+<!-- { -->
+<div id="microsvc">
+    <h2>Microservice</h2>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/metaleap/go-xsd</dt>
-      <dt>https://github.com/ivarg/goxsd</dt>
-      <dt>https://github.com/h12w/xsd</dt>
-      <dd>XSD-to-Go</dd>
+<!-- { -->
+<div id="util">
+    <h2>Utility</h2>
 
-      <dt>https://github.com/hooklift/gowsdl</dt>
-      <dt>https://github.com/fiorix/wsdl2go</dt>
-      <dd>Go + WSDL</dd>
+    <dt>https://github.com/SebastiaanKlippert/go-wkhtmltopdf</dt>
+    <dd>Golang commandline wrapper for wkhtmltopdf</dd>
 
-      <dt>https://github.com/topxeq/gotx</dt>
-      <dd>A Golang interpreter based on Yaegi. Gotx will be a perfect script language engine.</dd>
+    <dt>https://github.com/google/uuid</dt>
+    <dd>Go package for UUIDs based on RFC 4122 and DCE 1.1: Authentication and Security Services.</dd>
 
-      <dt>https://github.com/containous/yaegi</dt>
-      <dd>Yaegi is Another Elegant Go Interpreter</dd>
+    <dt>https://github.com/jlaffaye/ftp</dt>
+    <dd>FTP client package for Go</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/DuanJiaNing/GoMailer</dt>
-      <dd>轻量电子邮件推送服务(A lightly email sending service for Go)</dd>
+<!-- { -->
+<div id="testing">
+    <h2>Go Testing</h2>
 
-      <dt>https://github.com/gofiber/fiber</dt>
-      <dd>Fiber is an Express inspired web framework written in Go</dd>
+    <dt>https://github.com/stretchr/testify</dt>
+    <dd>A toolkit with common assertions and mocks that plays nicely with the standard library</dd>
 
-      <dt>https://github.com/Shpota/goxygen</dt>
-      <dd>Generate a modern Web project with Go and Angular, React or Vue in seconds</dd>
+    <dt>https://github.com/onsi/ginkgo</dt>
+    <dd>BDD Testing Framework for Go http://onsi.github.io/ginkgo/</dd>
 
-      <dt>https://github.com/evanw/esbuild</dt>
-      <dd>An extremely fast JavaScript bundler and minifier in Go</dd>
+    <dt>https://github.com/smartystreets/goconvey</dt>
+    <dd>Go testing in the browser. Integrates with `go test`. Write behavioral tests in Go.</dd>
 
-      <dt>https://github.com/dominikh/go-tools/</dt>
-      <dd>Staticcheck - The advanced Go linter</dd>
+    <dt>https://github.com/franela/goblin</dt>
+    <dd>Minimal and Beautiful Go testing framework</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/henvic/httpretty</dt>
-      <dd>Prints the HTTP requests you make with Go pretty on your terminal.</dd>
+<!-- { -->
+<div id="apps">
+    <h2>Applications in Go</h2>
 
-      <dt>https://github.com/oragono/oragono</dt>
-      <dd>A modern IRC server (daemon/ircd) written in Go.</dd>
+    <dt>https://github.com/syncthing/syncthing</dt>
+    <dd>Syncthing - Open Source Continuous File Synchronization</dd>
 
-      <dt>https://github.com/prologic/tube</dt>
-      <dd>Youtube-like Video Sharing App in Golang</dd>
+    <dt>https://github.com/mattermost/mattermost-server</dt>
+    <dd>MatterMost (Slack clone)</dd>
 
-      <dt>https://github.com/iawia002/annie</dt>
-      <dd>Fast, simple and clean video downloader</dd>
+    <dt>https://github.com/oragono/oragono</dt>
+    <dd>A modern IRC server (daemon/ircd) written in Go.</dd>
 
-      <dt>https://github.com/dtgorski/typex</dt>
-      <dd>[TOOL, CLI] - Filter and examine Go type structures</dd>
+    <dt>https://github.com/DuanJiaNing/GoMailer</dt>
+    <dd>轻量电子邮件推送服务(A lightly email sending service for Go)</dd>
 
-      <dt>https://github.com/inlets/inlets</dt>
-      <dd>Cloud Native Tunnel written in Go</dd>
+    <dt>https://github.com/prologic/tube</dt>
+    <dd>Youtube-like Video Sharing App in Golang</dd>
 
-      <dt>https://github.com/cube2222/jql</dt>
-      <dd>Easy JSON Query Processor with a Lispy syntax in Go</dd>
+    <dt>https://github.com/iawia002/annie</dt>
+    <dd>Fast, simple and clean video downloader</dd>
 
-      <dt>https://github.com/bxcodec/faker</dt>
-      <dd>Golang Fake Data Generator for Struct</dd>
+    <dt>https://github.com/inlets/inlets</dt>
+    <dd>Cloud Native Tunnel written in Go</dd>
 
-      <dt>https://github.com/dinever/golf</dt>
-      <dd>The Golf web framework</dd>
+    <dt>https://github.com/cube2222/jql</dt>
+    <dd>Easy JSON Query Processor with a Lispy syntax in Go</dd>
 
-      <dt>https://gitee.com/zhucheer/orange</dt>
-      <dd>一款基于 Golang 语言的 web 开发框架</dd>
+    <dt>https://github.com/writeas/writefreely</dt>
+    <dd>WriteFreely - A platform for writing communities</dd>
 
-      <dt>https://github.com/alibaba/sentinel-golang</dt>
-      <dd>Sentinel Go version (Reliability & Resilience) by alibaba</dd>
+    <dt>https://github.com/jaegertracing/jaeger</dt>
+    <dd>Jaeger, a Distributed Tracing Platform</dd>
 
-      <dt>https://github.com/forgoer/thinkgo</dt>
-      <dd>A lightweight MVC framework written in Go</dd>
+    <dt>https://github.com/zyedidia/micro</dt>
+    <dd>A modern and intuitive terminal-based text editor</dd>
+</div>
+<!-- } -->
 
-      <dt>https://github.com/FiloSottile/mkcert</dt>
-      <dd>A simple zero-config tool to make locally trusted development certificates with any names you'd like</dd>
+<!-- { -->
+<div id="tools">
+    <h2>Tools</h2>
 
-      <dt>https://github.com/dreamans/syncd</dt>
-      <dd>一款开源的代码部署工具，它具有简单、高效、易用等特点，可以提高团队的工作效率.</dd>
+    <dt>https://github.com/miku/zek</dt>
+    <dd>Zek - Xml-to-Go</dd>
 
-      <dt>https://github.com/zyedidia/micro</dt>
-      <dd>A modern and intuitive terminal-based text editor</dd>
+    <dt>https://github.com/xuri/xgen</dt>
+    <dd>XSD (XML Schema Definition) parser and Go/C/Java/Rust/TypeScript code generator</dd>
 
-      <dt>https://github.com/casbin/casbin</dt>
-      <dd>An authorization library that supports access control models like ACL, RBAC, ABAC in Golang</dd>
+    <dt>https://github.com/evanw/esbuild</dt>
+    <dd>An extremely fast JavaScript bundler and minifier in Go</dd>
 
-      <dt></dt>
-      <dd></dd>
+    <dt>https://github.com/dominikh/go-tools/</dt>
+    <dd>Staticcheck - The advanced Go linter</dd>
 
-      <dt></dt>
-      <dd></dd>
+    <dt>https://github.com/elsesiy/qrgo</dt>
+    <dd>Make QR code - Fast & simple service to generate QR codes from your CLI.</dd>
 
-    </dl>
+    <dt>https://github.com/golangci/golangci-lint</dt>
+    <dd>Linters Runner for Go</dd>
 
-</main>
-<!--
-      <dt>https://github.com/bloom42/sane-go</dt>
-      <dd>Sane-Go</dd>
+    <dt>https://github.com/droyo/go-xml</dt>
+    <dd>Utility and code-generation libraries for XML</dd>
 
-      <dt>https://gopkg.in/mgo.v2</dt>
-      <dd>Mgo</dd>
--->
+    <dt>https://github.com/metaleap/go-xsd</dt>
+    <dt>https://github.com/ivarg/goxsd</dt>
+    <dt>https://github.com/h12w/xsd</dt>
+    <dd>XSD-to-Go</dd>
+
+    <dt>https://github.com/hooklift/gowsdl</dt>
+    <dt>https://github.com/fiorix/wsdl2go</dt>
+    <dd>Go + WSDL</dd>
+
+    <dt>https://github.com/topxeq/gotx</dt>
+    <dd>A Golang interpreter based on Yaegi. Gotx will be a perfect script language engine.</dd>
+
+    <dt>https://github.com/containous/yaegi</dt>
+    <dd>Yaegi is Another Elegant Go Interpreter</dd>
+
+    <dt>https://github.com/FiloSottile/mkcert</dt>
+    <dd>A simple zero-config tool to make locally trusted development certificates with any names you'd like</dd>
+
+    <dt>https://github.com/dreamans/syncd</dt>
+    <dd>一款开源的代码部署工具，它具有简单、高效、易用等特点，可以提高团队的工作效率.</dd>
+
+    <dt>https://github.com/dtgorski/typex</dt>
+    <dd>[TOOL, CLI] - Filter and examine Go type structures</dd>
+</div>
+<!-- } -->
+
+<!-- { -->
+<div id="baffulo">
+    <h3>Baffulo</h3>
+
+    <dt>https://github.com/gobuffalo/buffalo</dt>
+    <dd>Rapid Web Development w/ Go http://gobuffalo.io</dd>
+
+    <dt>https://github.com/gobuffalo/packr</dt>
+    <dd>Packr - The simple and easy way to embed static files into Go binaries.</dd>
+
+    <dt>https://github.com/gobuffalo/pop</dt>
+    <dd>Pop- A Tasty Treat For All Your Database Needs</dd>
+
+    <dt>https://github.com/gobuffalo/fizz</dt>
+    <dd>Fizz - A Common DSL for Migrating Databases</dd>
+
+    <dt>https://github.com/gobuffalo/plush</dt>
+    <dd>Plush - The powerful template system that Go needs</dd>
+
+    <dt>https://github.com/gobuffalo/envy</dt>
+    <dd>Envy - Envy makes working with ENV variables in Go trivial.</dd>
+
+    <dt>https://github.com/gobuffalo/tags</dt>
+    <dd>Tags - Easily create HTML tags in Go</dd>
+
+    <dt>https://github.com/markbates/goth</dt>
+    <dd>Goth - A simple, clean, and idiomatic way to write authentication packages for Go web applications.</dd>
+
+    <dt>https://github.com/markbates/grift</dt>
+    <dd>Grift - Go based task runner</dd>
+</div>
+<!-- } -->
+
+<!-- { -->
+<div id="examples">
+    <h2>Examples</h2>
+
+    <dt></dt>
+    <dd></dd>
+</div>
+<!-- } -->
+
+</article>
+
 <script>
   var nodes = document.querySelectorAll('dt');
   for (var i=0; i<nodes.length; i++) {
     node = nodes[i];
     if (node.childNodes.length > 0) {
       var text = node.childNodes[0].nodeValue;
-      node.innerHTML = '<a href="' + text + '">' + text + '</a>';
+      node.innerHTML = '<a href="' + text + '" target=_blank>' + text + '</a>';
     }
   }
 </script>
-</body>
-</html>
+
+</body></html>
