@@ -182,15 +182,18 @@ function createThemes(pptx) {
     return shuffle([...Array(40).keys()]);
 }
 
+var font24 = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
+var font44 = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
+var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
+var font64 = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
+
 function createSong(pptx, song, theme) {
-
-    var pages = song.split('\n\n');
-
     pptx.defineSlideMaster({
         title: 'THEME_' + theme,
         bkgd: { path: 'http://laoli2008.github.io/images/best/' + theme + '.jpg' },
     });
 
+    var pages = song.split('\n\n');
     for (var p=0; p<pages.length; p++) {
         var slide = pptx.addNewSlide('THEME_' + theme);
         var text = pages[p];
@@ -203,8 +206,8 @@ function createSong(pptx, song, theme) {
         if (p == 0 && lines.length == 2) {
             slide.addText(
                 [
-                    { text: lines[0], options: { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:textcolor } },
-                    { text: lines[1], options: { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:textcolor } }
+                    { text: lines[0], options: font48 },
+                    { text: lines[1], options: font24 }
                 ],
                 { x: 0, y: 0, w: '100%', h: '80%' }
             );
@@ -230,15 +233,11 @@ function createPrelude(pptx) {
     slide.back = '#68217a'; //'7719aa'; //'563d7c';
     slide.color = 'FFFFFF';
 
-    var lines = [
-        '安靜默禱',
-    ];
-
-    var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
+    var lines = [ '安靜默禱' ];
 
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
+            { text: lines[0], options: font64 },
         ],
         { x: 0, y: 0, w: '100%', h: '80%' }
     );
@@ -259,18 +258,15 @@ function createOverture(pptx) {
         '應當肅靜。阿們。'
     ];
 
-    var fontLG = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
-
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
-            { text: lines[1], options: fontSM },
-            { text: '',       options: fontLG },
-            { text: lines[2], options: fontLG },
-            { text: lines[3], options: fontLG },
-            { text: lines[4], options: fontLG },
-            { text: lines[5], options: fontLG },
+            { text: lines[0], options: font44 },
+            { text: lines[1], options: font24 },
+            { text: '',       options: font44 },
+            { text: lines[2], options: font44 },
+            { text: lines[3], options: font44 },
+            { text: lines[4], options: font44 },
+            { text: lines[5], options: font44 },
         ],
         { x: 0, y: 0, w: '100%', h: '90%' }
     );
@@ -290,17 +286,14 @@ function createOffering(pptx) {
         '獻給主。阿們。',
     ];
 
-    var fontLG = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
-
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
-            { text: lines[1], options: fontSM },
-            { text: '',       options: fontLG },
-            { text: lines[2], options: fontLG },
-            { text: lines[3], options: fontLG },
-            { text: lines[4], options: fontLG },
+            { text: lines[0], options: font44 },
+            { text: lines[1], options: font24 },
+            { text: '',       options: font44 },
+            { text: lines[2], options: font44 },
+            { text: lines[3], options: font44 },
+            { text: lines[4], options: font44 },
         ],
         { x: 0, y: 0, w: '100%', h: '80%' }
     );
@@ -321,18 +314,15 @@ function createTrinity(pptx) {
         '阿們。',
     ];
 
-    var fontLG = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
-
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
-            { text: ' ',      options: fontSM },
-            { text: lines[1], options: fontLG },
-            { text: lines[2], options: fontLG },
-            { text: lines[3], options: fontLG },
-            { text: lines[4], options: fontLG },
-            { text: lines[5], options: fontLG },
+            { text: lines[0], options: font44 },
+            { text: ' ',      options: font24 },
+            { text: lines[1], options: font44 },
+            { text: lines[2], options: font44 },
+            { text: lines[3], options: font44 },
+            { text: lines[4], options: font44 },
+            { text: lines[5], options: font44 },
         ],
         { x: 0, y: 0, w: '100%', h: '90%' }
     );
@@ -353,18 +343,15 @@ function createGlory(pptx) {
         '　阿們，阿們。',
     ];
 
-    var fontLG = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 24, fontFace: "微软雅黑", color:'FFFFFF' };
-
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
-            { text: ' ',      options: fontSM },
-            { text: lines[1], options: fontLG },
-            { text: lines[2], options: fontLG },
-            { text: lines[3], options: fontLG },
-            { text: lines[4], options: fontLG },
-            { text: lines[5], options: fontLG },
+            { text: lines[0], options: font44 },
+            { text: ' ',      options: font24 },
+            { text: lines[1], options: font44 },
+            { text: lines[2], options: font44 },
+            { text: lines[3], options: font44 },
+            { text: lines[4], options: font44 },
+            { text: lines[5], options: font44 },
         ],
         { x: 0, y: 0, w: '100%', h: '90%' }
     );
@@ -381,13 +368,10 @@ function createMessage(pptx) {
         '彼此代禱',
     ];
 
-    var fontLG = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
-    var fontSM = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
-
     slide.addText(
         [
-            { text: lines[0], options: fontLG },
-            { text: lines[1], options: fontSM },
+            { text: lines[0], options: font64 },
+            { text: lines[1], options: font64 },
         ],
         { x: 0, y: 0, w: '100%', h: '80%' }
     );
