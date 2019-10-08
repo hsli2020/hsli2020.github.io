@@ -187,6 +187,9 @@ var font44 = { align: 'c', fontSize: 44, fontFace: "微软雅黑", color:'FFFFFF
 var font48 = { align: 'c', fontSize: 48, fontFace: "微软雅黑", color:'FFFFFF' };
 var font64 = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF' };
 
+var purples = [ '#7719aa', '#68217a', '#563d7c' ];
+var bkcolor = purples[Math.floor(Math.random() * purples.length)];
+
 function createSong(pptx, song, theme) {
     pptx.defineSlideMaster({
         title: 'THEME_' + theme,
@@ -230,7 +233,7 @@ function createSong(pptx, song, theme) {
 function createPrelude(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [ '安靜默禱' ];
@@ -246,7 +249,7 @@ function createPrelude(pptx) {
 function createOverture(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -275,7 +278,7 @@ function createOverture(pptx) {
 function createOffering(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -302,7 +305,7 @@ function createOffering(pptx) {
 function createTrinity(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -331,7 +334,7 @@ function createTrinity(pptx) {
 function createGlory(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#68217a'; //'7719aa'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
@@ -360,7 +363,7 @@ function createGlory(pptx) {
 function createMessage(pptx) {
     var slide = pptx.addNewSlide();
 
-    slide.back = '#7719aa'; //'68217a'; //'563d7c';
+    slide.back = bkcolor;
     slide.color = 'FFFFFF';
 
     var lines = [
