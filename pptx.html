@@ -43,7 +43,10 @@ textarea {
     cursor: pointer;
 	border:1px solid #186dad;
 }
-.right { position: relative; left: 50%; }
+
+.left { display: inline-block;  width: 20%; }
+.middle { display: inline-block; width: 400px; }
+.right { }
 
 /* Style the tab */
 .tab {
@@ -123,6 +126,14 @@ textarea {
       </div>
 
       <footer style="margin-top: 10px;">
+         <div class="left">
+           <label><input type="checkbox" id="communion">聖餐主日</label>
+         </div>
+         <div class="middle">
+           <label><input type="radio" id="theme" name="theme">Theme 1</label>
+           <label><input type="radio" id="theme" name="theme">Theme 2</label>
+           <label><input type="radio" id="theme" name="theme">Theme 3</label>
+         </div>
          <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
       </footer>
     </section>
