@@ -130,9 +130,9 @@ textarea {
            <label><input type="checkbox" id="communion">聖餐主日</label>
          </div>
          <div class="middle">
-           <label><input type="radio" id="theme" name="theme">Theme 1</label>
-           <label><input type="radio" id="theme" name="theme">Theme 2</label>
-           <label><input type="radio" id="theme" name="theme">Theme 3</label>
+           <label><input type="radio" id="theme" name="theme" value="best">Theme 1</label>
+           <label><input type="radio" id="theme" name="theme" value="folder2">Theme 2</label>
+           <label><input type="radio" id="theme" name="theme" value="folder3">Theme 3</label>
          </div>
          <button class="btn right" id="download">Download &nbsp;&#x2714;</button>
       </footer>
@@ -203,10 +203,14 @@ var font64 = { align: 'c', fontSize: 64, fontFace: "微软雅黑", color:'FFFFFF
 var purples = [ '#7719aa', '#68217a', '#563d7c', '#009688', '#9c27b0', '#5c2d91' ];
 var bkcolor = purples[Math.floor(Math.random() * purples.length)];
 
+var communion = false;
+var imgfolder = 'folder2';
+var imgext = '.png';
+
 function createSong(pptx, song, theme) {
     pptx.defineSlideMaster({
         title: 'THEME_' + theme,
-        bkgd: { path: '/images/folder2/' + theme + '.png' },
+        bkgd: { path: 'http://hsli2020.github.io/images/' + imgfolder + '/' + theme + imgext },
     });
 
     var pages = song.split('\n\n');
@@ -418,6 +422,10 @@ function createMessage(pptx) {
 <script>
 $(document).ready(function() {
     $("#download").click(function(e) {
+        communion = $('#communion').is(":checked");
+        imgfolder = $("input[name=theme]:checked").val();
+        imgext = (imgfolder == 'best') ? '.jpg' : '.png';
+
         var pptx = new PptxGenJS();
 
         pptx.setLayout('LAYOUT_16x9');
