@@ -398,6 +398,44 @@ function createGlory(pptx) {
     );
 }
 
+function createBlessing(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = bkcolor;
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '祝福 ',
+    ];
+
+    slide.addText(
+        [
+            { text: lines[0], options: font64 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '80%' }
+    );
+}
+
+function createAmen(pptx) {
+    var slide = pptx.addNewSlide();
+
+    slide.back = bkcolor;
+    slide.color = 'FFFFFF';
+
+    var lines = [
+        '「阿們頌」',
+        '阿們，阿們。阿們，阿們。',
+    ];
+
+    slide.addText(
+        [
+            { text: lines[0], options: font44 },
+            { text: lines[1], options: font44 },
+        ],
+        { x: 0, y: 0, w: '100%', h: '90%' }
+    );
+}
+
 function createMessage(pptx) {
     var slide = pptx.addNewSlide();
 
@@ -464,6 +502,8 @@ $(document).ready(function() {
 
         createTrinity(pptx);
         createGlory(pptx);
+        createBlessing(pptx);
+        createAmen(pptx);
         createMessage(pptx);
 
         localStorage.setItem(filename, JSON.stringify(songs));
