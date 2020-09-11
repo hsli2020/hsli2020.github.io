@@ -84,6 +84,7 @@ nav ul { margin: 10px; padding: 0; }
 nav a { color: white; text-decoration: none; }
 nav a_:hover { text-decoration: underline; }
 nav li { list-style: none; margin: 0; padding: 0; }
+nav li:hover, nav li:hover a { color:red; background-color:#fffacd; }
 
 nav .level2 { font-size: 11pt; font-weight: bold; }
 nav .level3 { padding-left: 1em; }
@@ -91,6 +92,6 @@ nav .level3:before { content: "» "; }
 nav .level4 { padding-left: 2em; }
 nav .level4:before { content: "› "; }
 
-a:hover   { color:red; background-color:#fffacd; }
+a_:hover   { color:red; background-color:#fffacd; }
 
 footer { padding-left: 200px; }
