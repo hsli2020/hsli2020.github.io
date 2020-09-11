@@ -19,17 +19,11 @@
       [
           { url: "http://localhost/", desc: "#localhost" },
           { url: "http://192.168.0.12/", desc: "LenovoServer" },
-          { url: "http://192.168.0.12:3000/", desc: "Gitea" }, // u:hsli/p:llhhss, u:bte/p:bbttee
           { url: "http://192.168.0.110/dataexchange/", desc: "DataExchange" },
-          { url: "http://192.168.0.110/kanboard/", desc: "Kanboard" },
-          { url: "http://192.168.0.110/dataexchange/developnotes/master-login.php", desc: "MasterLogin" },
       ],
       [
           { url: "http://192.168.0.12/search/order", desc: "#search/order" },
           { url: "http://192.168.0.12/product/search", desc: "search/product" },
-          { url: "http://192.168.0.12/shipment/picking", desc: "picking/report" },
-          { url: "http://192.168.0.12/shipment/report", desc: "shipment/report" },
-          { url: "http://192.168.0.12/inventory/invoice", desc: "inventory/invoice" },
           { url: "http://192.168.0.12/wishlist/report", desc: "wishlist/report" },
       ],
 
@@ -78,7 +72,7 @@
           { url: "https://www.amazon.ca/s?marketplaceID=A2EUQ1WTGCTBG2&me=A1U6PAVBPLQVBI&merchant=A1U6PAVBPLQVBI", desc: "Northern Shipments" },
       ],
       [
-          { url: "https://developer-docs.amazon.com/sp-api/docs", desc: "<b>Amazon Selling Partner API</b>" },
+          { url: "https://developer-docs.amazon.com/sp-api/docs", desc: "#<b>Amazon Selling Partner API</b>" },
           { url: "https://help.shopify.com/en/api/reference", desc: "Shopify API" },
       ],
     ];
@@ -86,6 +80,13 @@
     var container = document.getElementById("container");
     render(bookmarks, container);
   </script>
-
+<!--
+          { url: "http://192.168.0.12:3000/", desc: "Gitea" }, // u:hsli/p:llhhss, u:bte/p:bbttee
+          { url: "http://192.168.0.110/kanboard/", desc: "Kanboard" },
+          { url: "http://192.168.0.110/dataexchange/developnotes/master-login.php", desc: "MasterLogin" },
+          { url: "http://192.168.0.12/shipment/picking", desc: "picking/report" },
+          { url: "http://192.168.0.12/shipment/report", desc: "shipment/report" },
+          { url: "http://192.168.0.12/inventory/invoice", desc: "inventory/invoice" },
+-->
 </body>
 </html>
