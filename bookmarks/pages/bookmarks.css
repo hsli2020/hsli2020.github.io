@@ -17,6 +17,7 @@ nav {
     width: 200px;
 }
 
+hr { border-top: 2px dotted lightgrey; }
 header { padding-left: 200px; }
 header .banner { margin: 0 0 10px 0; }
 header .banner a { color: #777; font-weight: bold; }
