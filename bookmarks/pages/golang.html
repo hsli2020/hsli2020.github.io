@@ -16,13 +16,13 @@
 
   <script type="text/javascript">
     var bookmarks = [
-      { url: "https://go.dev/", desc: "Go.dev" },
-      { url: "https://pkg.go.dev/", desc: "Pkg.go.dev" },
-      { url: "https://golang.org/", desc: "Go Programming Language" },
-      { url: "https://godoc.org/", desc: "Go Doc" },
-      { url: "https://grpc.io/", desc: "gRPC.io" },
-      { url: "https://echo.labstack.com/guide", desc: "Echo Guide" },
-      { url: "https://magefile.org/", desc: "Mage" },
+      [
+        { url: "https://golang.org/", desc: "#Go Programming Language" },
+        { url: "https://go.dev/", desc: "Go.dev" },
+        { url: "https://pkg.go.dev/", desc: "Pkg.go.dev" },
+        { url: "https://godoc.org/", desc: "Go Doc" },
+        { url: "http://golang.org/doc/go_faq.html", desc: "Go FAQ" },
+      ],
 
       [
         { url: "https://play.golang.org/", desc: "Go Playground" },
@@ -30,58 +30,37 @@
         { url: "https://goplay.space/", desc: "GoPlay.Space" },
       ],
 
-      [
-        { url: "https://rpcx.io/", desc: "rpcx.io" },
-        { url: "https://blog.rpcx.io/", desc: "blog.rpcx.io" },
-        { url: "https://github.com/smallnest/rpcx", desc: "Github" },
-        { url: "http://colobu.com/", desc: "鸟窝" },
-      ],
-
       "---",
       [
         { url: "https://awesome-go.com/", desc: "#Awesome-Go" },
         { url: "https://github.com/amanbolat/awesome-go-with-stars", desc: "Awesome-Go-Stars" },
+        { url: "https://gowalker.org/", desc: "GoWalker - Search Go Code" },
       ],
 
       "---",
-      { url: "http://golangnews.com", desc: "Golang News" },
-      { url: "https://golangtc.com/", desc: "Golang China" },
-
       [
+        { url: "http://golangnews.com", desc: "#Golang News" },
+        { url: "https://golangtc.com/", desc: "Golang China" },
         { url: "https://studygolang.com/", desc: "Golang中文社区" },
         { url: "https://studygolang.com/go/weekly", desc: "Go周刊" },
         { url: "http://blog.studygolang.com/", desc: "Go博客" },
         { url: "https://github.com/Han-Ya-Jun/gocn_news_set", desc: "GoCN News" },
       ],
+
       [
         { url: "https://gopher-daily.com/issues/last", desc: "#Gopher Daily" },
         { url: "https://studygolang.com/go/godaily", desc: "Go技术日报" },
         { url: "https://gocn.vip/topics/node18", desc: "GoCN每日新闻" },
+        { url: "https://golangweekly.com/issues", desc: "Go Weekly" },
         { url: "https://go.libhunt.com/newsletter/archive", desc: "Awesome Go Newsletter" },
       ],
 
       "---",
       [
-        { url: "https://gopm.io/", desc: "#Gopm Registry" },
-        { url: "http://golang.org/doc/go_faq.html", desc: "Go FAQ" },
-        { url: "https://github.com/uber-go/guide/blob/master/style.md", desc: "Uber Go Style Guide" },
-      ],
-      [
-        { url: "https://gowalker.org/", desc: "#GoWalker - Search Go Code" },
-        { url: "https://gopry.rice.sh/", desc: "Go Pry" },
-        { url: "http://www.go-gazette.com/", desc: "Go Gazette" },
-      ],
-
-      "---",
-      [
-        { url: "http://go-database-sql.org/", desc: "#Go database/sql tutorial" },
-        { url: "https://chai2010.cn/advanced-go-programming-book/", desc: "Go语言高级编程" },
-        { url: "https://github.com/quii/learn-go-with-tests", desc: "Learn Go with Tests" },
-      ],
-      [
         { url: "https://tutorialedge.net/course/golang/", desc: "#Golang Course" },
-        { url: "https://gophercises.com/", desc: "Gophercises" },
         { url: "https://algorithmswithgo.com/", desc: "Algorithms with Go" },
+        { url: "http://go-database-sql.org/", desc: "Go database/sql tutorial" },
+        { url: "https://github.com/quii/learn-go-with-tests", desc: "Learn Go with Tests" },
       ],
 
       "---",
@@ -92,21 +71,41 @@
         { url: "https://golangbyexample.com/", desc: "Golang-By-Example" },
         { url: "https://golangbyexample.com/all-design-patterns-golang/", desc: "All-Design-Patterns" },
       ],
+
+      "--",
+      [
+        { url: "https://github.com/darjun/go-daily-lib", desc: "#Go 每日一库" },
+        { url: "https://draveness.me/golang/", desc: "Go 语言设计与实现" },
+        { url: "https://geektutu.com/post/high-performance-go.html", desc: "Go 语言高性能编程" },
+        { url: "https://chai2010.cn/advanced-go-programming-book/", desc: "Go语言高级编程" },
+      ],
       [
         { url: "https://go101.org/article/101.html", desc: "#Go 101" },
         { url: "https://github.com/adonovan/gopl.io/", desc: "Gopl Book Code" },
-        { url: "https://github.com/smallnest/dive-to-gosync-workshop", desc: "GoSync Workshop" },
-        { url: "https://docs.min.io/cn/", desc: "Minio Docs" },
+        { url: "https://github.com/smallnest/dive-to-gosync-workshop", desc: "深入Go并发编程研讨课" },
       ],
 
       "--",
       [
         { url: "gopkgs.html#useful", desc: "#Go Packages" },
-        { url: "https://github.com/darjun/go-daily-lib", desc: "Go 每日一库" },
-        { url: "https://entgo.io", desc: "Facebook Ent" },
-        { url: "https://draveness.me/golang/", desc: "Go 语言设计与实现" },
         { url: "https://xuri.me/excelize/en/", desc: "Excelize Docs" },
+        { url: "https://gorm.io/docs/", desc: "GORM" },
+        { url: "https://entgo.io", desc: "Facebook Ent" },
+        { url: "https://docs.min.io/cn/", desc: "Minio Docs" },
       ],
+
+      "---",
+      [
+        { url: "https://grpc.io/", desc: "gRPC.io" },
+        { url: "https://echo.labstack.com/guide", desc: "Echo Guide" },
+        { url: "https://gin-gonic.com/docs/", desc: "Gin Doc" },
+      ],
+      [
+        { url: "https://rpcx.io/", desc: "rpcx.io" },
+        { url: "https://blog.rpcx.io/", desc: "blog.rpcx.io" },
+        { url: "https://github.com/smallnest/rpcx", desc: "Github" },
+        { url: "http://colobu.com/", desc: "鸟窝" },
+      ]
     ];
 
     var container = document.getElementById("container");
@@ -121,5 +120,10 @@
       { url: "https://github.com/ying32/govcl", desc: "Go VCL" },
       { url: "https://github.com/emersion/go-imap", desc: "Go IMAP" },
       { url: "http://xiaorui.cc/category/golang/", desc: "Golang个人blog" },
+      { url: "https://gophercises.com/", desc: "Gophercises" },
+      { url: "https://gopm.io/", desc: "Gopm Registry" },
+      { url: "https://github.com/uber-go/guide/blob/master/style.md", desc: "Uber Go Style Guide" },
+      { url: "https://gopry.rice.sh/", desc: "Go Pry" },
+      { url: "https://magefile.org/", desc: "Mage" },
 -->
 </html>
