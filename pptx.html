@@ -421,6 +421,18 @@ function createMessage(pptx) {
 
 <script>
 $(document).ready(function() {
+    var filename = formatDate(new Date());
+    var songs = JSON.parse(localStorage.getItem(filename));
+    if (songs) {
+        for (var i=0; i<=9; i++) {
+            var song = songs[i];
+            song = $('#tab' + i + ' textarea').val(song);
+        }
+    } else {
+        songs = {};
+        localStorage.clear();
+    }
+
     $("#download").click(function(e) {
         communion = $('#communion').is(":checked");
         imgfolder = $("input[name=theme]:checked").val();
@@ -441,6 +453,7 @@ $(document).ready(function() {
 
         for (var i=0; i<=9; i++) {
             var song = $('#tab' + i + ' textarea').val();
+            songs[i] = song;
             if (song.length > 2) {
                 createSong(pptx, song, themes[i]);
             }
@@ -453,7 +466,9 @@ $(document).ready(function() {
         createGlory(pptx);
         createMessage(pptx);
 
-        pptx.save(formatDate(new Date()));
+        localStorage.setItem(filename, JSON.stringify(songs));
+
+        pptx.save(filename);
     })
 
     // Get the element with id="defaultOpen" and click on it
