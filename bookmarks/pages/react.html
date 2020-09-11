@@ -1,79 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>React</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### React
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-          { url: "https://reactjs.org/", desc: "React JS" },
-          { url: "https://react.dev/", desc: "React.dev" },
-          { url: "https://scrimba.com/g/glearnreact", desc: "Learn React for free" },
-      ],
-      [
-          { url: "https://preactjs.com/", desc: "Preact.js" },
-          { url: "https://nerv.aotu.io/", desc: "Nerv.js" },
-          { url: "https://infernojs.org/", desc: "Inferno.js" },
-      ],
-      { url: "https://doc.react-china.org/", desc: "React China" },
+[https://reactjs.org/](https://reactjs.org/)  React JS | [React.dev](https://react.dev/) | [Learn React for free](https://scrimba.com/g/glearnreact)  
+[https://preactjs.com/](https://preactjs.com/)  Preact.js | [Nerv.js](https://nerv.aotu.io/) | [Inferno.js](https://infernojs.org/)  
+[https://doc.react-china.org/](https://doc.react-china.org/)  React China  
 
-      "=Components",
-      [
-          { url: "https://ant.design/", desc: "Ant Design" },
-          { url: "https://www.primefaces.org/primereact/", desc: "Prime React" },
-          { url: "https://developer.microsoft.com/en-us/fluentui", desc: "Fluent UI" },
-          { url: "https://zarm.design/", desc: "React UI Library" },
-          { url: "https://github.com/codebdy/rxdrag", desc: "React Drag Tool" },
-      ],
-      [
-        { url: "https://spectrum.adobe.com/", desc: "#Adobe Spectrum" },
-        { url: "https://react-spectrum.adobe.com/react-spectrum/index.html", desc: "React Spectrum" },
-        { url: "https://github.com/adobe/spectrum-css", desc: "Spectrum CSS" },
-      ],
-      "-",
-      { url: "https://rubylouvre.github.io/anu/", desc: "Anu" },
-      { url: "https://material-ui.com/", desc: "Material UI" },
-      { url: "https://elastic.github.io/eui/", desc: "Elastic UI Framework" },
-      { url: "https://chakra-ui.com/", desc: "Chakra UI" },
-      { url: "https://blueprintjs.com", desc: "Blueprint" },
-      { url: "https://bootstrap.web-cell.dev/", desc: "BootCell" },
-      { url: "https://atlaskit.atlassian.com/", desc: "Atlaskit by Atlassian" },
-      { url: "https://pagic.org/", desc: "A static site generator using Deno + React" },
+### Components
 
-      "=Tutorials",
-      [
-          { url: "https://reactjs.org/tutorial/tutorial.html", desc: "#Intro to React" },
-          { url: "https://reactjs.org/docs/thinking-in-react.html", desc: "Thinking in React" },
-          { url: "https://daveceddia.com/archives/", desc: "React Articles" },
-          { url: "https://daveceddia.com/archives/", desc: "React blog" },
-          { url: "https://react.docschina.org/tutorial/tutorial.html", desc: "React 入门教程" },
-      ],
-      [
-          { url: "https://pomb.us/build-your-own-react/", desc: "#<b>Build Your Own React</b>" },
-          { url: "https://github.com/pomber/didact", desc: "Github Repo" },
-      ]
-    ];
+[https://ant.design/](https://ant.design/)  Ant Design | [Prime React](https://www.primefaces.org/primereact/) | [Fluent UI](https://developer.microsoft.com/en-us/fluentui) | [React UI Library](https://zarm.design/) | [React Drag Tool](https://github.com/codebdy/rxdrag)  
+[Adobe Spectrum](https://spectrum.adobe.com/) | [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) | [Spectrum CSS](https://github.com/adobe/spectrum-css)  
+  
+[https://rubylouvre.github.io/anu/](https://rubylouvre.github.io/anu/)  Anu  
+[https://material-ui.com/](https://material-ui.com/)  Material UI  
+[https://elastic.github.io/eui/](https://elastic.github.io/eui/)  Elastic UI Framework  
+[https://chakra-ui.com/](https://chakra-ui.com/)  Chakra UI  
+[https://blueprintjs.com](https://blueprintjs.com)  Blueprint  
+[https://bootstrap.web-cell.dev/](https://bootstrap.web-cell.dev/)  BootCell  
+[https://atlaskit.atlassian.com/](https://atlaskit.atlassian.com/)  Atlaskit by Atlassian  
+[https://pagic.org/](https://pagic.org/)  A static site generator using Deno + React  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Tutorials
+
+[Intro to React](https://reactjs.org/tutorial/tutorial.html) | [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) | [React Articles](https://daveceddia.com/archives/) | [React blog](https://daveceddia.com/archives/) | [React 入门教程](https://react.docschina.org/tutorial/tutorial.html)  
+[**Build Your Own React**](https://pomb.us/build-your-own-react/) | [Github Repo](https://github.com/pomber/didact)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-  { url: "http://huziketang.mangojuice.top/books/react/lesson1", desc: "#React.js 小书" },
-  { url: "http://www.ruanyifeng.com/blog/2015/03/react.html", desc: "#React 入门实例教程 &#10004;" },
-  { url: "https://hulufei.gitbooks.io/react-tutorial/content/introduction.html", desc: "React 入门教程 &#10004;" },
-  { url: "https://rsuite.gitee.io/", desc: "React Suite" },
-  { url: "https://reactjs.org/community/ui-components.html", desc: "React UI Components" },
--->
+
 </body>
 </html>

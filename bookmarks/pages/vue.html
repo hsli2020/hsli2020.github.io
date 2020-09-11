@@ -1,70 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Vue</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Vue
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://cn.vuejs.org/", desc: "Vue JS" },
-        { url: "https://cli.vuejs.org/zh/", desc: "Vue CLI" },
-        { url: "https://vue-loader.vuejs.org/zh/", desc: "Vue Loader" },
-        { url: "http://router.vuejs.org/zh-cn/", desc: "Vue Router" },
-        { url: "https://vuex.vuejs.org/zh/", desc: "Vuex" },
-      ],
-      { url: "https://nuxtjs.org/", desc: "Nuxt JS" },
+[https://cn.vuejs.org/](https://cn.vuejs.org/)  Vue JS | [Vue CLI](https://cli.vuejs.org/zh/) | [Vue Loader](https://vue-loader.vuejs.org/zh/) | [Vue Router](http://router.vuejs.org/zh-cn/) | [Vuex](https://vuex.vuejs.org/zh/)  
+[https://nuxtjs.org/](https://nuxtjs.org/)  Nuxt JS  
 
-      "=Components",
-      [
-        { url: "http://element.eleme.io/", desc: "Element Vue" },
-        { url: "https://www.iviewui.com/", desc: "iView" },
-        { url: "http://primefaces.org/primevue/", desc: "PrimeVue" },
-      ],
-      [
-        { url: "https://bootstrap-vue.org", desc: "Bootstrap+Vue" },
-        { url: "https://vuetifyjs.com/", desc: "Vuetify JS" },
-        { url: "https://quasar.dev/", desc: "Quasar" },
-      ],
-      "-",
-      [
-        { url: "https://youzan.github.io/vant/", desc: "#Vant" },
-        { url: "https://muse-ui.org", desc: "Muse UI" },
-        { url: "https://github.com/heyui/heyui/", desc: "HeyUI" },
-        { url: "https://at-ui.github.io/at-ui/#/en", desc: "AT UI" },
-      ],
-      [
-        { url: "https://github.com/vueComponent/ant-design-vue", desc: "#AntDesignVue" },
-        { url: "https://github.com/FE-Driver/vue-beauty", desc: "Vue-beauty" },
-        { url: "https://github.com/TerryZ/v-dialogs", desc: "v-dialogs" },
-      ],
+### Components
 
-      "=Tutorials",
-      [
-        { url: "http://hcysun.me/vue-design/", desc: "#Vue技术内幕" },
-        { url: "https://ustbhuangyi.github.io/vue-analysis/", desc: "Vue.js 技术揭秘" },
-        { url: "https://kuangpf.com/vue-cli-analysis/foreword/", desc: "vue-cli-analysis" },
-      ],
-    ];
+[http://element.eleme.io/](http://element.eleme.io/)  Element Vue | [iView](https://www.iviewui.com/) | [PrimeVue](http://primefaces.org/primevue/)  
+[https://bootstrap-vue.org](https://bootstrap-vue.org)  Bootstrap+Vue | [Vuetify JS](https://vuetifyjs.com/) | [Quasar](https://quasar.dev/)  
+  
+[Vant](https://youzan.github.io/vant/) | [Muse UI](https://muse-ui.org) | [HeyUI](https://github.com/heyui/heyui/) | [AT UI](https://at-ui.github.io/at-ui/#/en)  
+[AntDesignVue](https://github.com/vueComponent/ant-design-vue) | [Vue-beauty](https://github.com/FE-Driver/vue-beauty) | [v-dialogs](https://github.com/TerryZ/v-dialogs)  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Tutorials
+
+[Vue技术内幕](http://hcysun.me/vue-design/) | [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/) | [vue-cli-analysis](https://kuangpf.com/vue-cli-analysis/foreword/)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-      { url: "https://yuche.github.io/vue-strap/", desc: "VueStrap" },
-        { url: "https://github.com/zzuu666/antue", desc: "Antue" },
-        { url: "https://avue.top", desc: "AVUE" },
--->
+
 </body>
 </html>
-

@@ -1,116 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-  <div id="container"></div>
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <script type="text/javascript">
-    var bookmarks = [
-      "=Online Tools",
-      [
-        { url: "https://devdocs.io/", desc: "DevDocs" },
-        { url: "https://devhints.io/", desc: "DevHits" },
-        { url: "https://magi.com/", desc: "Magi.com" },
-      ],
-      [
-        { url: "https://translate.google.com/", desc: "Google Translate" },
-        { url: "https://www.bing.com/translator", desc: "Bing Translator" },
-        { url: "https://fanyi.baidu.com/", desc: "Baidu Translate" },
-      ],
-      [
-        { url: "https://regex101.com/", desc: "Regex 101" },
-        { url: "https://regexr.com/", desc: "RegExr" },
-        { url: "http://www.atoolbox.net/", desc: "A ToolBox" },
-        { url: "https://oktools.net/", desc: "OkTools" },
-        { url: "https://www.toolfk.com/", desc: "ToolFk" },
-      ],
-      "=Playground",
-      [
-        { url: "https://code.labstack.com/go", desc: "#Playground" },
-        { url: "https://play.golang.org/", desc: "Go Playground" },
-        { url: "https://play.rust-lang.org/", desc: "Rust Playground" },
-        { url: "https://www.sassmeister.com/", desc: "SASS Playground" },
-        { url: "https://dartpad.dartlang.org/", desc: "Dart Pad" },
-        { url: "https://webassembly.studio/", desc: "WebAssembly Studio" },
-        { url: "https://babeljs.io/repl", desc: "Babel REPL" },
-        { url: "https://closure-compiler.appspot.com/home", desc: "Closure Compiler" },
-      ],
-      "=Code Generator",
-      [
-        { url: "https://app.quicktype.io/", desc: "#Quick Type" },
-        { url: "https://transform.tools/json-to-go", desc: "Json-to-Go" },
-        { url: "https://learngolangonline.com/json-to-go-struct-converter", desc: "Json-to-Go" },
-        { url: "https://mholt.github.io/json-to-go/", desc: "Json-To-Go" },
-        { url: "https://yaml2go.prasadg.dev/", desc: "Yaml-To-Go" },
-        { url: "https://mholt.github.io/curl-to-go/", desc: "Curl-To-Go" },
-        { url: "https://incarnate.github.io/curl-to-php/", desc: "Curl-To-PHP" },
-        { url: "https://www.onlinetool.io/", desc: "Online Tools" },
-      ],
-      [
-        { url: "https://cssminifier.com/", desc: "#CSS Minifier" },
-        { url: "http://www.vvveb.com/vvvebjs/editor.html", desc: "VvvebJs" },
-        { url: "https://grapesjs.com/", desc: "GrapesJS" },
-        { url: "https://i18ns.com/", desc: "i18ns.com" },
-        { url: "https://xuri.me/toml-to-go/", desc: "Toml-To-Go" },
-        { url: "https://www.dute.org", desc: "独特工具箱" },
-        { url: "http://scriptgenerator.net/", desc: "ScriptGenerator" },
-      ],
-      "=Hash Tools",
-      [
-        { url: "http://passwordsgenerator.net/md5-hash-generator/", desc: "#Hash Generator" },
-        { url: "https://emn178.github.io/online-tools/", desc: "Online Encode/Encode" },
-        { url: "https://keccak-256.cloxy.net/", desc: "Keccak-256 Online Hash" },
-        { url: "https://helloacm.com/tools/string-hash/", desc: "String Hash" },
-        { url: "https://hat.sh", desc: "Hat.sh - File Encryption" },
-      ],
-      "=Image Tools",
-      [
-        { url: "https://www.photopea.com/", desc: "Photopea (PS-like)" },
-        { url: "https://ps.gaoding.com/", desc: "PS (PS-like)" },
-        { url: "https://www.remove.bg/", desc: "Remove.Bg" },
-      ],
-      "=Chart Tools",
-      [
-        { url: "https://www.desmos.com/calculator", desc: "#Func Chart" },
-        { url: "https://bpmn.io/toolkit/bpmn-js/", desc: "BPMN 2.0" },
-        { url: "https://www.draw.io/", desc: "draw.io" },
-        { url: "https://dbdiagram.io/home", desc: "DB Diagram" },
-        { url: "https://excalidraw.com/", desc: "ExcaliDraw" },
-      ],
-      "=Misc Tools",
-      [
-      ],
-      [
-        { url: "https://dogedoge.com/", desc: "DogeDoge Search" },
-        { url: "https://getavataaars.com/", desc: "Get Avataaars" },
-        { url: "http://www.autopiano.cn/", desc: "AutoPiano" },
-        { url: "https://www.noteflight.com/", desc: "NoteFlight" },
-        { url: "https://audiomass.co/", desc: "AudioMass" },
-      ],
-      [
-        { url: "https://cnbible.com/", desc: "CN Bible" },
-        { url: "https://browserleaks.com/", desc: "BrowserLeaks" },
-        { url: "https://github.com/dhamaniasad/HeadlessBrowsers", desc: "Headless Browsers" },
-        { url: "https://github.com/rust-lang/mdBook", desc: "mdBook" },
-        { url: "https://www.345tool.com/", desc: "Best Online Productivity Tools" },
-      ],
-    ];
+<template>
+### Online Tools
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[https://devdocs.io/](https://devdocs.io/)  DevDocs | [DevHits](https://devhints.io/) | [Magi.com](https://magi.com/)  
+[https://translate.google.com/](https://translate.google.com/)  Google Translate | [Bing Translator](https://www.bing.com/translator) | [Baidu Translate](https://fanyi.baidu.com/)  
+[https://regex101.com/](https://regex101.com/)  Regex 101 | [RegExr](https://regexr.com/) | [A ToolBox](http://www.atoolbox.net/) | [OkTools](https://oktools.net/) | [ToolFk](https://www.toolfk.com/)  
+
+### Playground
+
+[Playground](https://code.labstack.com/go) | [Go Playground](https://play.golang.org/) | [Rust Playground](https://play.rust-lang.org/) | [SASS Playground](https://www.sassmeister.com/) | [Dart Pad](https://dartpad.dartlang.org/) | [WebAssembly Studio](https://webassembly.studio/) | [Babel REPL](https://babeljs.io/repl) | [Closure Compiler](https://closure-compiler.appspot.com/home)  
+
+### Code Generator
+
+[Quick Type](https://app.quicktype.io/) | [Json-to-Go](https://transform.tools/json-to-go) | [Json-to-Go](https://learngolangonline.com/json-to-go-struct-converter) | [Json-To-Go](https://mholt.github.io/json-to-go/) | [Yaml-To-Go](https://yaml2go.prasadg.dev/) | [Curl-To-Go](https://mholt.github.io/curl-to-go/) | [Curl-To-PHP](https://incarnate.github.io/curl-to-php/) | [Online Tools](https://www.onlinetool.io/)  
+[CSS Minifier](https://cssminifier.com/) | [VvvebJs](http://www.vvveb.com/vvvebjs/editor.html) | [GrapesJS](https://grapesjs.com/) | [i18ns.com](https://i18ns.com/) | [Toml-To-Go](https://xuri.me/toml-to-go/) | [独特工具箱](https://www.dute.org) | [ScriptGenerator](http://scriptgenerator.net/)  
+
+### Hash Tools
+
+[Hash Generator](http://passwordsgenerator.net/md5-hash-generator/) | [Online Encode/Encode](https://emn178.github.io/online-tools/) | [Keccak-256 Online Hash](https://keccak-256.cloxy.net/) | [String Hash](https://helloacm.com/tools/string-hash/) | [Hat.sh - File Encryption](https://hat.sh)  
+
+### Image Tools
+
+[https://www.photopea.com/](https://www.photopea.com/)  Photopea (PS-like) | [PS (PS-like)](https://ps.gaoding.com/) | [Remove.Bg](https://www.remove.bg/)  
+
+### Chart Tools
+
+[Func Chart](https://www.desmos.com/calculator) | [BPMN 2.0](https://bpmn.io/toolkit/bpmn-js/) | [draw.io](https://www.draw.io/) | [DB Diagram](https://dbdiagram.io/home) | [ExcaliDraw](https://excalidraw.com/)  
+
+### Misc Tools
+
+[https://dogedoge.com/](https://dogedoge.com/)  DogeDoge Search | [Get Avataaars](https://getavataaars.com/) | [AutoPiano](http://www.autopiano.cn/) | [NoteFlight](https://www.noteflight.com/) | [AudioMass](https://audiomass.co/)  
+[https://cnbible.com/](https://cnbible.com/)  CN Bible | [BrowserLeaks](https://browserleaks.com/) | [Headless Browsers](https://github.com/dhamaniasad/HeadlessBrowsers) | [mdBook](https://github.com/rust-lang/mdBook) | [Best Online Productivity Tools](https://www.345tool.com/)
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-    { url: "http://krook.org/jsdom/", desc: "JS Dom" },
-    { url: "https://www.base-api.io/", desc: "Base API" },
-    { url: "https://github.com/magic-FE/translate-man", desc: "Translate-Man" },
-    { url: "https://curl.trillworks.com/", desc: "Curl-To-Code" },
-    { url: "https://json-to-golang.com/", desc: "Json-To-Golang" },
--->
+
 </body>
 </html>

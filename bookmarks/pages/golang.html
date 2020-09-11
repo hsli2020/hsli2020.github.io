@@ -1,161 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>GoLang</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### GoLang
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://golang.org/", desc: "#Go Programming Language" },
-        { url: "https://go.dev/", desc: "Go.dev" },
-        { url: "https://pkg.go.dev/", desc: "Pkg.go.dev" },
-        { url: "https://godoc.org/", desc: "Go Doc" },
-        { url: "http://golang.org/doc/go_faq.html", desc: "Go FAQ" },
-      ],
+[Go Programming Language](https://golang.org/) | [Go.dev](https://go.dev/) | [Pkg.go.dev](https://pkg.go.dev/) | [Go Doc](https://godoc.org/) | [Go FAQ](http://golang.org/doc/go_faq.html)  
+[https://play.golang.org/](https://play.golang.org/)  Go Playground | [GoPlay.Tools](https://goplay.tools) | [GoPlay.Space](https://goplay.space/)  
+  
+[Awesome-Go](https://awesome-go.com/) | [Awesome-Go-Stars](https://github.com/amanbolat/awesome-go-with-stars) | [GoWalker - Search Go Code](https://gowalker.org/)  
+  
+[Golang News](http://golangnews.com) | [Golang China](https://golangtc.com/) | [Golang中文社区](https://studygolang.com/) | [Go周刊](https://studygolang.com/go/weekly) | [Go博客](http://blog.studygolang.com/) | [GoCN News](https://github.com/Han-Ya-Jun/gocn_news_set)  
+[Gopher Daily](https://gopher-daily.com/issues/last) | [Go技术日报](https://studygolang.com/go/godaily) | [GoCN每日新闻](https://gocn.vip/topics/node18) | [Go Weekly](https://golangweekly.com/issues) | [Awesome Go Newsletter](https://go.libhunt.com/newsletter/archive)  
+[GCTT - Go 中文翻译组](https://studygolang.com/subject/1) | [Go语言中文网头条首页](https://www.toutiao.com/c/user/59903081459/#mid=1586087918877709)  
+  
+[Golang Course](https://tutorialedge.net/course/golang/) | [Algorithms with Go](https://algorithmswithgo.com/) | [Go database/sql tutorial](http://go-database-sql.org/) | [Learn Go with Tests](https://github.com/quii/learn-go-with-tests)  
+  
+[Golang Example](https://golangexample.com/) | [Your Basic Go](http://yourbasic.org/golang/) | [Gopher Academy](https://blog.gopheracademy.com/) | [Golang-By-Example](https://golangbyexample.com/) | [All-Design-Patterns](https://golangbyexample.com/all-design-patterns-golang/)  
+  
+[Go 每日一库](https://github.com/darjun/go-daily-lib) | [Go 语言设计与实现](https://draveness.me/golang/) | [Go 语言高性能编程](https://geektutu.com/post/high-performance-go.html) | [Go语言高级编程](https://chai2010.cn/advanced-go-programming-book/)  
+[Go 101](https://go101.org/article/101.html) | [Gopl Book Code](https://github.com/adonovan/gopl.io/) | [深入Go并发编程研讨课](https://github.com/smallnest/dive-to-gosync-workshop)  
+  
+[Go Packages](gopkgs.html#useful) | [Excelize Docs](https://xuri.me/excelize/en/) | [GORM](https://gorm.io/docs/) | [Facebook Ent](https://entgo.io) | [Minio Docs](https://docs.min.io/cn/)  
+  
+[https://grpc.io/](https://grpc.io/)  gRPC.io | [Echo Guide](https://echo.labstack.com/guide) | [Gin Doc](https://gin-gonic.com/docs/) | [Go Chronicles](https://gochronicles.com/)  
+[https://rpcx.io/](https://rpcx.io/)  rpcx.io | [blog.rpcx.io](https://blog.rpcx.io/) | [Github](https://github.com/smallnest/rpcx) | [鸟窝](http://colobu.com/)  
+  
+[《用Go做以太坊开发》](https://goethereumbook.org/zh/) | [代码](https://github.com/miguelmota/ethereum-development-with-go-book) | [《Go 语言设计与实现》](https://draven.co/golang/)  
+  
+[go-projects-01](go-projects-01.html) | [go-projects-02](go-projects-02.html) | [go-projects-03](go-projects-03.html) | [go-projects-04](go-projects-04.html) | [go-projects-05](go-projects-05.html)  
+[go-projects-06](go-projects-06.html) | [go-projects-07](go-projects-07.html) | [go-projects-08](go-projects-08.html) | [go-projects-09](go-projects-09.html) | [go-projects-10](go-projects-10.html)  
+[go-projects-11](go-projects-11.html) | [go-projects-12](go-projects-12.html) | [go-projects-13](go-projects-13.html)
 
-      [
-        { url: "https://play.golang.org/", desc: "Go Playground" },
-        { url: "https://goplay.tools", desc: "GoPlay.Tools" },
-        { url: "https://goplay.space/", desc: "GoPlay.Space" },
-      ],
+</template>
 
-      "---",
-      [
-        { url: "https://awesome-go.com/", desc: "#Awesome-Go" },
-        { url: "https://github.com/amanbolat/awesome-go-with-stars", desc: "Awesome-Go-Stars" },
-        { url: "https://gowalker.org/", desc: "GoWalker - Search Go Code" },
-      ],
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
 
-      "---",
-      [
-        { url: "http://golangnews.com", desc: "#Golang News" },
-        { url: "https://golangtc.com/", desc: "Golang China" },
-        { url: "https://studygolang.com/", desc: "Golang中文社区" },
-        { url: "https://studygolang.com/go/weekly", desc: "Go周刊" },
-        { url: "http://blog.studygolang.com/", desc: "Go博客" },
-        { url: "https://github.com/Han-Ya-Jun/gocn_news_set", desc: "GoCN News" },
-      ],
-
-      [
-        { url: "https://gopher-daily.com/issues/last", desc: "#Gopher Daily" },
-        { url: "https://studygolang.com/go/godaily", desc: "Go技术日报" },
-        { url: "https://gocn.vip/topics/node18", desc: "GoCN每日新闻" },
-        { url: "https://golangweekly.com/issues", desc: "Go Weekly" },
-        { url: "https://go.libhunt.com/newsletter/archive", desc: "Awesome Go Newsletter" },
-      ],
-      [
-        { url: "https://studygolang.com/subject/1", desc: "#GCTT - Go 中文翻译组" },
-        { url: "https://www.toutiao.com/c/user/59903081459/#mid=1586087918877709", desc: "Go语言中文网头条首页" },
-      ],
-      "---",
-      [
-        { url: "https://tutorialedge.net/course/golang/", desc: "#Golang Course" },
-        { url: "https://algorithmswithgo.com/", desc: "Algorithms with Go" },
-        { url: "http://go-database-sql.org/", desc: "Go database/sql tutorial" },
-        { url: "https://github.com/quii/learn-go-with-tests", desc: "Learn Go with Tests" },
-      ],
-
-      "---",
-      [
-        { url: "https://golangexample.com/", desc: "#Golang Example" },
-        { url: "http://yourbasic.org/golang/", desc: "Your Basic Go" },
-        { url: "https://blog.gopheracademy.com/", desc: "Gopher Academy" },
-        { url: "https://golangbyexample.com/", desc: "Golang-By-Example" },
-        { url: "https://golangbyexample.com/all-design-patterns-golang/", desc: "All-Design-Patterns" },
-      ],
-
-      "--",
-      [
-        { url: "https://github.com/darjun/go-daily-lib", desc: "#Go 每日一库" },
-        { url: "https://draveness.me/golang/", desc: "Go 语言设计与实现" },
-        { url: "https://geektutu.com/post/high-performance-go.html", desc: "Go 语言高性能编程" },
-        { url: "https://chai2010.cn/advanced-go-programming-book/", desc: "Go语言高级编程" },
-      ],
-      [
-        { url: "https://go101.org/article/101.html", desc: "#Go 101" },
-        { url: "https://github.com/adonovan/gopl.io/", desc: "Gopl Book Code" },
-        { url: "https://github.com/smallnest/dive-to-gosync-workshop", desc: "深入Go并发编程研讨课" },
-      ],
-
-      "--",
-      [
-        { url: "gopkgs.html#useful", desc: "#Go Packages" },
-        { url: "https://xuri.me/excelize/en/", desc: "Excelize Docs" },
-        { url: "https://gorm.io/docs/", desc: "GORM" },
-        { url: "https://entgo.io", desc: "Facebook Ent" },
-        { url: "https://docs.min.io/cn/", desc: "Minio Docs" },
-      ],
-
-      "---",
-      [
-        { url: "https://grpc.io/", desc: "gRPC.io" },
-        { url: "https://echo.labstack.com/guide", desc: "Echo Guide" },
-        { url: "https://gin-gonic.com/docs/", desc: "Gin Doc" },
-        { url: "https://gochronicles.com/", desc: "Go Chronicles" },
-      ],
-      [
-        { url: "https://rpcx.io/", desc: "rpcx.io" },
-        { url: "https://blog.rpcx.io/", desc: "blog.rpcx.io" },
-        { url: "https://github.com/smallnest/rpcx", desc: "Github" },
-        { url: "http://colobu.com/", desc: "鸟窝" },
-      ],
-
-      "---",
-      [
-        { url: "https://goethereumbook.org/zh/", desc: "#《用Go做以太坊开发》" },
-        { url: "https://github.com/miguelmota/ethereum-development-with-go-book", desc: "代码" },
-        { url: "https://draven.co/golang/", desc: "《Go 语言设计与实现》" },
-      ],
-
-      "---",
-      [
-        { url: "go-projects-01.html", desc: "#go-projects-01" },
-        { url: "go-projects-02.html", desc: "go-projects-02" },
-        { url: "go-projects-03.html", desc: "go-projects-03" },
-        { url: "go-projects-04.html", desc: "go-projects-04" },
-        { url: "go-projects-05.html", desc: "go-projects-05" },
-      ],
-      [
-        { url: "go-projects-06.html", desc: "#go-projects-06" },
-        { url: "go-projects-07.html", desc: "go-projects-07" },
-        { url: "go-projects-08.html", desc: "go-projects-08" },
-        { url: "go-projects-09.html", desc: "go-projects-09" },
-        { url: "go-projects-10.html", desc: "go-projects-10" },
-      ],
-      [
-        { url: "go-projects-11.html", desc: "#go-projects-11" },
-        { url: "go-projects-12.html", desc: "go-projects-12" },
-        { url: "go-projects-13.html", desc: "go-projects-13" },
-      ]
-    ];
-
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>
-<!--
-      { url: "http://golang.org/doc/articles/wiki/", desc: "Go Lang Web App" },
-      { url: "https://github.com/go-ini/ini", desc: "Go Ini" },
-      { url: "https://github.com/joho/godotenv/", desc: "Go dotEnv" },
-      { url: "https://github.com/ying32/govcl", desc: "Go VCL" },
-      { url: "https://github.com/emersion/go-imap", desc: "Go IMAP" },
-      { url: "http://xiaorui.cc/category/golang/", desc: "Golang个人blog" },
-      { url: "https://gophercises.com/", desc: "Gophercises" },
-      { url: "https://gopm.io/", desc: "Gopm Registry" },
-      { url: "https://github.com/uber-go/guide/blob/master/style.md", desc: "Uber Go Style Guide" },
-      { url: "https://gopry.rice.sh/", desc: "Go Pry" },
-      { url: "https://magefile.org/", desc: "Mage" },
--->
 </html>

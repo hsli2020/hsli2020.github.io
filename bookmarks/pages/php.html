@@ -1,149 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>PHP</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### PHP
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "http://www.php.net/", desc: "PHP" },
-        { url: "http://windows.php.net/downloads/pecl/releases/", desc: "PECL" },
-        { url: "https://www.php-fig.org/", desc: "PHP-FIG" },
-        { url: "https://github.com/openai-php/client", desc: "OpenAI PHP" },
-      ],
-      [
-        { url: "http://www.phptherightway.com/", desc: "PHP The Right Way" },
-        { url: "https://phpbestpractices.org/", desc: "PHP Best Practices" },
-      ],
-      [
-        { url: "http://phpunit.de/", desc: "PHPUnit" },
-        { url: "http://www.packagist.org", desc: "Packagist" },
-        { url: "http://behat.org/", desc: "Behat" },
-        { url: "https://phpixie.com/", desc: "Phpixie" },
-        { url: "https://www.swoole.com/", desc: "Swoole" },
-        { url: "https://inertiajs.com/", desc: "Inertiajs SPA" },
-        { url: "https://demo.inertiajs.com/", desc: "Inertiajs Demo" },
-      ],
-      "-",
-      [
-        { url: "https://framework.zend.com/", desc: "#Zend Framework" },
-        { url: "http://www.yiiframework.com", desc: "Yii Framework" },
-        { url: "http://codeigniter.com/", desc: "CodeIgniter" },
-        { url: "http://cakephp.org/", desc: "CakePHP" },
-        { url: "http://www.doctrine-project.org/", desc: "Doctrine Project" },
-        { url: "http://propelorm.org/", desc: "Propel" },
-      ],
-      [
-        { url: "http://auraphp.com/", desc: "#AuraPHP" },
-        { url: "https://thephpleague.com/", desc: "LeaguePHP" },
-        { url: "https://paragonie.com/software", desc: "ParagoniePHP" },
-        { url: "https://github.com/middlewares/awesome-psr15-middlewares", desc: "PSR15 Middlewares" },
-      ],
-      [
-        { url: "http://www.slimframework.com/", desc: "Slim Framework" },
-        { url: "http://flightphp.com/", desc: "Flight MicroFramework" },
-        { url: "http://nette.org/", desc: "Nette" },
-      ],
-      "-",
-      [
-        { url: "https://getpsalm.org/", desc: "Psalm" },
-        { url: "https://github.com/phan/phan", desc: "Phan" },
-        { url: "https://github.com/phpstan/phpstan", desc: "Phpstan" },
-        { url: "https://bref.sh/docs/", desc: "Bref.sh" },
-      ],
-      "-",
-      [
-        { url: "https://tcpdf.org/", desc: "TCPDF" },
-        { url: "https://tcpdf.org/examples/", desc: "TCPDF examples" },
-        { url: "https://github.com/smalot/pdfparser", desc: "PDF Parser" },
-        { url: "https://www.setasign.com/products/fpdi/about", desc: "FPDI" },
-        { url: "http://www.fpdf.org/", desc: "FPDF" },
-        { url: "https://github.com/dompdf/dompdf", desc: "DOMPDF" },
-      ],
-      [
-        { url: "https://hybridauth.github.io/index.html", desc: "#HybridAuth (3.x)" },
-        { url: "https://hybridauth.github.io/hybridauth/", desc: "HybridAuth (2.x)" },
-        { url: "https://psalm.dev/", desc: "Psalm - static analysis tool" },
-      ],
+[http://www.php.net/](http://www.php.net/)  PHP | [PECL](http://windows.php.net/downloads/pecl/releases/) | [PHP-FIG](https://www.php-fig.org/) | [OpenAI PHP](https://github.com/openai-php/client)  
+[http://www.phptherightway.com/](http://www.phptherightway.com/)  PHP The Right Way | [PHP Best Practices](https://phpbestpractices.org/)  
+[http://phpunit.de/](http://phpunit.de/)  PHPUnit | [Packagist](http://www.packagist.org) | [Behat](http://behat.org/) | [Phpixie](https://phpixie.com/) | [Swoole](https://www.swoole.com/) | [Inertiajs SPA](https://inertiajs.com/) | [Inertiajs Demo](https://demo.inertiajs.com/)  
+  
+[Zend Framework](https://framework.zend.com/) | [Yii Framework](http://www.yiiframework.com) | [CodeIgniter](http://codeigniter.com/) | [CakePHP](http://cakephp.org/) | [Doctrine Project](http://www.doctrine-project.org/) | [Propel](http://propelorm.org/)  
+[AuraPHP](http://auraphp.com/) | [LeaguePHP](https://thephpleague.com/) | [ParagoniePHP](https://paragonie.com/software) | [PSR15 Middlewares](https://github.com/middlewares/awesome-psr15-middlewares)  
+[http://www.slimframework.com/](http://www.slimframework.com/)  Slim Framework | [Flight MicroFramework](http://flightphp.com/) | [Nette](http://nette.org/)  
+  
+[https://getpsalm.org/](https://getpsalm.org/)  Psalm | [Phan](https://github.com/phan/phan) | [Phpstan](https://github.com/phpstan/phpstan) | [Bref.sh](https://bref.sh/docs/)  
+  
+[https://tcpdf.org/](https://tcpdf.org/)  TCPDF | [TCPDF examples](https://tcpdf.org/examples/) | [PDF Parser](https://github.com/smalot/pdfparser) | [FPDI](https://www.setasign.com/products/fpdi/about) | [FPDF](http://www.fpdf.org/) | [DOMPDF](https://github.com/dompdf/dompdf)  
+[HybridAuth (3.x)](https://hybridauth.github.io/index.html) | [HybridAuth (2.x)](https://hybridauth.github.io/hybridauth/) | [Psalm - static analysis tool](https://psalm.dev/)  
 
-      "=Symfony",
-      [
-        { url: "https://symfony.com/", desc: "#Symfony Framework" },
-        { url: "https://symfony.com/doc/current/index.html", desc: "Symfony Documentation" },
-        { url: "https://symfony.com/doc/current/reference/index.html", desc: "Symfony Reference" },
-        { url: "https://symfonycasts.com/courses#all", desc: "Symfony Casts" },
-      ],
-      [
-        { url: "https://sylius.com/", desc: "Open Source eCommerce Platform on Symfony" },
-      ],
-      "-",
-      [
-        { url: "https://github.com/statamic/cms", desc: "#Statamic CMS" },
-        { url: "https://statamic.com/starter-kits/luckymedia/landtamic", desc: "Statamic Starter Kit" },
-      ],
-      [
-        { url: "https://leafphp.dev/", desc: "#Leaf PHP" },
-        { url: "https://leafphp.dev/tutorial/#step-1", desc: "Leaf PHP Tutorial" },
-      ],
-    ];
+### Symfony
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[Symfony Framework](https://symfony.com/) | [Symfony Documentation](https://symfony.com/doc/current/index.html) | [Symfony Reference](https://symfony.com/doc/current/reference/index.html) | [Symfony Casts](https://symfonycasts.com/courses#all)  
+[https://sylius.com/](https://sylius.com/)  Open Source eCommerce Platform on Symfony  
+  
+[Statamic CMS](https://github.com/statamic/cms) | [Statamic Starter Kit](https://statamic.com/starter-kits/luckymedia/landtamic)  
+[Leaf PHP](https://leafphp.dev/) | [Leaf PHP Tutorial](https://leafphp.dev/tutorial/#step-1)  
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-      { url: "http://www.phing.info/", desc: "Phing" },
-      { url: "https://github.com/zend-dev/ZendOptimizerPlus/", desc: "Zend Optimizer Plus" },
-      { url: "http://cs.sensiolabs.org/", desc: "PHP Coding Standards Fixer" },
-      { url: "http://micromvc.com/", desc: "MicroMVC Framework" },
-      { url: "http://bcosca.github.com/fatfree/", desc: "Fat-Free" },
-      { url: "http://limonade-php.github.com/", desc: "Limonade" },
-      { url: "http://tinymvc.com/", desc: "Tiny MVC" },
-      { url: "http://bulletphp.com/", desc: "Bullet" },
-   
-      { url: "http://kohanaframework.org/", desc: "Kohana Framework" },
-      { url: "http://www.recessframework.org/", desc: "Recess Framework" },
-      { url: "http://www.firephp.org/", desc: "FirePHP" },
-   
-      { url: "http://fuelphp.com/", desc: "FuelPHP" },
-      { url: "http://lithify.me/", desc: "Lithium" },
-      { url: "http://solarphp.com/", desc: "SolarPHP" },
-      { url: "http://www.thinkphp.cn", desc: "ThinkPHP" },
-      { url: "http://www.qeephp.com", desc: "QeePHP" },
-   
-      { url: "http://www.akelos.org/", desc: "Akelos" },
-      { url: "http://seleniumhq.org/", desc: "Selenium" },
-      { url: "http://auraphp.github.com/", desc: "Aura" },
-      { url: "http://www.ppi.io/", desc: "PPI" },
-      { url: "http://flow.typo3.org/", desc: "TYPO3 Flow" },
-      [
-        { url: "http://laravel.com/", desc: "Laravel" },
-        { url: "https://lumen.laravel.com/", desc: "Lumen" },
-        { url: "https://spark.laravel.com/", desc: "Spark" },
-        { url: "https://nova.laravel.com/", desc: "Nova" },
-        { url: "https://horizon.laravel.com/", desc: "Horizon" },
-        { url: "https://vapor.laravel.com/", desc: "Vapor" },
-        { url: "http://laradock.io/", desc: "Laradock" },
-        { url: "https://envoyer.io/", desc: "Envoyer" },
-      ],
-      { url: "http://zanphp.com/", desc: "ZanPHP Framework" },
-      { url: "http://www.yafdev.com/", desc: "Yaf - Yet Another Framework" },
-        { url: "http://knpbundles.com/", desc: "Bundles for Symfony2" },
-        { url: "http://silex.sensiolabs.org/", desc: "#Silex Framework" },
-        { url: "http://pimple.sensiolabs.org/", desc: "Pimple" },
-        { url: "http://twig.sensiolabs.org/", desc: "Twig" },
-        { url: "https://www.waveframework.com/", desc: "Wave" },
-        { url: "https://limonade-php.github.io/", desc: "Limonade" },
--->
+
 </body>
 </html>

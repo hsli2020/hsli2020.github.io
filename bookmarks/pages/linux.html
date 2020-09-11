@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Linux</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Linux
 
-  <script type="text/javascript">
-    var bookmarks = [
-      { url: "https://wangdoc.com/bash/", desc: "Bash 脚本教程" },
-      { url: "", desc: "" },
-    ];
+[https://wangdoc.com/bash/](https://wangdoc.com/bash/)  Bash 脚本教程
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

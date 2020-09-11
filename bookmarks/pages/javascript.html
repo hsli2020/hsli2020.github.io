@@ -1,149 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>JavaScript</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### JavaScript
 
-  <script type="text/javascript">
-    var bookmarks = [
-        [
-          { url: "https://nodejs.org/en/", desc: "NodeJS" },
-          { url: "https://www.npmjs.com/", desc: "NPM" },
-          { url: "https://yarnpkg.com/", desc: "Yarn" },
-          { url: "https://github.com/mishoo/UglifyJS", desc: "UglifyJS" },
-          { url: "https://github.com/jshint/jshint/", desc: "jshint" },
-          { url: "https://www.jslint.com/", desc: "JSLint" },
-          { url: "https://gruntjs.com/", desc: "GruntJS" },
-          { url: "https://gulpjs.com/", desc: "Gulp" },
-        ],
-        [
-          { url: "https://bellard.org/quickjs/", desc: "QuickJS" },
-          { url: "https://expressjs.com/en/index.html", desc: "ExpressJS" },
-          { url: "https://webpack.js.org/guides/get-started/", desc: "Webpack" },
-          { url: "https://parceljs.org/", desc: "ParcelJS" },
-          { url: "https://rollupjs.org/guide/en", desc: "Rollup JS" },
-          { url: "http://browserify.org/", desc: "Browserify" },
-        ],
-        [
-          { url: "https://www.typescriptlang.org/", desc: "TypeScript" },
-          { url: "https://babeljs.io/", desc: "Babel The Compiler" },
-          { url: "https://requirejs.org/", desc: "RequireJS" },
-        ],
-        [
-          { url: "https://facebook.github.io/react/", desc: "ReactJS" },
-          { url: "https://vuejs.org/", desc: "Vue" },
-          { url: "https://angular.io/", desc: "Angular" },
-          { url: "https://emberjs.com/", desc: "EmberJS" },
-          { url: "https://www.polymer-project.org/", desc: "Polymer" },
-        ],
-        "-",
-        [
-          { url: "https://developer.mozilla.org/en-US/", desc: "Mozilla Developer Network" },
-          { url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference", desc: "JavaScript Reference in Mozilla" },
-        ],
-        [
-          { url: "http://speakingjs.com/es5/index.html", desc: "#Speaking JavaScript" }, 
-          { url: "http://eloquentjavascript.net/", desc: "<b>Eloquent JavaScript</b>" },
-          { url: "http://addyosmani.com/resources/essentialjsdesignpatterns/book/", desc: "<b>Learning JavaScript Design Patterns</b>" },
-        ],
-        [
-          { url: "http://bonsaiden.github.io/JavaScript-Garden/", desc: "#JavaScript Garden" }, 
-          { url: "http://todomvc.com/", desc: "TodoMVC" },
-          { url: "https://pptr.dev/", desc: "Puppeteer 2.0.0" },
-          { url: "https://js1k.com/", desc: "<b>JS1K</b>" },
-          { url: "https://js13kgames.com/", desc: "JS13K games" },
-        ],
-        "=Library",
-        [
-          { url: "https://underscorejs.org/", desc: "#Underscore" },
-          { url: "https://lit-element.polymer-project.org/", desc: "LitElement" },
-          { url: "http://www.chartjs.org/", desc: "Chart.js" },
-          { url: "https://handsontable.com/", desc: "Handsontable" },
-          { url: "https://www.highcharts.com/", desc: "HighCharts" },
-          { url: "http://backbonejs.org/", desc: "Backbone" },
-          { url: "http://www.layui.com/", desc: "Layui" },
-          { url: "http://zui.sexy/", desc: "ZUI" },
-        ],
-        [
-          { url: "https://lodash.com/", desc: "#Lodash" },
-          { url: "https://riot.js.org/", desc: "Riot JS" },
-          { url: "https://mithril.js.org/", desc: "Mithril" },
-          { url: "https://baidu.github.io/san/", desc: "Baidu San" },
-          { url: "https://markojs.com/", desc: "MarkoJS" },
-          { url: "https://aurelia.io/", desc: "AureliaJS" },
-          { url: "https://www.meteor.com/", desc: "Meteor" },
-          { url: "http://www.pixijs.com/", desc: "PixiJS" },
-          { url: "https://svelte.dev/", desc: "SvelteJS" },
-        ],
-        "-",
-        [
-          { url: "https://developer.spotify.com/web-api/", desc: "#Spotify Web API" },
-          { url: "https://github.com/airbnb/javascript", desc: "Airbnb JS Guide" },
-          { url: "https://www.html5rocks.com/en/tutorials/", desc: "Html5Rocks" },
-          { url: "https://atomiks.github.io/tippyjs/getting-started/", desc: "Tippy.js" },
-          { url: "https://tarekraafat.github.io/autoComplete.js/demo/", desc: "autoComplete.js" },
-          { url: "https://clipboardjs.com/", desc: "clipboard.js" },
-        ],
-        [
-          { url: "https://datatables.net/", desc: "#DataTables" },
-          { url: "http://microjs.com/", desc: "Micro.JS" },
-          { url: "http://www.alloyteam.com/", desc: "AlloyTeam" },
-          { url: "https://mozilla.github.io/pdf.js/", desc: "PDF.js" },
-          { url: "https://github.com/getify/You-Dont-Know-JS", desc: "You Don't Know JS" },
-          { url: "https://sweetalert2.github.io/", desc: "SweetAlert2" },
-          { url: "http://kenwheeler.github.io/slick/", desc: "Slick" },
-        ],
-        "-",
-        [
-          { url: "https://developer.mozilla.org/en-US/Add-ons/WebExtensions", desc: "#Web Extensions" },
-          { url: "https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#Background_scripts", desc: "Anatomy of a Web Extensions" },
-          { url: "https://github.com/mdn/webextensions-examples", desc: "Web Extensions Examples" },
-          { url: "https://github.com/TerryZ/bDialog", desc: "bDialog" },
-        ],
-        [
-          { url: "https://babeljs.io/learn-es2015/", desc: "#Learn ES2015 Babel" },
-          { url: "http://nikgrozev.com/2017/10/01/async-await/", desc: "Async/Await" },
-          { url: "http://layer.layui.com/", desc: "layer ui demo" },
-          { url: "http://layer.layui.com/api.html", desc: "layer ui doc" },
-          { url: "https://github.com/paulhodel/jexcel", desc: "jExcel" },
-          { url: "https://licia.liriliri.io/docs.html", desc: "Licia" },
-          { url: "https://echarts.apache.org/zh/tutorial.html", desc: "eCharts" },
-        ],
-        "-",
-        [
-          { url: "http://strapdownjs.com/", desc: "#StrapDown.js" },
-          { url: "http://lindell.me/JsBarcode/", desc: "JsBarcode" },
-          { url: "https://docsify.js.org", desc: "Docsify" },
-          { url: "https://github.com/BabylonJS/Babylon.js", desc: "BabylonJS" },
-          { url: "https://shopify.github.io/draggable/", desc: "Draggable" },
-          { url: "https://impress.js.org/", desc: "Impress.js" },
-          { url: "https://d3js.org/", desc: "D3.js" },
-          { url: "https://github.com/d3/d3/wiki/Tutorials", desc: "D3.js Tutorials" },
-        ],
-        [
-          { url: "https://observablehq.com/@d3/learn-d3", desc: "#Learn D3.js" },
-          { url: "https://learn.unity.com/", desc: "Learn Unity" },
-          { url: "https://zh.javascript.info/", desc: "现代JavaScript教程" },
-          { url: "https://cn.history.js.org/", desc: "JavaScript 20年" },
-        ],
+[https://nodejs.org/en/](https://nodejs.org/en/)  NodeJS | [NPM](https://www.npmjs.com/) | [Yarn](https://yarnpkg.com/) | [UglifyJS](https://github.com/mishoo/UglifyJS) | [jshint](https://github.com/jshint/jshint/) | [JSLint](https://www.jslint.com/) | [GruntJS](https://gruntjs.com/) | [Gulp](https://gulpjs.com/)  
+[https://bellard.org/quickjs/](https://bellard.org/quickjs/)  QuickJS | [ExpressJS](https://expressjs.com/en/index.html) | [Webpack](https://webpack.js.org/guides/get-started/) | [ParcelJS](https://parceljs.org/) | [Rollup JS](https://rollupjs.org/guide/en) | [Browserify](http://browserify.org/)  
+[https://www.typescriptlang.org/](https://www.typescriptlang.org/)  TypeScript | [Babel The Compiler](https://babeljs.io/) | [RequireJS](https://requirejs.org/)  
+[https://facebook.github.io/react/](https://facebook.github.io/react/)  ReactJS | [Vue](https://vuejs.org/) | [Angular](https://angular.io/) | [EmberJS](https://emberjs.com/) | [Polymer](https://www.polymer-project.org/)  
+  
+[https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)  Mozilla Developer Network | [JavaScript Reference in Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)  
+[Speaking JavaScript](http://speakingjs.com/es5/index.html) | [**Eloquent JavaScript**](http://eloquentjavascript.net/) | [**Learning JavaScript Design Patterns**](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)  
+[JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) | [TodoMVC](http://todomvc.com/) | [Puppeteer 2.0.0](https://pptr.dev/) | [**JS1K**](https://js1k.com/) | [JS13K games](https://js13kgames.com/)  
 
-        "--",
-        { url: "https://github.com/parro-it/awesome-micro-npm-packages", desc: "#Asesome Micro NPM Packages" },
+### Library
 
-    ];
+[Underscore](https://underscorejs.org/) | [LitElement](https://lit-element.polymer-project.org/) | [Chart.js](http://www.chartjs.org/) | [Handsontable](https://handsontable.com/) | [HighCharts](https://www.highcharts.com/) | [Backbone](http://backbonejs.org/) | [Layui](http://www.layui.com/) | [ZUI](http://zui.sexy/)  
+[Lodash](https://lodash.com/) | [Riot JS](https://riot.js.org/) | [Mithril](https://mithril.js.org/) | [Baidu San](https://baidu.github.io/san/) | [MarkoJS](https://markojs.com/) | [AureliaJS](https://aurelia.io/) | [Meteor](https://www.meteor.com/) | [PixiJS](http://www.pixijs.com/) | [SvelteJS](https://svelte.dev/)  
+  
+[Spotify Web API](https://developer.spotify.com/web-api/) | [Airbnb JS Guide](https://github.com/airbnb/javascript) | [Html5Rocks](https://www.html5rocks.com/en/tutorials/) | [Tippy.js](https://atomiks.github.io/tippyjs/getting-started/) | [autoComplete.js](https://tarekraafat.github.io/autoComplete.js/demo/) | [clipboard.js](https://clipboardjs.com/)  
+[DataTables](https://datatables.net/) | [Micro.JS](http://microjs.com/) | [AlloyTeam](http://www.alloyteam.com/) | [PDF.js](https://mozilla.github.io/pdf.js/) | [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) | [SweetAlert2](https://sweetalert2.github.io/) | [Slick](http://kenwheeler.github.io/slick/)  
+  
+[Web Extensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) | [Anatomy of a Web Extensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#Background_scripts) | [Web Extensions Examples](https://github.com/mdn/webextensions-examples) | [bDialog](https://github.com/TerryZ/bDialog)  
+[Learn ES2015 Babel](https://babeljs.io/learn-es2015/) | [Async/Await](http://nikgrozev.com/2017/10/01/async-await/) | [layer ui demo](http://layer.layui.com/) | [layer ui doc](http://layer.layui.com/api.html) | [jExcel](https://github.com/paulhodel/jexcel) | [Licia](https://licia.liriliri.io/docs.html) | [eCharts](https://echarts.apache.org/zh/tutorial.html)  
+  
+[StrapDown.js](http://strapdownjs.com/) | [JsBarcode](http://lindell.me/JsBarcode/) | [Docsify](https://docsify.js.org) | [BabylonJS](https://github.com/BabylonJS/Babylon.js) | [Draggable](https://shopify.github.io/draggable/) | [Impress.js](https://impress.js.org/) | [D3.js](https://d3js.org/) | [D3.js Tutorials](https://github.com/d3/d3/wiki/Tutorials)  
+[Learn D3.js](https://observablehq.com/@d3/learn-d3) | [Learn Unity](https://learn.unity.com/) | [现代JavaScript教程](https://zh.javascript.info/) | [JavaScript 20年](https://cn.history.js.org/)  
+  
+[Asesome Micro NPM Packages](https://github.com/parro-it/awesome-micro-npm-packages)
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

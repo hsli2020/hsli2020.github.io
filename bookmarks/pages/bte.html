@@ -1,96 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>BTE</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### BTE
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-          { url: "http://localhost/", desc: "#localhost" },
-          { url: "http://192.168.0.12/", desc: "HP Server" },
-          { url: "http://192.168.0.110/dataexchange/", desc: "DataExchange" },
-          { url: "http://192.168.0.12:9001/", desc: "KanBoard" },
-      ],
-      [
-          { url: "http://192.168.0.12/search/order", desc: "#search/order" },
-          { url: "http://192.168.0.12/product/search", desc: "search/product" },
-          { url: "http://192.168.0.12/wishlist/report", desc: "wishlist/report" },
-      ],
+[localhost](http://localhost/) | [HP Server](http://192.168.0.12/) | [DataExchange](http://192.168.0.110/dataexchange/) | [KanBoard](http://192.168.0.12:9001/)  
+[search/order](http://192.168.0.12/search/order) | [search/product](http://192.168.0.12/product/search) | [wishlist/report](http://192.168.0.12/wishlist/report)  
 
-      "=Seller Centers",
-      [
-          { url: "https://sellercentral.amazon.com", desc: "#Amazon.COM" },
-          { url: "https://sellercentral.amazon.ca", desc: "Amazon.CA" },
-          { url: "https://marketplace.bestbuy.ca", desc: "BestBuy" },
-          { url: "https://sellerportal.newegg.com/can/manage-items/itemmanagelist", desc: "Newegg.com" },
-          { url: "https://seller.walmart.com/", desc: "Walmart US" },
-          { url: "https://seller.walmart.ca/order-management/details", desc: "Walmart CA" },
-      ],
+### Seller Centers
 
-      "=Tools",
-      [
-          { url: "https://www.bqool.com/", desc: "#bqool" },
-          { url: "https://app.arbiship.com/login", desc: "Arbiship" },
-          { url: "https://yaballe.com/", desc: "Yaballe" },
-          { url: "http://ibiz10.com/", desc: "iBiz10" },
-          { url: "https://www.solidcommerce.com/", desc: "Solid Commerece" },
-          { url: "https://www.emarketplaceservices.com/", desc: "eMarketplaceServices" },
-          { url: "https://bte-computer.myshopify.com/admin", desc: "BTE Shopify" },
-      ],
-      [
-          { url: "https://manager.selleractive.com/", desc: "#Seller Active" },
-          { url: "https://www.listingmirror.com/", desc: "Listing Mirror" },
-          { url: "https://crazylister.com/", desc: "Crazy Lister" },
-          { url: "https://viral-launch.com/", desc: "Viral Launch" },
-          { url: "https://www.junglescout.com/", desc: "Jungle Scout" },
-      ],
+[Amazon.COM](https://sellercentral.amazon.com) | [Amazon.CA](https://sellercentral.amazon.ca) | [BestBuy](https://marketplace.bestbuy.ca) | [Newegg.com](https://sellerportal.newegg.com/can/manage-items/itemmanagelist) | [Walmart US](https://seller.walmart.com/) | [Walmart CA](https://seller.walmart.ca/order-management/details)  
 
-      "=Reference",
-      [
-          { url: "https://developer.walmart.com/#/apicenter/marketPlace/latest#introduction", desc: "#Walmart Api Docs" },
-          { url: "https://www.sellerlabs.com/", desc: "Seller Labs" },
-          { url: "https://docs.sellerlabs.com/", desc: "Seller Labs Docs" },
-          { url: "https://zinc.io/", desc: "Zinc.io" },
-          { url: "https://docs.zincapi.com/", desc: "Zinc API" },
-          { url: "https://www.amazon.ca/s?marketplaceID=A2EUQ1WTGCTBG2&me=A1U6PAVBPLQVBI&merchant=A1U6PAVBPLQVBI", desc: "Northern Shipments" },
-      ],
-      [
-          { url: "https://developer-docs.amazon.com/sp-api/docs", desc: "#<b>Amazon Selling Partner API</b>" },
-          { url: "https://help.shopify.com/en/api/reference", desc: "Shopify API" },
-      ],
-      '---',
-      [
-          { url: "https://developer.bestbuy.com/apis", desc: "#Bestbuy APIs" },
-          { url: "https://github.com/BestBuyAPIs", desc: "Bestbuy API SDKs" },
-          { url: "https://bestbuyapis.github.io/api-documentation/", desc: "Bestbuy API Docs" },
-          { url: "https://developer.newegg.com/newegg_marketplace_api/", desc: "#Newegg API" },
-      ],
-    ];
+### Tools
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[bqool](https://www.bqool.com/) | [Arbiship](https://app.arbiship.com/login) | [Yaballe](https://yaballe.com/) | [iBiz10](http://ibiz10.com/) | [Solid Commerece](https://www.solidcommerce.com/) | [eMarketplaceServices](https://www.emarketplaceservices.com/) | [BTE Shopify](https://bte-computer.myshopify.com/admin)  
+[Seller Active](https://manager.selleractive.com/) | [Listing Mirror](https://www.listingmirror.com/) | [Crazy Lister](https://crazylister.com/) | [Viral Launch](https://viral-launch.com/) | [Jungle Scout](https://www.junglescout.com/)  
+
+### Reference
+
+[Walmart Api Docs](https://developer.walmart.com/#/apicenter/marketPlace/latest#introduction) | [Seller Labs](https://www.sellerlabs.com/) | [Seller Labs Docs](https://docs.sellerlabs.com/) | [Zinc.io](https://zinc.io/) | [Zinc API](https://docs.zincapi.com/) | [Northern Shipments](https://www.amazon.ca/s?marketplaceID=A2EUQ1WTGCTBG2&me=A1U6PAVBPLQVBI&merchant=A1U6PAVBPLQVBI)  
+[**Amazon Selling Partner API**](https://developer-docs.amazon.com/sp-api/docs) | [Shopify API](https://help.shopify.com/en/api/reference)  
+  
+[Bestbuy APIs](https://developer.bestbuy.com/apis) | [Bestbuy API SDKs](https://github.com/BestBuyAPIs) | [Bestbuy API Docs](https://bestbuyapis.github.io/api-documentation/) | [#Newegg API](https://developer.newegg.com/newegg_marketplace_api/)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-          { url: "http://192.168.0.110/dataexchange/developnotes/master-login.php", desc: "MasterLogin" },
-          { url: "http://192.168.0.12/shipment/picking", desc: "picking/report" },
-          { url: "http://192.168.0.12/shipment/report", desc: "shipment/report" },
-          { url: "http://192.168.0.12/inventory/invoice", desc: "inventory/invoice" },
-          { url: "https://sellercentral.amazon.co.uk", desc: "Amazon.UK" },
-          { url: "https://sellercentral.amazon.com.mx", desc: "Amazon.MX" },
-          { url: "https://sellercentral.amazon.com.au", desc: "Amazon.AU" },
-          { url: "https://mai.amazon.cn", desc: "Amazon.CN" },
-          { url: "https://sellercentral.amazon.ae/gp/homepage.html/ref=xx_home_logo_xx", desc: "Amazon.AE" },
--->
+
 </body>
 </html>

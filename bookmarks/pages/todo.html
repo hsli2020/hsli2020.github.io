@@ -1,96 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Todo</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Todo
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://scrimba.com/", desc: "Scrimba" },
-        { url: "https://scrimba.com/g/glearnreact", desc: "Learn React" },
-        { url: "https://scrimba.com/g/glearnvue", desc: "Learn Vue" },
-        { url: "https://scrimba.com/g/gbulma", desc: "Learn Bulma" },
-        { url: "https://scrimba.com/g/gbootstrap4", desc: "Learn Bootstrap4" },
-      ],
-      [
-        { url: "https://coderstape.com/", desc: "CoderStape" },
-        { url: "https://coderstape.com/series/11-laravel-6-beginner", desc: "Laravel 6 Beginner" },
-        { url: "https://coderstape.com/series/8-vuejs-tutorial-from-the-ground-up", desc: "Vue Tutorial" },
-        { url: "https://coderstape.com/series/13-learn-tailwind-css-from-scratch", desc: "Tailwind CSS" },
-      ],
-      [
-        { url: "https://www.coursera.org/", desc: "Coursera" },
-        { url: "https://cn.udacity.com/", desc: "Udacity" },
-        { url: "https://www.udemy.com/", desc: "Udemy" },
-      ],
+[https://scrimba.com/](https://scrimba.com/)  Scrimba | [Learn React](https://scrimba.com/g/glearnreact) | [Learn Vue](https://scrimba.com/g/glearnvue) | [Learn Bulma](https://scrimba.com/g/gbulma) | [Learn Bootstrap4](https://scrimba.com/g/gbootstrap4)  
+[https://coderstape.com/](https://coderstape.com/)  CoderStape | [Laravel 6 Beginner](https://coderstape.com/series/11-laravel-6-beginner) | [Vue Tutorial](https://coderstape.com/series/8-vuejs-tutorial-from-the-ground-up) | [Tailwind CSS](https://coderstape.com/series/13-learn-tailwind-css-from-scratch)  
+[https://www.coursera.org/](https://www.coursera.org/)  Coursera | [Udacity](https://cn.udacity.com/) | [Udemy](https://www.udemy.com/)  
 
-      "=Microservices in Golang",
-      [
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-1/", desc: "#Part 1" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-2/", desc: "Part 2" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-3/", desc: "Part 3" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-4/", desc: "Part 4" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-5/", desc: "Part 5" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-6/", desc: "Part 6" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-7/", desc: "Part 7" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-8/", desc: "Part 8" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-9/", desc: "Part 9" },
-        { url: "https://ewanvalentine.io/microservices-in-golang-part-10/", desc: "Part 10" },
-      ],
+### Microservices in Golang
 
-      "-",
-      { url: "https://course.elementsofai.com/", desc: "Elements of AI (Sweden Gov)" },
-      { url: "https://geektutu.com/post/gee.html", desc: "7天用Go从零实现Web框架Gee教程" },
+[Part 1](https://ewanvalentine.io/microservices-in-golang-part-1/) | [Part 2](https://ewanvalentine.io/microservices-in-golang-part-2/) | [Part 3](https://ewanvalentine.io/microservices-in-golang-part-3/) | [Part 4](https://ewanvalentine.io/microservices-in-golang-part-4/) | [Part 5](https://ewanvalentine.io/microservices-in-golang-part-5/) | [Part 6](https://ewanvalentine.io/microservices-in-golang-part-6/) | [Part 7](https://ewanvalentine.io/microservices-in-golang-part-7/) | [Part 8](https://ewanvalentine.io/microservices-in-golang-part-8/) | [Part 9](https://ewanvalentine.io/microservices-in-golang-part-9/) | [Part 10](https://ewanvalentine.io/microservices-in-golang-part-10/)  
+  
+[https://course.elementsofai.com/](https://course.elementsofai.com/)  Elements of AI (Sweden Gov)  
+[https://geektutu.com/post/gee.html](https://geektutu.com/post/gee.html)  7天用Go从零实现Web框架Gee教程  
 
-      "=Firefox WebExt",
-      [
-        { url: "https://dev.to/nabendu82/creating-firefox-browser-extensions-1-1e37", desc: "# Firefox Ext 1" },
-        { url: "https://dev.to/nabendu82/creating-firefox-browser-extensions-2-3gpn", desc: "Firefox Ext 2" },
-        { url: "https://github.com/nabendu82/Addons", desc: "Source on Github" },
-      ],
-    ];
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Firefox WebExt
+
+[Firefox Ext 1](https://dev.to/nabendu82/creating-firefox-browser-extensions-1-1e37) | [Firefox Ext 2](https://dev.to/nabendu82/creating-firefox-browser-extensions-2-3gpn) | [Source on Github](https://github.com/nabendu82/Addons)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>
-<!--
-      "=跟我学 gRPC",
-      [
-        { url: "https://www.toutiao.com/i6710954159140504077/", desc: "#跟我学 gRPC 一" },
-        { url: "https://www.toutiao.com/i6712020783104786956/", desc: "跟我学 gRPC 二" },
-        { url: "https://www.toutiao.com/i6712586955932041742/", desc: "跟我学 gRPC 三" },
-        { url: "https://www.toutiao.com/i6712970909877010952/", desc: "跟我学 gRPC 四" },
-        { url: "https://www.toutiao.com/i6713539563853185544/", desc: "跟我学 gRPC 五" },
-      ],
-      [
-        { url: "https://www.toutiao.com/i6714933973849473543/", desc: "#跟我学 gRPC 六" },
-        { url: "https://www.toutiao.com/i6714940420238868999/", desc: "跟我学 gRPC 七" },
-        { url: "https://www.toutiao.com/i6715406624598524430/", desc: "跟我学 gRPC 八" },
-        { url: "https://www.toutiao.com/i6715283751946945037/", desc: "跟我学 gRPC 九" },
-        { url: "https://www.toutiao.com/i6716411008367198727/", desc: "跟我学 gRPC 十" },
-      ],
-
-      "=[译] 使用 Go 和 ReactJS 构建聊天系统",
-      [
-        { url: "https://juejin.im/post/5d43d371e51d45620e0b99c8", desc: "#(前言)" },
-        { url: "https://juejin.im/post/5d43d469f265da03e168588e", desc: "(一)" },
-        { url: "https://juejin.im/post/5d43d4856fb9a06ac93cb132", desc: "(二)" },
-        { url: "https://juejin.im/post/5d43d4a3518825640516c6de", desc: "(三)" },
-        { url: "https://juejin.im/post/5d43d4c0f265da03cd0a6060", desc: "(四)" },
-        { url: "https://juejin.im/post/5d43d4df51882567b434de30", desc: "(五)" },
-        { url: "https://juejin.im/post/5d43d4f7e51d4561ff6667b9", desc: "(六)" },
-      ],
--->
 </html>

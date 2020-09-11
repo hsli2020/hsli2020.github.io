@@ -1,116 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Resources</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Resources
 
-  <script type="text/javascript">
-    var bookmarks = [
-      { url: "http://www.manythings.org/voa/scripts/", desc: "VOA" },
-      { url: "https://www.artic.edu/", desc: "Art Institute of Chicago" },
-      { url: "https://search.creativecommons.org/", desc: "CC Search" },
-      { url: "https://free-for.dev/", desc: "Free for Developers" },
-      { url: "https://alternativeto.net/", desc: "Alternative To" },
-      { url: "https://pity.eu.org/", desc: "悦享云盘" },
-      "-",
-      [
-        { url: "https://unsplash.com/", desc: "#Unsplash" },
-        { url: "https://pixabay.com", desc: "Pixabay" },
-        { url: "https://www.pexels.com", desc: "Pexels" },
-        { url: "https://visualhunt.com", desc: "Visual Hunt" },
-        { url: "http://streetwill.co", desc: "Street Will" },
-        { url: "https://www.photock.jp", desc: "Photock" },
-        { url: "http://superfamous.com", desc: "SuperFamous" },
-        { url: "http://pngimg.com", desc: "PngImg" },
-        { url: "http://moveast.me", desc: "Moveast" },
-      ],
-      [
-        { url: "https://everypixel.com", desc: "#EveryPixel" },
-        { url: "https://magdeleine.co/browse", desc: "Magdeleine" },
-        { url: "https://www.lifeofpix.com", desc: "Life Of Pix" },
-        { url: "http://www.freemagebank.com", desc: "Free Mage Bank" },
-        { url: "http://cupcake.nilssonlee.se", desc: "CupCake" },
-        { url: "http://trunklog.com", desc: "Trunklog" },
-        { url: "http://kaboompics.com", desc: "KaboomPics" },
-        { url: "http://www.designerspics.com", desc: "DesignersPics" },
-      ],
-      [
-        { url: "http://freelyphotos.com", desc: "#FreelyPhotos" },
-        { url: "http://www.polayoutu.com/collections", desc: "Palyoutu" },
-        { url: "http://fancycrave.com", desc: "FancyCrave" },
-        { url: "http://www.gratisography.com", desc: "GratisoGraphy" },
-        { url: "http://travelcoffeebook.com", desc: "TravelCoffeeBook" },
-        { url: "https://foodiesfeed.com", desc: "FoodiesFeed" },
-        { url: "https://realisticshots.com", desc: "RealisticShots" },
-      ],
-      [
-        { url: "http://stokpic.com", desc: "#StokPic" },
-        { url: "http://jeshoots.com", desc: "JeShoots" },
-        { url: "http://zerospace.asika.tw", desc: "ZeroSpace" },
-        { url: "https://stocksnap.io", desc: "StockSnap" },
-        { url: "http://skuawk.com", desc: "Skuawk" },
-        { url: "https://barnimages.com", desc: "BarnImages" },
-        { url: "http://en.freejpg.com.ar", desc: "FreeJpg" },
-        { url: "http://www.stockvault.net", desc: "StockVault" },
-        { url: "https://taken.photos/", desc: "Free Stock Photos" },
-      ],
-      "=Books",
-      [
-        { url: "https://goalkicker.com/", desc: "#Programming Notes for Professionals books" },
-        { url: "https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md", desc: "free-programming-books" },
-        { url: "https://love2.io/", desc: "love2.io(ebook)" },
-        { url: "https://libgen.is/", desc: "Library Genesis" },
-      ],
-      [
-        { url: "https://www.programming-books.io/", desc: "Essential Programming Books" },
-      ],
-      "=Miscs",
-      [
-        { url: "https://senseis.xmp.net/", desc: "#围棋英文资料" },
-        { url: "https://www.dpm.org.cn/lights/royal.html", desc: "故宫壁纸" },
-        { url: "https://www.ttkmj.net/", desc: "天天看美剧" },
-        { url: "http://bbcsfx.acropolis.org.uk/", desc: "BBC Sound Effects" },
-        { url: "https://redditix.com/", desc: "Redditix" },
-        { url: "https://colors.ichuantong.cn/", desc: "中国传统颜色手册" },
-        { url: "https://undraw.co/", desc: "unDraw插图" },
-      ],
-      "=Podcast",
-      [
-        { url: "https://www.cbc.ca/radio/podcasts", desc: "#CBC Podcast" },
-        { url: "https://softwareengineeringdaily.com/", desc: "Software Engineering Daily" },
-        { url: "https://www.infoq.com/microservices/podcasts/", desc: "InfoQ Podcast" },
-        { url: "https://99percentinvisible.org/", desc: "99pi" },
-        { url: "https://www.stuffyoushouldknow.com/podcasts", desc: "SYSK" },
-        { url: "https://www.cbsnews.com/podcasts/", desc: "#CBS News" },
-        { url: "https://www.wnycstudios.org/podcasts/radiolab", desc: "RadioLab" },
-        { url: "https://www.npr.org/sections/money/127413729/planet-money/", desc: "N.P.R" },
-        { url: "https://tunein.com/embed/player/p112538/", desc: "CBS This Morning" },
-      ],
-      [
-        { url: "https://changelog.com/gotime", desc: "#GoTime Podcast" },
-        { url: "/podcasts.html", desc: "Favorite Podcasts" },
-        { url: "https://feeds.transistor.fm/laravel-snippet", desc: "The Laravel Snippet" },
-        { url: "https://www.heavybit.com/library/podcasts/jamstack-radio/", desc: "JAMstack Radio" },
-        { url: "https://www.serverlesschats.com/episodes", desc: "Serverless Chats" },
-      ],
-      [
-        { url: "https://online-learning.harvard.edu/catalog", desc: "#Harvard Online Learning" },
-        { url: "https://www.swyx.io/fave-podcasts", desc: "My Favorite Podcasts" },
-      ],
-    ];
+[http://www.manythings.org/voa/scripts/](http://www.manythings.org/voa/scripts/)  VOA  
+[https://www.artic.edu/](https://www.artic.edu/)  Art Institute of Chicago  
+[https://search.creativecommons.org/](https://search.creativecommons.org/)  CC Search  
+[https://free-for.dev/](https://free-for.dev/)  Free for Developers  
+[https://alternativeto.net/](https://alternativeto.net/)  Alternative To  
+[https://pity.eu.org/](https://pity.eu.org/)  悦享云盘  
+  
+[Unsplash](https://unsplash.com/) | [Pixabay](https://pixabay.com) | [Pexels](https://www.pexels.com) | [Visual Hunt](https://visualhunt.com) | [Street Will](http://streetwill.co) | [Photock](https://www.photock.jp) | [SuperFamous](http://superfamous.com) | [PngImg](http://pngimg.com) | [Moveast](http://moveast.me)  
+[EveryPixel](https://everypixel.com) | [Magdeleine](https://magdeleine.co/browse) | [Life Of Pix](https://www.lifeofpix.com) | [Free Mage Bank](http://www.freemagebank.com) | [CupCake](http://cupcake.nilssonlee.se) | [Trunklog](http://trunklog.com) | [KaboomPics](http://kaboompics.com) | [DesignersPics](http://www.designerspics.com)  
+[FreelyPhotos](http://freelyphotos.com) | [Palyoutu](http://www.polayoutu.com/collections) | [FancyCrave](http://fancycrave.com) | [GratisoGraphy](http://www.gratisography.com) | [TravelCoffeeBook](http://travelcoffeebook.com) | [FoodiesFeed](https://foodiesfeed.com) | [RealisticShots](https://realisticshots.com)  
+[StokPic](http://stokpic.com) | [JeShoots](http://jeshoots.com) | [ZeroSpace](http://zerospace.asika.tw) | [StockSnap](https://stocksnap.io) | [Skuawk](http://skuawk.com) | [BarnImages](https://barnimages.com) | [FreeJpg](http://en.freejpg.com.ar) | [StockVault](http://www.stockvault.net) | [Free Stock Photos](https://taken.photos/)  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Books
+
+[Programming Notes for Professionals books](https://goalkicker.com/) | [free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md) | [love2.io(ebook)](https://love2.io/) | [Library Genesis](https://libgen.is/)  
+[https://www.programming-books.io/](https://www.programming-books.io/)  Essential Programming Books  
+
+### Miscs
+
+[围棋英文资料](https://senseis.xmp.net/) | [故宫壁纸](https://www.dpm.org.cn/lights/royal.html) | [天天看美剧](https://www.ttkmj.net/) | [BBC Sound Effects](http://bbcsfx.acropolis.org.uk/) | [Redditix](https://redditix.com/) | [中国传统颜色手册](https://colors.ichuantong.cn/) | [unDraw插图](https://undraw.co/)  
+
+### Podcast
+
+[CBC Podcast](https://www.cbc.ca/radio/podcasts) | [Software Engineering Daily](https://softwareengineeringdaily.com/) | [InfoQ Podcast](https://www.infoq.com/microservices/podcasts/) | [99pi](https://99percentinvisible.org/) | [SYSK](https://www.stuffyoushouldknow.com/podcasts) | [#CBS News](https://www.cbsnews.com/podcasts/) | [RadioLab](https://www.wnycstudios.org/podcasts/radiolab) | [N.P.R](https://www.npr.org/sections/money/127413729/planet-money/) | [CBS This Morning](https://tunein.com/embed/player/p112538/)  
+[GoTime Podcast](https://changelog.com/gotime) | [Favorite Podcasts](/podcasts.html) | [The Laravel Snippet](https://feeds.transistor.fm/laravel-snippet) | [JAMstack Radio](https://www.heavybit.com/library/podcasts/jamstack-radio/) | [Serverless Chats](https://www.serverlesschats.com/episodes)  
+[Harvard Online Learning](https://online-learning.harvard.edu/catalog) | [My Favorite Podcasts](https://www.swyx.io/fave-podcasts)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

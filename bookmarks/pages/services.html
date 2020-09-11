@@ -1,34 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>常用链接</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### 常用链接
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [ 
-        { url: "http://ejohn.org/profile-2013.40.jpg", desc: "jQuery作者的主页" },
-        { url: "http://softaa.com/", desc: "优秀股票信息网站" },
-        { url: "http://www.taoguba.com.cn/", desc: "淘股论坛" },
-      ],
-      { url: "http://www.taoguba.com.cn/guba_sh601998", desc: "互联银行革命" },
-      { url: "----", desc: "" },
-      { url: "http://ejohn.org/full-profile-2013.43.jpg", desc: "jQuery作者的简介" },
-      { url: "http://www.taoguba.com.cn/Article/1361250/1", desc: "海绵城市龙头" },
-    ];
+[http://ejohn.org/profile-2013.40.jpg](http://ejohn.org/profile-2013.40.jpg)  jQuery作者的主页 | [优秀股票信息网站](http://softaa.com/) | [淘股论坛](http://www.taoguba.com.cn/)  
+[http://www.taoguba.com.cn/guba\_sh601998](http://www.taoguba.com.cn/guba_sh601998)  互联银行革命  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[http://ejohn.org/full-profile-2013.43.jpg](http://ejohn.org/full-profile-2013.43.jpg)  jQuery作者的简介  
+[http://www.taoguba.com.cn/Article/1361250/1](http://www.taoguba.com.cn/Article/1361250/1)  海绵城市龙头
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

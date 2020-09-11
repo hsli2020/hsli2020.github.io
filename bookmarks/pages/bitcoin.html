@@ -1,71 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Bitcoin</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Bitcoin
 
-  <script type="text/javascript">
-    var bookmarks = [
-        { url: "https://www.tradingview.com/", desc: "TradingView" },
-        { url: "https://www.coingecko.com/", desc: "CoinGecko.com" },
-        { url: "https://www.myetherwallet.com/", desc: "MyEtherWallet" },
-        { url: "https://coinmarketcap.com/", desc: "CoinMarketCAP" },
-        { url: "https://blockchain.info/", desc: "BlockChain.info" },
-        { url: "http://remix.ethereum.org", desc: "Remix-Solidity IDE" },
-        { url: "https://solidity-by-example.org/", desc: "Solidity by Example" },
+[https://www.tradingview.com/](https://www.tradingview.com/)  TradingView  
+[https://www.coingecko.com/](https://www.coingecko.com/)  CoinGecko.com  
+[https://www.myetherwallet.com/](https://www.myetherwallet.com/)  MyEtherWallet  
+[https://coinmarketcap.com/](https://coinmarketcap.com/)  CoinMarketCAP  
+[https://blockchain.info/](https://blockchain.info/)  BlockChain.info  
+[http://remix.ethereum.org](http://remix.ethereum.org)  Remix-Solidity IDE  
+[https://solidity-by-example.org/](https://solidity-by-example.org/)  Solidity by Example  
 
-        "=Trade",
-        { url: "https://www.binance.com/", desc: "Binance" },
-        { url: "https://www.coinbase.com/", desc: "Coinbase" },
-        { url: "http://bittrex.com/", desc: "BitTrex" },
-        { url: "https://localbitcoins.com/", desc: "LocalBitcoins" },
-        { url: "https://gate.io/", desc: "Gate.io" },
+### Trade
 
-        "=中文站点",
-        { url: "https://www.8btc.com/", desc: "巴比特" },
-        { url: "https://www.feixiaohao.com/", desc: "非小号" },
+[https://www.binance.com/](https://www.binance.com/)  Binance  
+[https://www.coinbase.com/](https://www.coinbase.com/)  Coinbase  
+[http://bittrex.com/](http://bittrex.com/)  BitTrex  
+[https://localbitcoins.com/](https://localbitcoins.com/)  LocalBitcoins  
+[https://gate.io/](https://gate.io/)  Gate.io  
 
-        "=Articles & Books",
-        { url: "https://github.com/inoutcode/ethereum_book", desc: "《精通以太坊 （中文版）》" },
-        { url: "https://cypherpunks-core.github.io/ethereumbook/", desc: "Mastering Ethereum" },
-        { url: "http://www.tryblockchain.org/index.html", desc: "Solidity Tutorial" },
-        { url: "https://www.8btc.com/books/834/masterbitcoin2cn/_book/", desc: "《精通比特币第二版》" },
-        { url: "https://ethbook.abyteahead.com/howto.html", desc: "《以太坊的指南针》" },
-        { url: "https://solanacookbook.com/", desc: "Cooking with Solana" },
-        { url: "https://learnblockchain.cn/article/2006", desc: "以太坊开发工具及资源大全" },
-        { url: "https://learnblockchain.cn/manuals", desc: "区块链文档" },
-        { url: "https://tutorials.cosmos.network/", desc: "Cosmos SDK Tutorials" },
-    ];
+### 中文站点
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[https://www.8btc.com/](https://www.8btc.com/)  巴比特  
+[https://www.feixiaohao.com/](https://www.feixiaohao.com/)  非小号  
+
+### Articles & Books
+
+[https://github.com/inoutcode/ethereum\_book](https://github.com/inoutcode/ethereum_book)  《精通以太坊 （中文版）》  
+[https://cypherpunks-core.github.io/ethereumbook/](https://cypherpunks-core.github.io/ethereumbook/)  Mastering Ethereum  
+[http://www.tryblockchain.org/index.html](http://www.tryblockchain.org/index.html)  Solidity Tutorial  
+[https://www.8btc.com/books/834/masterbitcoin2cn/\_book/](https://www.8btc.com/books/834/masterbitcoin2cn/_book/)  《精通比特币第二版》  
+[https://ethbook.abyteahead.com/howto.html](https://ethbook.abyteahead.com/howto.html)  《以太坊的指南针》  
+[https://solanacookbook.com/](https://solanacookbook.com/)  Cooking with Solana  
+[https://learnblockchain.cn/article/2006](https://learnblockchain.cn/article/2006)  以太坊开发工具及资源大全  
+[https://learnblockchain.cn/manuals](https://learnblockchain.cn/manuals)  区块链文档  
+[https://tutorials.cosmos.network/](https://tutorials.cosmos.network/)  Cosmos SDK Tutorials
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>
-<!--
-        { url: "https://www.bitaddress.org", desc: "BitAddress.org" },
-        { url: "https://walletgenerator.net/", desc: "WalletGenerateor" },
-        { url: "https://blockexplorer.com/", desc: "BlockExplorer" },
-        { url: "https://bitcointalk.org/", desc: "BitcoinTalk Forum" },
-        { url: "https://www.coindesk.com/", desc: "CoinDesk" },
-        { url: "https://big.one/", desc: "Big.One" },
-        { url: "https://bitejie.net/navigation", desc: "比特街" },
-        { url: "https://btc123.com/list", desc: "BTC123" },
-        { url: "https://ethfans.org/", desc: "以太坊爱好者" },
-        { url: "https://blog.chainone.xyz/archives/", desc: "ChainOne(blog)" },
-        { url: "http://bytemaster.github.io/", desc: "Founder of BitShares" },
-        { url: "https://bitcoin.org/zh_CN/", desc: "BitCoin.org" },
-        { url: "http://zhibimo.com/read/wang-miao/mastering-bitcoin/index.html", desc: "精通比特币" },
-
--->
 </html>

@@ -1,71 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Architectures</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Architectures
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html", desc: "#Clean Architecture" },
-        { url: "https://stackshare.io/categories", desc: "Open Source & SaaS Tools" },
-        { url: "https://docs.microsoft.com/en-us/azure/architecture/", desc: "Azure Architecture Center" },
-      ],
+[Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) | [Open Source & SaaS Tools](https://stackshare.io/categories) | [Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/)  
 
-      "=Clean Architecture",
-      [
-        { url: "https://hackernoon.com/golang-clean-archithecture-efd6d7c43047", desc: "#Trying Clean Architecture on Golang" },
-        { url: "https://hackernoon.com/trying-clean-architecture-on-golang-2-44d615bf8fdf", desc: "Part 2" },
-        { url: "https://github.com/bxcodec/go-clean-arch", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://toolbox.kurio.co.id/implementing-grpc-service-in-golang-afb9e05c0064", desc: "#Implementing gRPC service in Golang" },
-        { url: "https://github.com/bxcodec/go-clean-arch-grpc", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://medium.com/@eminetto/clean-architecture-using-golang-b63587aa5e3f", desc: "#Clean Architecture using Golang" },
-        { url: "https://github.com/eminetto/clean-architecture-go", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://www.reddit.com/r/golang/comments/814x7j/go_and_clean_architecture/", desc: "#Go and clean architecture/Reddit" },
-        { url: "https://github.com/lunemec/go-clean-architecture", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://manuel.kiessling.net/2012/09/28/applying-the-clean-architecture-to-go-applications/", desc: "#Applying The Clean Architecture to Go applications" },
-        { url: "https://github.com/ManuelKiessling/go-cleanarchitecture", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://geeks.uniplaces.com/putting-clean-architecture-into-practice-20c47d8c76de", desc: "#Putting the Clean Architecture into practice" },
-        { url: "", desc: "" },
-      ],
-      [
-        { url: "https://medium.com/@matthieujacquot/clean-architecture-in-golang-7ebafe4c70db", desc: "#Hands-On Clean Architecture(NotGood)" },
-        { url: "https://github.com/Err0r500/Clean-Architecture-in-Golang", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://medium.com/@hatajoe/clean-architecture-in-go-4030f11ec1b1", desc: "#Clean Architecture in Go" },
-        { url: "https://github.com/hatajoe/8am", desc: "Github Repo" },
-      ],
-      [
-        { url: "https://github.com/hirotakan/go-cleanarchitecture-sample", desc: "#Github Repo 1" },
-        { url: "https://github.com/ktr0731/cris/tree/master/server", desc: "Github Repo 2" },
-        { url: "https://github.com/nakabonne/cleanarchitecture-sample", desc: "Github Repo 3" },
-        { url: "https://github.com/yoshinorihisakawa/sample-api-hoop/tree/develop", desc: "Github Repo 4" },
-      ],
-    ];
+### Clean Architecture
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[Trying Clean Architecture on Golang](https://hackernoon.com/golang-clean-archithecture-efd6d7c43047) | [Part 2](https://hackernoon.com/trying-clean-architecture-on-golang-2-44d615bf8fdf) | [Github Repo](https://github.com/bxcodec/go-clean-arch)  
+[Implementing gRPC service in Golang](https://toolbox.kurio.co.id/implementing-grpc-service-in-golang-afb9e05c0064) | [Github Repo](https://github.com/bxcodec/go-clean-arch-grpc)  
+[Clean Architecture using Golang](https://medium.com/@eminetto/clean-architecture-using-golang-b63587aa5e3f) | [Github Repo](https://github.com/eminetto/clean-architecture-go)  
+[Go and clean architecture/Reddit](https://www.reddit.com/r/golang/comments/814x7j/go_and_clean_architecture/) | [Github Repo](https://github.com/lunemec/go-clean-architecture)  
+[Applying The Clean Architecture to Go applications](https://manuel.kiessling.net/2012/09/28/applying-the-clean-architecture-to-go-applications/) | [Github Repo](https://github.com/ManuelKiessling/go-cleanarchitecture)  
+[Putting the Clean Architecture into practice](https://geeks.uniplaces.com/putting-clean-architecture-into-practice-20c47d8c76de) |   
+[Hands-On Clean Architecture(NotGood)](https://medium.com/@matthieujacquot/clean-architecture-in-golang-7ebafe4c70db) | [Github Repo](https://github.com/Err0r500/Clean-Architecture-in-Golang)  
+[Clean Architecture in Go](https://medium.com/@hatajoe/clean-architecture-in-go-4030f11ec1b1) | [Github Repo](https://github.com/hatajoe/8am)  
+[Github Repo 1](https://github.com/hirotakan/go-cleanarchitecture-sample) | [Github Repo 2](https://github.com/ktr0731/cris/tree/master/server) | [Github Repo 3](https://github.com/nakabonne/cleanarchitecture-sample) | [Github Repo 4](https://github.com/yoshinorihisakawa/sample-api-hoop/tree/develop)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

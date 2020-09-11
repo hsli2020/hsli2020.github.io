@@ -1,59 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Google</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Google
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "http://www.google.com", desc: "Google Search" },
-        { url: "http://mail.google.com", desc: "Gmail" },
-        { url: "http://map.google.com", desc: "Google Map" },
-        { url: "http://translate.google.com/", desc: "Translation" },
-        { url: "http://translate.google.com/#zh-CN/en/", desc: "汉译英" },
-        { url: "http://translate.google.com/#en/zh-CN/", desc: "英译汉" },
-      ],
-      [
-        { url: "http://drive.google.com/keep/", desc: "#Keep" },
-        { url: "https://drive.google.com/drive/my-drive", desc: "Drive" },
-        { url: "http://www.google.ca/bookmarks", desc: "Bookmarks" },
-        { url: "https://developers.google.com/", desc: "Developers" },
-        { url: "https://console.developers.google.com/", desc: "Console" },
-        { url: "https://hangouts.google.com/", desc: "Hangouts" },
-        { url: "https://developers.google.com/chart/", desc: "Charts" },
-        { url: "https://firebase.google.com/", desc: "Firebase" },
-        { url: "https://www.google.ca/intl/en/about/products/", desc: "Products" },
-        { url: "https://takeout.google.com/settings/takeout", desc: "Takeout" },
-      ],
-      "----",
-      [
-        { url: "https://dart.dev/", desc: "#Dart.dev" },
-        { url: "https://pub.dev/", desc: "Pub.dev" },
-        { url: "https://flutter.io/", desc: "Flutter.io" },
-        { url: "https://flutter.github.io/samples/", desc: "Flutter Samples" },
-        { url: "https://book.flutterchina.club/", desc: "Flutter实战" },
-        { url: "https://grpc.io/", desc: "gRPC" },
-      ],
-      "----",
-      [
-        { url: "https://search.google.com/test/mobile-friendly", desc: "#Mobile-Friendly Test" },
-        { url: "https://developers.google.com/machine-learning/crash-course/?hl=zh-cn", desc: "机器学习速成课程" },
-      ],
-    ];
+[http://www.google.com](http://www.google.com)  Google Search | [Gmail](http://mail.google.com) | [Google Map](http://map.google.com) | [Translation](http://translate.google.com/) | [汉译英](http://translate.google.com/#zh-CN/en/) | [英译汉](http://translate.google.com/#en/zh-CN/)  
+[Keep](http://drive.google.com/keep/) | [Drive](https://drive.google.com/drive/my-drive) | [Bookmarks](http://www.google.ca/bookmarks) | [Developers](https://developers.google.com/) | [Console](https://console.developers.google.com/) | [Hangouts](https://hangouts.google.com/) | [Charts](https://developers.google.com/chart/) | [Firebase](https://firebase.google.com/) | [Products](https://www.google.ca/intl/en/about/products/) | [Takeout](https://takeout.google.com/settings/takeout)  
+  
+[Dart.dev](https://dart.dev/) | [Pub.dev](https://pub.dev/) | [Flutter.io](https://flutter.io/) | [Flutter Samples](https://flutter.github.io/samples/) | [Flutter实战](https://book.flutterchina.club/) | [gRPC](https://grpc.io/)  
+  
+[Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) | [机器学习速成课程](https://developers.google.com/machine-learning/crash-course/?hl=zh-cn)
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

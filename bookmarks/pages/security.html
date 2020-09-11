@@ -1,31 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Security</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Security
 
-  <script type="text/javascript">
-    var bookmarks = [
-      { url: "https://paragonie.com/blog", desc: "PARAGON INITIATIVE(Security)" },
-      { url: "http://blogs.360.cn/", desc: "360 核心安全技术博客" },
+[https://paragonie.com/blog](https://paragonie.com/blog)  PARAGON INITIATIVE(Security)  
+[http://blogs.360.cn/](http://blogs.360.cn/)  360 核心安全技术博客  
+  
+[2018 Guide Building Secure PHP Software](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software)  
+[On the (in)security of popular open source Content Management Systems written in PHP](https://paragonie.com/blog/2016/08/on-insecurity-popular-open-source-php-cms-platforms)
 
-      "-",
-      { url: "https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software", desc: "#2018 Guide Building Secure PHP Software" },
-      { url: "https://paragonie.com/blog/2016/08/on-insecurity-popular-open-source-php-cms-platforms", desc: "#On the (in)security of popular open source Content Management Systems written in PHP" },
-    ];
+</template>
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

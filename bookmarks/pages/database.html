@@ -1,45 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Database</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Database
 
-  <script type="text/javascript">
-    var bookmarks = [
-      { url: "http://dev.mysql.com/doc/", desc: "MySQL Doc" },
-      [
-        { url: "http://www.postgresql.org/", desc: "PostgreSQL" },
-        { url: "http://www.postgres.cn/docs/12/index.html", desc: "Manual" },
-      ],
-      { url: "https://www.sqlite.org/", desc: "SQLite" },
-      [
-        { url: "https://www.mongodb.org/", desc: "MongoDB" },
-        { url: "https://docs.mongodb.com/", desc: "Docs" },
-        { url: "https://www.tutorialspoint.com/mongodb/", desc: "Tutorial" },
-      ],
-      { url: "http://redis.io/", desc: "Redis" },
+[http://dev.mysql.com/doc/](http://dev.mysql.com/doc/)  MySQL Doc  
+[http://www.postgresql.org/](http://www.postgresql.org/)  PostgreSQL | [Manual](http://www.postgres.cn/docs/12/index.html)  
+[https://www.sqlite.org/](https://www.sqlite.org/)  SQLite  
+[https://www.mongodb.org/](https://www.mongodb.org/)  MongoDB | [Docs](https://docs.mongodb.com/) | [Tutorial](https://www.tutorialspoint.com/mongodb/)  
+[http://redis.io/](http://redis.io/)  Redis  
+  
+[https://www.elastic.co/products/elasticsearch](https://www.elastic.co/products/elasticsearch)  ElasticSearch  
+[http://sphinxsearch.com/](http://sphinxsearch.com/)  SphinxSearch  
+  
+[https://www.vertabelo.com/blog](https://www.vertabelo.com/blog)  Database Models  
+[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/)  Postgres Tutorial
+</template>
 
-      "-",
-      { url: "https://www.elastic.co/products/elasticsearch", desc: "ElasticSearch" },
-      { url: "http://sphinxsearch.com/", desc: "SphinxSearch" },
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
 
-      "-",
-      { url: "https://www.vertabelo.com/blog", desc: "Database Models" },
-      { url: "http://www.postgresqltutorial.com/", desc: "Postgres Tutorial" },
-    ];
-
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

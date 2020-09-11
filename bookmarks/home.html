@@ -1,188 +1,54 @@
+<!doctype html>
 <html>
-
 <head>
-<meta charset="utf-8">
-<title>My Bookmarks</title>
-<base target="_blank">
-<link rel="stylesheet" type="text/css" href="./pages/bookmarks.css" />
-<script src="./pages/bookmarks.js" type="text/javascript"></script>
+  <meta charset="utf-8"/>
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="pages/github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>常用链接</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### 常用链接
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "http://toutiao.io/", desc: "#开发者头条" },
-        { url: "http://www.oschina.net", desc: "开源中国" },
-        { url: "http://www.sitepoint.com/", desc: "SitePoint" },
-        { url: "https://dev.to", desc: "Dev.to" },
-        { url: "https://segmentfault.com/", desc: "SegmentFault" },
-      ],
-      [
-        { url: "https://chat.openai.com/chat", desc: "#ChatGPT" },
-        { url: "https://devv.ai/", desc: "Devv.AI" },
-        { url: "https://grep.app/", desc: "grep.app" },
-        { url: "https://transform.tools/", desc: "超级转换工具" },
-        { url: "https://www.cloudflare.com/", desc: "Cloudflare" },
-        { url: "https://vercel.com/", desc: "Vercel w/ Github" },
-        { url: "https://replit.com/", desc: "Replit" },
-      ],
-      "-",
-      [
-        { url: "https://news.ycombinator.com/", desc: "#Hacker News" },
-        { url: "http://www.infoq.com/cn/", desc: "InfoQ" },
-        { url: "http://solidot.org/", desc: "Solidot" },
-        { url: "http://www.smashingmagazine.com/", desc: "Smashing Magazine" },
-        { url: "https://readthedocs.org/", desc: "Read The Docs" },
-        { url: "https://duckduckgo.com/", desc: "DuckDuckGo" },
-        { url: "https://searx.xyz/", desc: "SearX" },
-      ],
-      [
-        { url: "https://www.digitalocean.com/community/tutorials", desc: "#DigitalOcean Community Tutorials" },
-        { url: "http://www.infoq.com/cn/", desc: "InfoQ" },
-        { url: "https://zh.wikihow.com/", desc: "wikiHow" },
-        { url: "https://www.wanqu.co/", desc: "湾区日报" },
-        { url: "http://radio.garden/listen/680news/B3DfRJRH", desc: "Radio Garden" },
-      ],
-      "-",
-      [
-        { url: "http://www.juejin.cn", desc: "#掘金" },
-        { url: "http://www.cnblogs.com/", desc: "博客园" },
-        { url: "https://git.news/", desc: "Git News" },
-        { url: "https://github.com/timqian/chinese-independent-blogs", desc: "中文独立博客汇总" },
-        { url: "http://www.ruanyifeng.com/blog/", desc: "阮一峰" },
-        { url: "http://es6.ruanyifeng.com/", desc: "ECMAScript 6入门" },
-        { url: "https://weekly.tw93.fun/", desc: "潮流周刊" },
-      ],
-      [
-        { url: "https://itnext.io/", desc: "#ITNEXT" },
-        { url: "http://www.w3school.com.cn", desc: "w3school" },
-        { url: "http://www.chinaunix.net/", desc: "ChinaUnix" },
-        { url: "http://www.iteye.com/", desc: "ITeye" },
-        { url: "http://www.gitbook.cn/", desc: "GitBook.cn" },
-        { url: "https://www.javatpoint.com/", desc: "JavaTpoint" },
-      ],
-      "---",
-      [
-        { url: "http://www.google.com", desc: "#Google" },
-        { url: "http://mail.google.com", desc: "邮箱" },
-        { url: "http://map.google.com", desc: "地图" },
-        { url: "http://translate.google.com/#zh-CN/en/", desc: "汉译英" },
-        { url: "http://translate.google.com/#en/zh-CN/", desc: "英译汉" },
-        { url: "http://drive.google.com/keep/", desc: "Keep" },
-        { url: "https://drive.google.com/drive/my-drive", desc: "Drive" },
-        { url: "http://www.google.ca/bookmarks", desc: "Bookmarks" },
-      ],
-      "---",
-      [
-        { url: "http://sourcemaking.com/design_patterns", desc: "#Design Patterns" },
-        { url: "http://naotu.baidu.com/", desc: "KityMinder" },
-        { url: "https://www.vettery.com/tech", desc: "Vettery Jobs" },
-        { url: "https://golang.cafe/", desc: "Golang Cafe" },
-      ],
+[开发者头条](http://toutiao.io/) | [开源中国](http://www.oschina.net) | [SitePoint](http://www.sitepoint.com/) | [Dev.to](https://dev.to) | [SegmentFault](https://segmentfault.com/)  
+[ChatGPT](https://chat.openai.com/chat) | [Devv.AI](https://devv.ai/) | [grep.app](https://grep.app/) | [超级转换工具](https://transform.tools/) | [Cloudflare](https://www.cloudflare.com/) | [Vercel w/ Github](https://vercel.com/) | [Replit](https://replit.com/)  
+  
+[Hacker News](https://news.ycombinator.com/) | [InfoQ](http://www.infoq.com/cn/) | [Solidot](http://solidot.org/) | [Smashing Magazine](http://www.smashingmagazine.com/) | [Read The Docs](https://readthedocs.org/) | [DuckDuckGo](https://duckduckgo.com/) | [SearX](https://searx.xyz/)  
+[DigitalOcean Community Tutorials](https://www.digitalocean.com/community/tutorials) | [InfoQ](http://www.infoq.com/cn/) | [wikiHow](https://zh.wikihow.com/) | [湾区日报](https://www.wanqu.co/) | [Radio Garden](http://radio.garden/listen/680news/B3DfRJRH)  
+  
+[掘金](http://www.juejin.cn) | [博客园](http://www.cnblogs.com/) | [Git News](https://git.news/) | [中文独立博客汇总](https://github.com/timqian/chinese-independent-blogs) | [阮一峰](http://www.ruanyifeng.com/blog/) | [ECMAScript 6入门](http://es6.ruanyifeng.com/) | [潮流周刊](https://weekly.tw93.fun/)  
+[ITNEXT](https://itnext.io/) | [w3school](http://www.w3school.com.cn) | [ChinaUnix](http://www.chinaunix.net/) | [ITeye](http://www.iteye.com/) | [GitBook.cn](http://www.gitbook.cn/) | [JavaTpoint](https://www.javatpoint.com/)  
+  
+[Google](http://www.google.com) | [邮箱](http://mail.google.com) | [地图](http://map.google.com) | [汉译英](http://translate.google.com/#zh-CN/en/) | [英译汉](http://translate.google.com/#en/zh-CN/) | [Keep](http://drive.google.com/keep/) | [Drive](https://drive.google.com/drive/my-drive) | [Bookmarks](http://www.google.ca/bookmarks)  
+  
+[Design Patterns](http://sourcemaking.com/design_patterns) | [KityMinder](http://naotu.baidu.com/) | [Vettery Jobs](https://www.vettery.com/tech) | [Golang Cafe](https://golang.cafe/)  
 
-      "=OpenAI / ChatGPT",
-      [
-        { url: "https://chat.openai.com/chat", desc: "#ChatGPT" },
-        { url: "https://platform.openai.com/examples", desc: "Examples" },
-        { url: "https://platform.openai.com/playground", desc: "Playground" },
-        { url: "https://platform.openai.com/docs/api-reference/introduction", desc: "API Docs" },
-        { url: "https://platform.openai.com/docs/quickstart", desc: "QuickStart" },
-        { url: "https://github.com/openai/openai-cookbook", desc: "OpenAI Cookbook" },
-        { url: "https://openai.com/api/", desc: "API" },
-      ],
-      [
-        { url: "https://bing.com/new#examples", desc: "#New Bing" },
-        { url: "https://bing.com/create", desc: "Bing Image Creator" },
-        { url: "https://bard.google.com/", desc: "Google Bard" },
-        { url: "https://firefly.adobe.com/", desc: "Adobe Firefly" },
-        { url: "https://www.perplexity.ai/", desc: "Perplexity" },
-        { url: "https://poe.com/", desc: "Poe - Sage" },
-        { url: "https://huggingface.co/chat/", desc: "HuggingFace" },
-      ],
-      "-",
-      [
-        { url: "https://github.com/openai/openai-python", desc: "#OpenAI Python" },
-        { url: "https://github.com/sashabaranov/go-gpt3", desc: "OpenAI Golang" },
-        { url: "https://github.com/openai-php/client", desc: "OpenAI PHP Client" },
-        { url: "https://github.com/orhanerday/open-ai", desc: "OpenAI PHP (简洁)" },
-        { url: "https://github.com/tectalichq/public-openai-client-php", desc: "OpenAI PHP (规范)" },
-      ],
-      "-",
-      [
-        { url: "https://github.com/f/awesome-chatgpt-prompts", desc: "#Awesome ChatGPT Prompts" },
-        { url: "https://prompts.chat/", desc: "Prompts.chat" },
-        { url: "https://github.com/dalinvip/Awesome-ChatGPT", desc: "Awesome ChatGPT" },
-        { url: "https://www.explainthis.io/zh-hans/chatgpt", desc: "ChatGPT 指令大全" },
-        { url: "https://openprompt.co/", desc: "Open Prompt" },
-        { url: "https://promptperfect.jina.ai/", desc: "PromptPerfect" },
-      ],
-      [
-        { url: "https://ai-code-translator.vercel.app/", desc: "#AI Code Translator" },
-        { url: "https://www.chatbotui.com/", desc: "Chatbot UI" },
-        { url: "https://ai-bot.cn/", desc: "AI工具导航大全" },
-        { url: "https://www.futurepedia.io/", desc: "FuturePedia" },
-      ],
+### OpenAI / ChatGPT
 
-      "=Solar",
-      [
-        { url: "http://75.98.194.226/", desc: "#Great Circle Solar" },
-        { url: "http://99.79.170.251/", desc: "GCS-AWS" },
-        { url: "http://99.79.167.116/", desc: "GCP-AWS" },
-      ],
-    ];
+[ChatGPT](https://chat.openai.com/chat) | [Examples](https://platform.openai.com/examples) | [Playground](https://platform.openai.com/playground) | [API Docs](https://platform.openai.com/docs/api-reference/introduction) | [QuickStart](https://platform.openai.com/docs/quickstart) | [OpenAI Cookbook](https://github.com/openai/openai-cookbook) | [API](https://openai.com/api/)  
+[New Bing](https://bing.com/new#examples) | [Bing Image Creator](https://bing.com/create) | [Google Bard](https://bard.google.com/) | [Adobe Firefly](https://firefly.adobe.com/) | [Perplexity](https://www.perplexity.ai/) | [Poe - Sage](https://poe.com/) | [HuggingFace](https://huggingface.co/chat/)  
+  
+[OpenAI Python](https://github.com/openai/openai-python) | [OpenAI Golang](https://github.com/sashabaranov/go-gpt3) | [OpenAI PHP Client](https://github.com/openai-php/client) | [OpenAI PHP (简洁)](https://github.com/orhanerday/open-ai) | [OpenAI PHP (规范)](https://github.com/tectalichq/public-openai-client-php)  
+  
+[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) | [Prompts.chat](https://prompts.chat/) | [Awesome ChatGPT](https://github.com/dalinvip/Awesome-ChatGPT) | [ChatGPT 指令大全](https://www.explainthis.io/zh-hans/chatgpt) | [Open Prompt](https://openprompt.co/) | [PromptPerfect](https://promptperfect.jina.ai/)  
+[AI Code Translator](https://ai-code-translator.vercel.app/) | [Chatbot UI](https://www.chatbotui.com/) | [AI工具导航大全](https://ai-bot.cn/) | [FuturePedia](https://www.futurepedia.io/)  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Solar
+
+[Great Circle Solar](http://75.98.194.226/) | [GCS-AWS](http://99.79.170.251/) | [GCP-AWS](http://99.79.167.116/)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
+
 </body>
-<!--
-        { url: "https://liudanking.com/", desc: "#行思錄(blog)" },
-        { url: "https://blog.t9t.io/", desc: "透明创业实验" },
-        { url: "https://blog.gitee.com/category/weekly/", desc: "码云周刊" },
-        { url: "https://www.printf520.com/hot.html", desc: "鱼塘热榜" },
-        { url: "https://tophub.today/", desc: "今日热榜" },
-        { url: "https://www.zhangxinxu.com/wordpress/", desc: "张鑫旭个人空间" },
-        { url: "https://www.hrefs.cn/", desc: "编程网址导航" },
-        { url: "https://blog.fundebug.com/", desc: "FunDebug" },
-        { url: "http://www.w3schools.com/", desc: "W3Schools" },
-        { url: "https://www.gate.io/", desc: "Gate.io" },
-        { url: "http://it-ebooks.info/", desc: "#IT Books" },
-        { url: "http://caibaojian.com/c/news", desc: "前端开发日报" },
-        { url: "https://github.com/KeKe-Li/fetool", desc: "大前端百宝箱" },
-        { url: "https://tech.meituan.com/", desc: "美团技术团队" },
-        { url: "http://ifeve.com/", desc: "并发编程网" },
-        { url: "https://www.discoverdev.io/", desc: "DiscoverDev" },
-        { url: "http://www.importnew.com/all-posts", desc: "#ImportNew" },
-        { url: "http://www.jobbole.com/", desc: "伯乐在线" },
-        { url: "https://deno.land", desc: "#Deno" },
-        { url: "https://deno.land/manual", desc: "Manual" },
-        { url: "https://deno.land/typedoc", desc: "Deno typedoc" },
-        { url: "https://deno.land/std/", desc: "Deno stdlib" },
-        { url: "https://deno.land/x/", desc: "Deno third-party" },
-        { url: "https://wubaiqing.github.io/zaobao/", desc: "每日时报" },
-        { url: "https://www.tuicool.com/mags", desc: "推酷技术周刊" },
-        { url: "https://danieleckler.com/2020/", desc: "Tech Trends 2020" },
-        { url: "http://www.tuicool.com/", desc: "推酷" },
-        { url: "https://weekly.manong.io/issues/", desc: "码农周刊" },
-        { url: "https://openai.com/product/gpt-4", desc: "GPT-4" },
-        { url: "http://www.csdn.net/", desc: "#CSDN" },
-
-        { url: "https://addons.mozilla.org/en-US/firefox/", desc: "#Firefox Add-ons" },
-        { url: "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions", desc: "Getting started" },
-        { url: "https://www.emailthis.me/open-source/extension-boilerplate", desc: "Boilerplate" },
-
-        { url: "https://chrome.google.com/webstore/developer/dashboard", desc: "#Chrome Web Ext Dashboard" },
-        { url: "https://chrome.google.com/webstore/devconsole", desc: "Dev Console" },
-        { url: "https://developer.chrome.com/extensions/getstarted", desc: "Getting Started" },
-        { url: "https://developer.chrome.com/extensions/devguide", desc: "Dev Guide" },
-        { url: "https://extensionizr.com/", desc: "Extensionizr" },
-
-        { url: "http://zy2071.com/Fun/todayJueJin.html", desc: "今日掘金" },
--->
 </html>

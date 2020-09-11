@@ -1,56 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Laravel</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Laravel
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "http://laravel.com/", desc: "#Laravel" },
-        { url: "https://laravel.com/docs/6.x/homestead", desc: "Homestead" },
-        { url: "https://lumen.laravel.com/", desc: "Lumen" },
-        { url: "https://spark.laravel.com/", desc: "Spark" },
-        { url: "https://nova.laravel.com/", desc: "Nova" },
-        { url: "https://horizon.laravel.com/", desc: "Horizon" },
-        { url: "https://vapor.laravel.com/", desc: "Vapor" },
-        { url: "http://laradock.io/", desc: "Laradock" },
-        { url: "https://envoyer.io/", desc: "Envoyer" },
-      ],
-      "-",
-      [
-        { url: "https://laracasts.com/", desc: "#Laracasts" },
-        { url: "https://laraveldaily.com/", desc: "Laravel Daily" },
-        { url: "https://laravel-news.com/", desc: "Laravel-News" },
-        { url: "https://laravel-livewire.com/docs", desc: "Livewire v2" },
-        { url: "https://livewire.laravel.com/docs", desc: "Livewire v3" },
-        { url: "https://laravel.io/forum", desc: "Laravel.io" },
-      ],
-      "-",
-      { url: "https://github.com/pixelfed/pixelfed", desc: "Photo Sharing. For Everyone." },
-      { url: "https://github.com/monicahq/monica", desc: "Personal CRM &#9989;" },
-      { url: "https://github.com/Qsnh/meedu", desc: "基于Laravel开发的在线点播系统" },
-      { url: "https://github.com/inbjo/CoreBlog", desc: "基于Laravel开发的一款优雅博客系统" },
-    ];
+[Laravel](http://laravel.com/) | [Homestead](https://laravel.com/docs/6.x/homestead) | [Lumen](https://lumen.laravel.com/) | [Spark](https://spark.laravel.com/) | [Nova](https://nova.laravel.com/) | [Horizon](https://horizon.laravel.com/) | [Vapor](https://vapor.laravel.com/) | [Laradock](http://laradock.io/) | [Envoyer](https://envoyer.io/)  
+  
+[Laracasts](https://laracasts.com/) | [Laravel Daily](https://laraveldaily.com/) | [Laravel-News](https://laravel-news.com/) | [Livewire v2](https://laravel-livewire.com/docs) | [Livewire v3](https://livewire.laravel.com/docs) | [Laravel.io](https://laravel.io/forum)  
+  
+[https://github.com/pixelfed/pixelfed](https://github.com/pixelfed/pixelfed)  Photo Sharing. For Everyone.  
+[https://github.com/monicahq/monica](https://github.com/monicahq/monica)  Personal CRM ✅  
+[https://github.com/Qsnh/meedu](https://github.com/Qsnh/meedu)  基于Laravel开发的在线点播系统  
+[https://github.com/inbjo/CoreBlog](https://github.com/inbjo/CoreBlog)  基于Laravel开发的一款优雅博客系统
+</template>
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
-  <!--
-      { url: "https://github.com/hui-ho/WebStack-Laravel", desc: "网址导航网站项目" },
-      { url: "https://gitee.com/moell/laravel-layui-admin", desc: "基于 Laravel、Layui 构建的 RABC 基础后台管理系统" },
-      { url: "https://gitee.com/myteng/MeEdu", desc: "基于Laravel开发的在线点播系统" },
-  -->
 </body>
 </html>

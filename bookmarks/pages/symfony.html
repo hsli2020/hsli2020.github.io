@@ -1,33 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Symfony</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Symfony
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://symfony.com/", desc: "Symfony Framework" },
-        { url: "https://symfony.com/doc/current/reference/index.html", desc: "Symfony Reference" },
-        { url: "http://knpbundles.com/", desc: "Bundles for Symfony2" },
-      ],
-      [
-        { url: "https://sylius.com/", desc: "Open Source eCommerce Platform on Symfony" },
-      ],
-    ];
+[https://symfony.com/](https://symfony.com/)  Symfony Framework | [Symfony Reference](https://symfony.com/doc/current/reference/index.html) | [Bundles for Symfony2](http://knpbundles.com/)  
+[https://sylius.com/](https://sylius.com/)  Open Source eCommerce Platform on Symfony
+</template>
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

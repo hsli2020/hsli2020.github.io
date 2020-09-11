@@ -1,97 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Web</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Web
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://developer.mozilla.org/en-US/", desc: "#Mozilla Developer Network" },
-        { url: "https://getbootstrap.com/", desc: "Bootstrap" },
-        { url: "https://css-tricks.com/", desc: "CSS Tricks" },
-        { url: "https://web.dev/", desc: "Web.dev" },
-      ],
-      [
-        { url: "https://codesandbox.io/", desc: "#CodeSandbox" },
-        { url: "https://codepen.io/", desc: "CodePen" },
-        { url: "https://jsrun.net/", desc: "JsRun" },
-        { url: "https://jsfiddle.net/", desc: "JsFiddle" },
-        { url: "https://www.ideone.com/", desc: "IdeOne" },
-        { url: "https://www.codechef.com/ide", desc: "CodeChef" },
-        { url: "https://www.onlinegdb.com", desc: "OnlineGDB" },
-        { url: "https://gcc.godbolt.org", desc: "GodBolt" },
-        { url: "https://plnkr.co/edit", desc: "Plnkr" },
-      ],
-      "---",
-      [
-        { url: "http://pan.baidu.com/", desc: "#百度云" },
-        { url: "http://www.whatismyip.com/", desc: "What's My IP" },
-        { url: "http://whatismyipaddress.com", desc: "My IP Address" },
-        { url: "http://who.is/", desc: "Who Is" },
-        { url: "http://www.name.com/", desc: "Name.com" },
-        { url: "http://www.godaddy.com/", desc: "GoDaddy" },
-      ],
-      "---",
-      [
-        { url: "https://www.webcomponents.org/introduction", desc: "#Web Components" },
-        { url: "https://github.com/wiredjs/wired-elements", desc: "WiredJS" },
-        { url: "https://pptr.dev/", desc: "Puppeteer" },
-        { url: "https://www.w3cplus.com/", desc: "w3cplus blog" },
-        { url: "https://www.sitepen.com/blog/2017/11/10/web-frameworks-conclusions/", desc: "Web Frameworks Conclusions" },
-      ],
-      [
-        { url: "https://amp.dev/about/websites/", desc: "#AMP website" },
-        { url: "https://github.com/polymer/lit-html", desc: "LitHtml" },
-        { url: "http://graphql.org/", desc: "GraphQL" },
-        { url: "http://graphql.cn/", desc: "GraphQL中文网" },
-        { url: "http://geekdocs.cn/", desc: "程序员导航" },
-      ],
-      "---",
-      [
-        { url: "https://www.tutorialrepublic.com/", desc: "#Tutorial Republic" },
-        { url: "https://www.tutorialrepublic.com/twitter-bootstrap-examples.php", desc: "Bootstrap Examples" },
-        { url: "https://www.tutorialrepublic.com/snippets/gallery.php", desc: "Bootstrap Snippets" },
-        { url: "https://embed.plnkr.co/plunk/K6WPaM", desc: "Bootstrap Popover" },
-      ],
-      "---",
-      { url: "https://microsoft.github.io/frontend-bootcamp/", desc: "Microsoft Frontend Bootcamp" },
-      "---",
-      [
-        { url: "https://webpack.wuhaolin.cn/", desc: "深入浅出 Webpack" },
-        { url: "https://www.webpackjs.com/", desc: "Webpack 中文文档" },
-        { url: "https://fullstackopen.com/zh/", desc: "现代Web编程" },
-        { url: "https://github.com/taosue/30-seconds-zh_CN", desc: "每天30秒系列" },
-      ],
-      { url: "https://www.techempower.com/benchmarks/", desc: "Webframework Benchmark" },
-      { url: "https://shoelace.style/", desc: "Web Components" },
-    ];
+[Mozilla Developer Network](https://developer.mozilla.org/en-US/) | [Bootstrap](https://getbootstrap.com/) | [CSS Tricks](https://css-tricks.com/) | [Web.dev](https://web.dev/)  
+[CodeSandbox](https://codesandbox.io/) | [CodePen](https://codepen.io/) | [JsRun](https://jsrun.net/) | [JsFiddle](https://jsfiddle.net/) | [IdeOne](https://www.ideone.com/) | [CodeChef](https://www.codechef.com/ide) | [OnlineGDB](https://www.onlinegdb.com) | [GodBolt](https://gcc.godbolt.org) | [Plnkr](https://plnkr.co/edit)  
+  
+[百度云](http://pan.baidu.com/) | [What's My IP](http://www.whatismyip.com/) | [My IP Address](http://whatismyipaddress.com) | [Who Is](http://who.is/) | [Name.com](http://www.name.com/) | [GoDaddy](http://www.godaddy.com/)  
+  
+[Web Components](https://www.webcomponents.org/introduction) | [WiredJS](https://github.com/wiredjs/wired-elements) | [Puppeteer](https://pptr.dev/) | [w3cplus blog](https://www.w3cplus.com/) | [Web Frameworks Conclusions](https://www.sitepen.com/blog/2017/11/10/web-frameworks-conclusions/)  
+[AMP website](https://amp.dev/about/websites/) | [LitHtml](https://github.com/polymer/lit-html) | [GraphQL](http://graphql.org/) | [GraphQL中文网](http://graphql.cn/) | [程序员导航](http://geekdocs.cn/)  
+  
+[Tutorial Republic](https://www.tutorialrepublic.com/) | [Bootstrap Examples](https://www.tutorialrepublic.com/twitter-bootstrap-examples.php) | [Bootstrap Snippets](https://www.tutorialrepublic.com/snippets/gallery.php) | [Bootstrap Popover](https://embed.plnkr.co/plunk/K6WPaM)  
+  
+[https://microsoft.github.io/frontend-bootcamp/](https://microsoft.github.io/frontend-bootcamp/)  Microsoft Frontend Bootcamp  
+  
+[https://webpack.wuhaolin.cn/](https://webpack.wuhaolin.cn/)  深入浅出 Webpack | [Webpack 中文文档](https://www.webpackjs.com/) | [现代Web编程](https://fullstackopen.com/zh/) | [每天30秒系列](https://github.com/taosue/30-seconds-zh_CN)  
+[https://www.techempower.com/benchmarks/](https://www.techempower.com/benchmarks/)  Webframework Benchmark  
+[https://shoelace.style/](https://shoelace.style/)  Web Components  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+✅ ❎ ✨ ❌ ❓ ❗ ⚡ ⛔ ⭐ ⭕ 🔴
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-  <p>
-    &#9989;
-    &#10062;
-    &#10024;
-    &#10060;
-    &#10067;
-    &#10071;
-    &#9889;
-    &#9940;
-    &#11088;
-    &#11093;
-    &#128308;
-  </p>
+
 </body>
 </html>

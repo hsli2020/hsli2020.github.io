@@ -1,99 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Software</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Software
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://eclipse.org/", desc: "Eclipse" },
-        { url: "https://netbeans.org/", desc: "NetBeans" },
-        { url: "https://www.jetbrains.com/phpstorm/", desc: "PHPStorm" },
-        { url: "https://github.com/visualfc/liteide/releases", desc: "LiteIDE" },
-      ],
+[https://eclipse.org/](https://eclipse.org/)  Eclipse | [NetBeans](https://netbeans.org/) | [PHPStorm](https://www.jetbrains.com/phpstorm/) | [LiteIDE](https://github.com/visualfc/liteide/releases)  
+  
+[http://www.sublimetext.com/](http://www.sublimetext.com/)  Sublime | [unofficial documentation](http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html)  
+[https://notepad-plus-plus.org/](https://notepad-plus-plus.org/)  Notepad++ | [JQ](https://github.com/stedolan/jq) | [UPX](https://upx.github.io/) | [Rclone](https://rclone.org/)  
+  
+[https://gohugo.io/](https://gohugo.io/)  Hugo Blog | [Hexo Blog](https://hexo.io/zh-cn/docs/) | [Jekyll Blog](https://jekyllrb.com/)  
+[https://www.sumatrapdfreader.org/free-pdf-reader.html](https://www.sumatrapdfreader.org/free-pdf-reader.html)  Sumatra PDF Reader  
+[https://wkhtmltopdf.org/](https://wkhtmltopdf.org/)  wkhtmltopdf  
+[https://tuxproject.de/projects/vim/](https://tuxproject.de/projects/vim/)  Vim Tux | [SpaceVim](https://spacevim.org/) | [Vim教程网](https://vim.ink) | [spf13-vim](https://github.com/spf13/spf13-vim)  
+[https://gogs.io/](https://gogs.io/)  Gogs | [Gitea](https://gitea.io/) | [Pdfcpu](https://pdfcpu.io/) | [GitFork](https://git-fork.com/)  
+[http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download)  TDM GCC  
+[https://jmeubank.github.io/tdm-gcc/](https://jmeubank.github.io/tdm-gcc/)  TDM-GCC  
+[https://viewer.dadroit.com/](https://viewer.dadroit.com/)  Dadroit JSON Viewer  
+[https://dbeaver.io/](https://dbeaver.io/)  DBeaver | [SQLite Expert](http://www.sqliteexpert.com/download.html) | [TablePlus](https://tableplus.com/)  
+[https://sciter.com/](https://sciter.com/)  Sciter - Embeddable HTML/CSS/script engine  
+[https://ultralig.ht/](https://ultralig.ht/)  Ultralight - HTML UI  
+[https://androidpal.com/studio/about](https://androidpal.com/studio/about)  AP Studio IDE  
+[http://kr.github.io/beanstalkd/](http://kr.github.io/beanstalkd/)  Beanstalk  
+[http://gitblit.com/](http://gitblit.com/)  gitblit  
+[https://tabnine.com/](https://tabnine.com/)  TabNine  
+[https://guacamole.apache.org/](https://guacamole.apache.org/)  Apache Guacamole  
+[https://httptoolkit.tech/mock/](https://httptoolkit.tech/mock/)  Http Toolkit  
+[https://laragon.org/](https://laragon.org/)  Laragon  
+[https://www.geany.org/](https://www.geany.org/)  Geany  
+[https://www.artweaver.de/en](https://www.artweaver.de/en)  Artweaver | [日本免费开源绘画软件FireAlpaca](https://firealpaca.com/)  
+[https://obsproject.com/](https://obsproject.com/)  OBS Studio  
+[http://www.videosoftdev.com/free-video-editor](http://www.videosoftdev.com/free-video-editor)  VSDC Video Editor  
+[http://xrdp.org/](http://xrdp.org/)  An open-source Remote Desktop Protocol server  
+[https://github.com/VSCodium/vscodium](https://github.com/VSCodium/vscodium)  Open Source Software Binaries of VSCode  
+[https://ibotpeaches.github.io/Apktool/](https://ibotpeaches.github.io/Apktool/)  ApkTool  
+[https://packages.msys2.org/package/](https://packages.msys2.org/package/)  Msys2 Packages
 
-      "-",
-      [
-        { url: "http://www.sublimetext.com/", desc: "Sublime" },
-        { url: "http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html", desc: "unofficial documentation" },
-      ],
-      [
-        { url: "https://notepad-plus-plus.org/", desc: "Notepad++" },
-        { url: "https://github.com/stedolan/jq", desc: "JQ" },
-        { url: "https://upx.github.io/", desc: "UPX" },
-        { url: "https://rclone.org/", desc: "Rclone" },
-      ],
+</template>
 
-      "-",
-      [
-        { url: "https://gohugo.io/", desc: "Hugo Blog" },
-        { url: "https://hexo.io/zh-cn/docs/", desc: "Hexo Blog" },
-        { url: "https://jekyllrb.com/", desc: "Jekyll Blog" },
-      ],
-      { url: "https://www.sumatrapdfreader.org/free-pdf-reader.html", desc: "Sumatra PDF Reader" },
-      { url: "https://wkhtmltopdf.org/", desc: "wkhtmltopdf" },
-      [
-        { url: "https://tuxproject.de/projects/vim/", desc: "Vim Tux" },
-        { url: "https://spacevim.org/", desc: "SpaceVim" },
-        { url: "https://vim.ink", desc: "Vim教程网" },
-        { url: "https://github.com/spf13/spf13-vim", desc: "spf13-vim" },
-      ],
-      [
-        { url: "https://gogs.io/", desc: "Gogs" },
-        { url: "https://gitea.io/", desc: "Gitea" },
-        { url: "https://pdfcpu.io/", desc: "Pdfcpu" },
-        { url: "https://git-fork.com/", desc: "GitFork" },
-      ],
-      { url: "http://tdm-gcc.tdragon.net/download", desc: "TDM GCC" },
-      { url: "https://jmeubank.github.io/tdm-gcc/", desc: "TDM-GCC" },
-      { url: "https://viewer.dadroit.com/", desc: "Dadroit JSON Viewer" },
-      [
-        { url: "https://dbeaver.io/", desc: "DBeaver" },
-        { url: "http://www.sqliteexpert.com/download.html", desc: "SQLite Expert" },
-        { url: "https://tableplus.com/", desc: "TablePlus" },
-      ],
-      { url: "https://sciter.com/", desc: "Sciter - Embeddable HTML/CSS/script engine" },
-      { url: "https://ultralig.ht/", desc: "Ultralight - HTML UI" },
-      { url: "https://androidpal.com/studio/about", desc: "AP Studio IDE" },
-      { url: "http://kr.github.io/beanstalkd/", desc: "Beanstalk" },
-      { url: "http://gitblit.com/", desc: "gitblit" },
-      { url: "https://tabnine.com/", desc: "TabNine" },
-      { url: "https://guacamole.apache.org/", desc: "Apache Guacamole" },
-      { url: "https://httptoolkit.tech/mock/", desc: "Http Toolkit" },
-      { url: "https://laragon.org/", desc: "Laragon" },
-      { url: "https://www.geany.org/", desc: "Geany" },
-      [
-        { url: "https://www.artweaver.de/en", desc: "Artweaver" },
-        { url: "https://firealpaca.com/", desc: "日本免费开源绘画软件FireAlpaca" },
-      ],
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
 
-      { url: "https://obsproject.com/", desc: "OBS Studio" },
-      { url: "http://www.videosoftdev.com/free-video-editor", desc: "VSDC Video Editor" },
-
-      { url: "http://xrdp.org/", desc: "An open-source Remote Desktop Protocol server" },
-      { url: "https://github.com/VSCodium/vscodium", desc: "Open Source Software Binaries of VSCode" },
-      { url: "https://ibotpeaches.github.io/Apktool/", desc: "ApkTool" },
-      { url: "https://packages.msys2.org/package/", desc: "Msys2 Packages" },
-    ];
-
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-
-<!--
-  { url: "http://babun.github.io/", desc: "Babun" },
--->
 
 </body>
 </html>

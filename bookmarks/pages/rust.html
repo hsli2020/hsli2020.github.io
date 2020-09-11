@@ -1,34 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Rust</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Rust
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [ 
-        { url: "https://www.rust-lang.org/", desc: "Rust Lang" },
-      ],
-      [
-        { url: "https://rust-lang-nursery.github.io/rust-cookbook/", desc: "#Rust Cookbook" },
-        { url: "https://rustwiki.org/zh-CN/rust-cookbook/", desc: "Rust Cookbook 中文版" },
-        { url: "https://pragprog.com/titles/hwrust/hands-on-rust/", desc: "Hands-on Rust" },
-        { url: "https://google.github.io/comprehensive-rust/", desc: "Rust Tutorial by Android Team" },
-      ],
-    ];
+[https://www.rust-lang.org/](https://www.rust-lang.org/)  Rust Lang  
+[Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) | [Rust Cookbook 中文版](https://rustwiki.org/zh-CN/rust-cookbook/) | [Hands-on Rust](https://pragprog.com/titles/hwrust/hands-on-rust/) | [Rust Tutorial by Android Team](https://google.github.io/comprehensive-rust/)
+</template>
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

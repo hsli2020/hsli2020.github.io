@@ -1,85 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-  <div id="container"></div>
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <script type="text/javascript">
-    var bookmarks = [
-        "=Javascript",
-        [
-          { url: "http://speakingjs.com/es5/index.html", desc: "#Speaking JavaScript" }, 
-          { url: "http://eloquentjavascript.net/", desc: "<b>Eloquent JavaScript</b>" },
-          { url: "http://exploringjs.com/es6/index.html", desc: "Exploring ES6" },
-          { url: "http://addyosmani.com/resources/essentialjsdesignpatterns/book/", desc: "<b>Learning JavaScript Design Patterns</b>" },
-          { url: "http://todomvc.com/", desc: "TodoMVC" },
-        ],
-        [
-            { url: "https://davidwalsh.name/", desc: "#David Walsh Blog" },
-            { url: "https://zhuanlan.zhihu.com/p/33298555", desc: "最棒的 JavaScript 学习指南" },
-            { url: "https://zh.javascript.info/", desc: "现代Javascript教程" },
-            { url: "https://jkchao.github.io/typescript-book-chinese/", desc: "深入理解TypeScript" },
-        ],
-        [
-            { url: "https://frontendmasters.com/books/front-end-handbook/2019/", desc: "#Frontend Handbook 2019" },
-            { url: "https://www.yuque.com/yuque/blog/yuque-info-tech-encyclopedia", desc: "语雀IT百科" },
-            { url: "https://github.com/yygmind/blog", desc: "前端面试重难点" },
-            { url: "http://javascript.ruanyifeng.com/", desc: "Javascript标准参考教程" },
-            { url: "https://pptr.dev/#?product=Puppeteer", desc: "Puppeteer" },
-        ],
-        [
-            { url: "https://javascript.info/", desc: "#Javascript.Info" },
-            { url: "https://github.com/ljianshu/Blog", desc: "FrontEnd Engineer" },
-            { url: "https://github.com/mbeaudru/modern-js-cheatsheet", desc: "Morden JS Cheatsheet" },
-            { url: "https://github.com/wearehive/project-guidelines/blob/master/README-zh.md", desc: "Project Guidelines" },
-            { url: "http://wangdoc.com/javascript/index.html", desc: "JavaScript 教程" },
-        ],
-        "-",
-        [
-          { url: "http://requirejs.org/docs/why.html", desc: "#Why Web Modules?" },
-          { url: "http://requirejs.org/docs/whyamd.html", desc: "Why AMD?" },
-          { url: "http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs", desc: "Relation between CommonJS, AMD and RequireJS?" }, 
-        ],
-        { url: "http://addyosmani.com/writing-modular-js/", desc: "#Writing Modular JavaScript With AMD, CommonJS & ES Harmony" }, 
-        [
-          { url: "https://www.devbridge.com/articles/understanding-amd-requirejs/", desc: "#Understanding AMD & RequireJS" },
-          { url: "http://www.phpied.com/3-ways-to-define-a-javascript-class/", desc: "3 ways to define a JavaScript class" }, 
-        ],
+<template>
+### Javascript
 
-        "=Golang",
-        { url: "http://colobu.com/2017/12/28/top-golang-articles-of-2017/", desc: "Top Golang Articles of 2017" },
-        { url: "https://www.programming-books.io/essential/go/", desc: "Book:Essential Go" },
-        { url: "http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/", desc: "50 Shades of Go" },
-        { url: "http://go-database-sql.org/", desc: "Go Database/SQL Tutorial" },
-        { url: "https://github.com/enocom/gopher-reading-list", desc: "Gopher Reading List" },
-        { url: "https://chai2010.gitbooks.io/advanced-go-programming-book/content/", desc: "Go语言高级编程" },
-        { url: "https://goquiz.github.io/", desc: "Go语言经典笔试题" },
-        "-",
-        [
-          { url: "http://www.oschina.net/news/69536/flynn-doc-cn", desc: "#《Flynn 文档中文版》" },
-          { url: "https://dengxiaolong.com/caddy/zh/", desc: "Caddy中文文档" },
-          { url: "http://www.gohugo.org/", desc: "Hugo中文文档" },
-        ],
-        [
-          { url: "http://es.xiaoleilu.com/index.html", desc: "#Elasticsearch 权威指南" },
-          { url: "https://sourcemaking.com/design_patterns", desc: "Design Patterns" },
-          { url: "http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm", desc: "RESTful" },
-        ],
-        "-",
-        { url: "https://cstack.github.io/db_tutorial/", desc: "Writing a sqlite clone from scratch in C" },
-        { url: "https://github.com/k88hudson/git-flight-rules/blob/master/README.md", desc: "Git Flight Rules" },
-        { url: "https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/", desc: "The Unofficial pop Book" },
-        { url: "https://fullstackopen.com/en/", desc: "Modern Web Development" },
-    ];
+[Speaking JavaScript](http://speakingjs.com/es5/index.html) | [**Eloquent JavaScript**](http://eloquentjavascript.net/) | [Exploring ES6](http://exploringjs.com/es6/index.html) | [**Learning JavaScript Design Patterns**](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) | [TodoMVC](http://todomvc.com/)  
+[David Walsh Blog](https://davidwalsh.name/) | [最棒的 JavaScript 学习指南](https://zhuanlan.zhihu.com/p/33298555) | [现代Javascript教程](https://zh.javascript.info/) | [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)  
+[Frontend Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/) | [语雀IT百科](https://www.yuque.com/yuque/blog/yuque-info-tech-encyclopedia) | [前端面试重难点](https://github.com/yygmind/blog) | [Javascript标准参考教程](http://javascript.ruanyifeng.com/) | [Puppeteer](https://pptr.dev/#?product=Puppeteer)  
+[Javascript.Info](https://javascript.info/) | [FrontEnd Engineer](https://github.com/ljianshu/Blog) | [Morden JS Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet) | [Project Guidelines](https://github.com/wearehive/project-guidelines/blob/master/README-zh.md) | [JavaScript 教程](http://wangdoc.com/javascript/index.html)  
+  
+[Why Web Modules?](http://requirejs.org/docs/why.html) | [Why AMD?](http://requirejs.org/docs/whyamd.html) | [Relation between CommonJS, AMD and RequireJS?](http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)  
+[Writing Modular JavaScript With AMD, CommonJS & ES Harmony](http://addyosmani.com/writing-modular-js/)  
+[Understanding AMD & RequireJS](https://www.devbridge.com/articles/understanding-amd-requirejs/) | [3 ways to define a JavaScript class](http://www.phpied.com/3-ways-to-define-a-javascript-class/)  
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+### Golang
+
+[http://colobu.com/2017/12/28/top-golang-articles-of-2017/](http://colobu.com/2017/12/28/top-golang-articles-of-2017/)  Top Golang Articles of 2017  
+[https://www.programming-books.io/essential/go/](https://www.programming-books.io/essential/go/)  Book:Essential Go  
+[http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)  50 Shades of Go  
+[http://go-database-sql.org/](http://go-database-sql.org/)  Go Database/SQL Tutorial  
+[https://github.com/enocom/gopher-reading-list](https://github.com/enocom/gopher-reading-list)  Gopher Reading List  
+[https://chai2010.gitbooks.io/advanced-go-programming-book/content/](https://chai2010.gitbooks.io/advanced-go-programming-book/content/)  Go语言高级编程  
+[https://goquiz.github.io/](https://goquiz.github.io/)  Go语言经典笔试题  
+  
+[《Flynn 文档中文版》](http://www.oschina.net/news/69536/flynn-doc-cn) | [Caddy中文文档](https://dengxiaolong.com/caddy/zh/) | [Hugo中文文档](http://www.gohugo.org/)  
+[Elasticsearch 权威指南](http://es.xiaoleilu.com/index.html) | [Design Patterns](https://sourcemaking.com/design_patterns) | [RESTful](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)  
+  
+[https://cstack.github.io/db\_tutorial/](https://cstack.github.io/db_tutorial/)  Writing a sqlite clone from scratch in C  
+[https://github.com/k88hudson/git-flight-rules/blob/master/README.md](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)  Git Flight Rules  
+[https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/](https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/)  The Unofficial pop Book  
+[https://fullstackopen.com/en/](https://fullstackopen.com/en/)  Modern Web Development
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

@@ -1,146 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Blogs</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Blogs
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "http://www.ruanyifeng.com/blog", desc: "#阮一峰的blog" },
-        { url: "http://tonybai.com/category/technical-notes/", desc:"Tony Bai 的技术志 (Go)" },
-        { url: "https://einverne.github.io/", desc: "Verne in GitHub" },
-      ],
-      "-",
-      [
-        { url: "http://www.cnblogs.com/", desc: "博客园" },
-        { url: "http://www.coolshell.cn", desc: "Cool Shell" },
-        { url: "http://www.laruence.com/", desc: "风雪之隅" },
-        { url: "http://blog.codingnow.com/", desc: "云风的 BLOG" },
-      ],
-      [
-        { url: "https://draveness.me/", desc: "#面向信仰编程" },
-        { url: "https://jiajunhuang.com/", desc: "JiaJun的编程随想" },
-        { url: "https://mojotv.cn/golang/", desc: "Mojo Tech" },
-        { url: "https://lailin.xyz/", desc: "Mohuishou's blog" },
-      ],
+[阮一峰的blog](http://www.ruanyifeng.com/blog) | [Tony Bai 的技术志 (Go)](http://tonybai.com/category/technical-notes/) | [Verne in GitHub](https://einverne.github.io/)  
+  
+[http://www.cnblogs.com/](http://www.cnblogs.com/)  博客园 | [Cool Shell](http://www.coolshell.cn) | [风雪之隅](http://www.laruence.com/) | [云风的 BLOG](http://blog.codingnow.com/)  
+[面向信仰编程](https://draveness.me/) | [JiaJun的编程随想](https://jiajunhuang.com/) | [Mojo Tech](https://mojotv.cn/golang/) | [Mohuishou's blog](https://lailin.xyz/)  
 
-      "=Golang",
-      [
-        { url: "http://www.alexedwards.net/blog/", desc: "#Alex Edwards Blog" },
-        { url: "https://dave.cheney.net/category/golang", desc: "Dave Cheney" },
-        { url: "https://www.calhoun.io/", desc: "Calhoun.io" },
-        { url: "https://www.ardanlabs.com/blog/", desc: "ArdanLabs/Blog" },
-      ],
-      [
-        { url: "https://www.gopheracademy.com/", desc: "#GopherAcademy" },
-        { url: "https://golangcode.com/", desc: "GolangCode(blog)" },
-        { url: "https://golangbot.com/", desc: "GolangBot(blog)" },
-        { url: "https://arp242.net/", desc: "arp242" },
-        { url: "https://rakyll.org/archive/", desc: "Rakyll.org" },
-      ],
-      [
-        { url: "https://eltonminetto.net/en/", desc: "#Elton Minetto" },
-        { url: "https://zserge.com/posts/", desc: "zserge's blog" },
-        { url: "https://www.positronx.io/", desc: "positronX.io" },
-      ],
-      "---",
-      [
-        { url: "https://medium.com/a-journey-with-go", desc: "#A Journey With Go" },
-        { url: "https://appliedgo.net/", desc: "Applied Go" },
-        { url: "https://dev.to/t/go", desc: "DEV’s Go Tag" },
-        { url: "https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go", desc: "Digital Ocean’s Go Series" },
-        { url: "https://eli.thegreenplace.net/tag/go", desc: "<b>Eli Bendersky’s Blog</b>" },
-      ],
-      [
-        { url: "https://github.com/golang/go/wiki/Articles", desc: "#Go’s Articles Wiki" },
-        { url: "https://www.golangprograms.com/", desc: "Golang Programs" },
-        { url: "https://www.gopherguides.com/articles/", desc: "Gopher Guides" },
-        { url: "https://hashnode.com/n/go", desc: "Hashnode’s Go Tag" },
-      ],
-      [
-        { url: "https://medium.com/learning-the-go-programming-language", desc: "#Learn Golang" },
-        { url: "https://scene-si.org/", desc: "Tit Petric’s Blog" },
-        { url: "https://tutorialedge.net/course/golang/", desc: "Tutorial Edge" },
-        { url: "https://utcc.utoronto.ca/~cks/space/blog/__TopicGo", desc: "Wandering Thoughts’ Go Topic" },
-      ],
+### Golang
 
-      "=Miscs",
-      [
-        { url: "http://skrshop.tech/", desc: "#电商设计手册" },
-        { url: "https://www.discoverdev.io/", desc: "DiscoverDev" },
-        { url: "https://semaphoreci.com/blog", desc: "Semaphore" },
-        { url: "https://tech.meituan.com/", desc: "美团技术团队" },
-        { url: "https://liudanking.com/", desc: "行思錄(blog)" },
-        { url: "https://blog.forecho.com/", desc: "forecho's blog" },
-      ],
+[Alex Edwards Blog](http://www.alexedwards.net/blog/) | [Dave Cheney](https://dave.cheney.net/category/golang) | [Calhoun.io](https://www.calhoun.io/) | [ArdanLabs/Blog](https://www.ardanlabs.com/blog/)  
+[GopherAcademy](https://www.gopheracademy.com/) | [GolangCode(blog)](https://golangcode.com/) | [GolangBot(blog)](https://golangbot.com/) | [arp242](https://arp242.net/) | [Rakyll.org](https://rakyll.org/archive/)  
+[Elton Minetto](https://eltonminetto.net/en/) | [zserge's blog](https://zserge.com/posts/) | [positronX.io](https://www.positronx.io/)  
+  
+[A Journey With Go](https://medium.com/a-journey-with-go) | [Applied Go](https://appliedgo.net/) | [DEV’s Go Tag](https://dev.to/t/go) | [Digital Ocean’s Go Series](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go) | [**Eli Bendersky’s Blog**](https://eli.thegreenplace.net/tag/go)  
+[Go’s Articles Wiki](https://github.com/golang/go/wiki/Articles) | [Golang Programs](https://www.golangprograms.com/) | [Gopher Guides](https://www.gopherguides.com/articles/) | [Hashnode’s Go Tag](https://hashnode.com/n/go)  
+[Learn Golang](https://medium.com/learning-the-go-programming-language) | [Tit Petric’s Blog](https://scene-si.org/) | [Tutorial Edge](https://tutorialedge.net/course/golang/) | [Wandering Thoughts’ Go Topic](https://utcc.utoronto.ca/~cks/space/blog/__TopicGo)  
 
-      "-",
-      [
-        { url: "https://bbs.wenxuecity.com/music/", desc:"#音乐快递" },
-        { url: "https://blog.wenxuecity.com/myblog/76398/all.html", desc:"#Vuli@me" },
-        { url: "https://blog.wenxuecity.com/myblog/48977/all.html", desc:"肯老音乐" },
-        { url: "https://blog.wenxuecity.com/myblog/38115/all.html", desc:"路边野花" },
-        { url: "https://blog.wenxuecity.com/myblog/42623/all.html", desc:"笑看世界" },
-        { url: "https://blog.wenxuecity.com/myblog/51352/all.html", desc:"Frindle" },
-        { url: "http://blog.wenxuecity.com/myblog/48304/all.html", desc:"怡然楓嬅" },
-/*
-        { url: "https://blog.wenxuecity.com/myblog/27795/all.html", desc:"怡然自得" },
-        { url: "https://blog.wenxuecity.com/myblog/12860/all.html", desc:"音乐心情" },
-        { url: "https://blog.wenxuecity.com/myblog/55354/all.html", desc:"枫叶琴缘" },
-        { url: "https://blog.wenxuecity.com/myblog/55338/all.html", desc:"JustAddMusic" },
-        { url: "https://blog.wenxuecity.com/myblog/6729/all.html",  desc:"音乐书童" },
-        { url: "http://blog.wenxuecity.com/myblog/48304/all.html", desc:"怡然楓嬅" },
-*/
-      ],
-    ];
+### Miscs
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+[电商设计手册](http://skrshop.tech/) | [DiscoverDev](https://www.discoverdev.io/) | [Semaphore](https://semaphoreci.com/blog) | [美团技术团队](https://tech.meituan.com/) | [行思錄(blog)](https://liudanking.com/) | [forecho's blog](https://blog.forecho.com/)  
+  
+[音乐快递](https://bbs.wenxuecity.com/music/) | [#Vuli@me](https://blog.wenxuecity.com/myblog/76398/all.html) | [肯老音乐](https://blog.wenxuecity.com/myblog/48977/all.html) | [路边野花](https://blog.wenxuecity.com/myblog/38115/all.html) | [笑看世界](https://blog.wenxuecity.com/myblog/42623/all.html) | [Frindle](https://blog.wenxuecity.com/myblog/51352/all.html) | [怡然楓嬅](http://blog.wenxuecity.com/myblog/48304/all.html)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
-<!--
-      { url: "https://program-think.blogspot.com",  desc:"编程随想的博客" },
-    { url: "http://blog.wenxuecity.com/myblog/64942/0.html", desc:"鸭厨房事" },
-    { url: "https://bbs.wenxuecity.com/music-album/", desc:"音乐专辑" },
-    [
-      { url: "http://blog.wenxuecity.com/myblog/35538/56487.html", desc:"#南山松 英文笑话" },
-      { url: "http://blog.wenxuecity.com/myblog/55817/all.html", desc:"文革图文" },
-      { url: "http://blog.wenxuecity.com/myindex/69791/", desc:"国府深深" },
-    ],
-    { url: "https://blog.wenxuecity.com/myblog/39916/all.html", desc:"Change-Le" },
-    { url: "http://blog.wenxuecity.com/myblog/48304/all.html", desc:"怡然楓嬅" },
-        { url: "https://dreamerjonson.com/", desc: "郑建勋的个人网站" },
-        { url: "https://yplam.com/", desc:"YPLam Blog" },
-        { url: "http://www.chenjingkun.com/", desc:"陈境坤的个人博客" },
-        { url: "https://medium.com/justforfunc", desc: "Just For Func" },
-        { url: "https://gowebexamples.com/", desc: "Go Web Examples" },
-        { url: "https://flaviocopes.com/", desc: "Flavio Copes" },
 
-        { url: "https://wubaiqing.github.io/zaobao/", desc: "每日时报" },
-        { url: "http://huoding.com/", desc:"火丁笔记" },
-        { url: "http://weekly.manong.io/issues/", desc:"#码农周刊" },
-        { url: "http://ifeve.com/", desc:"并发编程网" },
-        { url: "https://cjting.me/", desc:"CJ Ting's Blog" },
-        { url: "https://blog.thinkeridea.com/", desc: "ThinkerIdea(戚银)" },
-        { url: "https://eddycjy.com/posts/", desc: "煎鱼" },
-        { url: "http://goinbigdata.com/", desc: "Go in Big Data" },
-        { url: "https://eddycjy.com/posts/", desc: "煎鱼Blog" },
-        { url: "https://github.com/KeKe-Li/fetool", desc: "大前端百宝箱" },
-        { url: "http://www.importnew.com/all-posts", desc: "ImportNew" },
-        { url: "http://caibaojian.com/c/news", desc: "前端开发日报" },
-        { url: "https://itnext.io/tagged/golang", desc: "ITNEXT’s Blog" },
-        { url: "https://ieftimov.com/", desc: "Ilija Eftimov’s Blog" },
-
--->
 </body>
 </html>

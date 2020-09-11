@@ -1,48 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Flutter</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Flutter
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [
-        { url: "https://dart.dev/", desc: "Dart.dev" },
-        { url: "https://pub.dev/", desc: "Pub.dev" },
-        { url: "https://flutter.io/", desc: "Flutter.io" },
-        { url: "https://flutter.dev/web", desc: "Flutter for Web" },
-        { url: "https://flutter.github.io/samples/", desc: "Flutter Samples" },
-        { url: "https://book.flutterchina.club/", desc: "Flutter实战" },
-      ],
-      [
-        { url: "https://dart.dev/tutorials", desc: "Dart Tutorial" },
-        { url: "https://dartpad.dartlang.org/", desc: "Dart Pad" },
-        { url: "https://docs.flutter.io/flutter/material/Material-class.html", desc: "Flutter Meterial class" },
-        { url: "https://docs.flutter.io/flutter/widgets/widgets-library.html", desc: "Flutter Widgets Library" },
-      ],
-      "---",
-      [
-        { url: "https://github.com/Solido/awesome-flutter", desc: "#Awesome Flutter" },
-        { url: "https://github.com/kaina404/FlutterDouBan", desc: "Flutter DouBan" },
-        { url: "https://www.tutorialspoint.com/dart_programming/index.htm", desc: "Dart Tutorial" },
-      ],
-      "---",
-      { url: "https://sergiandreplace.com/planets-flutter-from-design-to-app/", desc: "#Planets-Flutter: from design to app" },
-      { url: "https://proandroiddev.com/flutter-from-zero-to-comfortable-6b1d6b2d20e", desc: "#Flutter: from zero to comfortable" },
-    ];
+[https://dart.dev/](https://dart.dev/)  Dart.dev | [Pub.dev](https://pub.dev/) | [Flutter.io](https://flutter.io/) | [Flutter for Web](https://flutter.dev/web) | [Flutter Samples](https://flutter.github.io/samples/) | [Flutter实战](https://book.flutterchina.club/)  
+[https://dart.dev/tutorials](https://dart.dev/tutorials)  Dart Tutorial | [Dart Pad](https://dartpad.dartlang.org/) | [Flutter Meterial class](https://docs.flutter.io/flutter/material/Material-class.html) | [Flutter Widgets Library](https://docs.flutter.io/flutter/widgets/widgets-library.html)  
+  
+[Awesome Flutter](https://github.com/Solido/awesome-flutter) | [Flutter DouBan](https://github.com/kaina404/FlutterDouBan) | [Dart Tutorial](https://www.tutorialspoint.com/dart_programming/index.htm)  
+  
+[Planets-Flutter: from design to app](https://sergiandreplace.com/planets-flutter-from-design-to-app/)  
+[Flutter: from zero to comfortable](https://proandroiddev.com/flutter-from-zero-to-comfortable-6b1d6b2d20e)
+</template>
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>

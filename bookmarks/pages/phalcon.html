@@ -1,99 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <title>Bookmarks</title>
   <base target="_blank">
-  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
-  <script src="bookmarks.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-<!-- ------------------------------------------------------------ -->
-<h3>Phalcon</h3>
-<!-- ------------------------------------------------------------ -->
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
 
-  <div id="container"></div>
+<template>
+### Phalcon
 
-  <script type="text/javascript">
-    var bookmarks = [
-      [ 
-        { url: "https://phalcon.io/en-us", desc: "Phalcon" },
-        { url: "https://docs.phalcon.io/5.0/en/introduction", desc: "Phalcon Doc" },
-        { url: "https://docs.phalcon.io/5.0/en/api/", desc: "Api Docs" },
-      ],
-      "-",
-      [
-        { url: "https://docs.phalcon.io/5.0/en/di", desc: "#DI" },
-        { url: "https://docs.phalcon.io/5.0/en/mvc", desc: "MVC" },
-        { url: "https://docs.phalcon.io/5.0/en/cache", desc: "Cache" },
-        { url: "https://docs.phalcon.io/5.0/en/config", desc: "Config" },
-        { url: "https://docs.phalcon.io/5.0/en/escaper", desc: "Escaper" },
-        { url: "https://docs.phalcon.io/5.0/en/loader", desc: "Loader" },
-        { url: "https://docs.phalcon.io/5.0/en/namespaces", desc: "Namespaces" },
-        { url: "https://docs.phalcon.io/5.0/en/logging", desc: "Logging" },
-        { url: "https://docs.phalcon.io/5.0/en/queue", desc: "Queue" },
-      ],
-      "-",
-      [
-        { url: "https://docs.phalcon.io/5.0/en/db-layer", desc: "#DB Layer" },
-        { url: "https://docs.phalcon.io/5.0/en/db-phql", desc: "DB PHQL" },
-        { url: "https://docs.phalcon.io/5.0/en/db-odm", desc: "DB ODM" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models", desc: "DB Models" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models-behaviors", desc: "DB Models Behaviors" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models-cache", desc: "DB Models Cache" },
-      ],
-      [
-        { url: "https://docs.phalcon.io/5.0/en/db-models-events", desc: "#DB Models Events" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models-metadata", desc: "DB Models Metadata" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models-relationships", desc: "DB Models Relationships" },
-        { url: "https://docs.phalcon.io/5.0/en/db-models-transactions", desc: "DB Models Transactions" },
-      ],
-      [
-        { url: "https://docs.phalcon.io/5.0/en/db-models-validation", desc: "#DB Models Validation" },
-        { url: "https://docs.phalcon.io/5.0/en/db-migrations", desc: "DB Migrations" },
-        { url: "https://docs.phalcon.io/5.0/en/db-pagination", desc: "DB Pagination" },
-      ],
-      "-",
-      [
-        { url: "https://docs.phalcon.io/5.0/en/assets", desc: "#Assets" },
-        { url: "https://docs.phalcon.io/5.0/en/flash", desc: "Flash" },
-        { url: "https://docs.phalcon.io/5.0/en/forms", desc: "Forms" },
-        { url: "https://docs.phalcon.io/5.0/en/image", desc: "Image" },
-        { url: "https://docs.phalcon.io/5.0/en/tag", desc: "Tag" },
-        { url: "https://docs.phalcon.io/5.0/en/acl", desc: "Acl" },
-        { url: "https://docs.phalcon.io/5.0/en/annotations", desc: "Annotations" },
-        { url: "https://docs.phalcon.io/5.0/en/views", desc: "Views" },
-        { url: "https://docs.phalcon.io/5.0/en/volt", desc: "Volt" },
-        { url: "https://docs.phalcon.io/5.0/en/controllers", desc: "Controllers" },
-      ],
-      [
-        { url: "https://docs.phalcon.io/5.0/en/dispatcher", desc: "#Dispatcher" },
-        { url: "https://docs.phalcon.io/5.0/en/events", desc: "Events" },
-        { url: "https://docs.phalcon.io/5.0/en/filter", desc: "Filter" },
-        { url: "https://docs.phalcon.io/5.0/en/routing", desc: "Routing" },
-        { url: "https://docs.phalcon.io/5.0/en/session", desc: "Session" },
-        { url: "https://docs.phalcon.io/5.0/en/url", desc: "Url" },
-        { url: "https://docs.phalcon.io/5.0/en/validation", desc: "Validation" },
-        { url: "https://docs.phalcon.io/5.0/en/cookies", desc: "Cookies" },
-        { url: "https://docs.phalcon.io/5.0/en/request", desc: "Request" },
-        { url: "https://docs.phalcon.io/5.0/en/response", desc: "Response" },
-      ],
-      [
-        { url: "https://docs.phalcon.io/5.0/en/crypt", desc: "#Crypt" },
-        { url: "https://docs.phalcon.io/5.0/en/security", desc: "Security" },
-        { url: "https://docs.phalcon.io/5.0/en/i18n", desc: "I18n" },
-        { url: "https://docs.phalcon.io/5.0/en/translate", desc: "Translate" },
-      ],
-      "-",
-      [
-        { url: "https://github.com/phalcon/mvc", desc: "#Phalcon MVC Examples" },
-        { url: "https://github.com/phalcon/awesome-phalcon", desc: "Awesome Phalcon" },
-        { url: "https://github.com/Riu/phalconization", desc: "Phalconization" },
-      ],
-    ];
+[https://phalcon.io/en-us](https://phalcon.io/en-us)  Phalcon | [Phalcon Doc](https://docs.phalcon.io/5.0/en/introduction) | [Api Docs](https://docs.phalcon.io/5.0/en/api/)  
+  
+[DI](https://docs.phalcon.io/5.0/en/di) | [MVC](https://docs.phalcon.io/5.0/en/mvc) | [Cache](https://docs.phalcon.io/5.0/en/cache) | [Config](https://docs.phalcon.io/5.0/en/config) | [Escaper](https://docs.phalcon.io/5.0/en/escaper) | [Loader](https://docs.phalcon.io/5.0/en/loader) | [Namespaces](https://docs.phalcon.io/5.0/en/namespaces) | [Logging](https://docs.phalcon.io/5.0/en/logging) | [Queue](https://docs.phalcon.io/5.0/en/queue)  
+  
+[DB Layer](https://docs.phalcon.io/5.0/en/db-layer) | [DB PHQL](https://docs.phalcon.io/5.0/en/db-phql) | [DB ODM](https://docs.phalcon.io/5.0/en/db-odm) | [DB Models](https://docs.phalcon.io/5.0/en/db-models) | [DB Models Behaviors](https://docs.phalcon.io/5.0/en/db-models-behaviors) | [DB Models Cache](https://docs.phalcon.io/5.0/en/db-models-cache)  
+[DB Models Events](https://docs.phalcon.io/5.0/en/db-models-events) | [DB Models Metadata](https://docs.phalcon.io/5.0/en/db-models-metadata) | [DB Models Relationships](https://docs.phalcon.io/5.0/en/db-models-relationships) | [DB Models Transactions](https://docs.phalcon.io/5.0/en/db-models-transactions)  
+[DB Models Validation](https://docs.phalcon.io/5.0/en/db-models-validation) | [DB Migrations](https://docs.phalcon.io/5.0/en/db-migrations) | [DB Pagination](https://docs.phalcon.io/5.0/en/db-pagination)  
+  
+[Assets](https://docs.phalcon.io/5.0/en/assets) | [Flash](https://docs.phalcon.io/5.0/en/flash) | [Forms](https://docs.phalcon.io/5.0/en/forms) | [Image](https://docs.phalcon.io/5.0/en/image) | [Tag](https://docs.phalcon.io/5.0/en/tag) | [Acl](https://docs.phalcon.io/5.0/en/acl) | [Annotations](https://docs.phalcon.io/5.0/en/annotations) | [Views](https://docs.phalcon.io/5.0/en/views) | [Volt](https://docs.phalcon.io/5.0/en/volt) | [Controllers](https://docs.phalcon.io/5.0/en/controllers)  
+[Dispatcher](https://docs.phalcon.io/5.0/en/dispatcher) | [Events](https://docs.phalcon.io/5.0/en/events) | [Filter](https://docs.phalcon.io/5.0/en/filter) | [Routing](https://docs.phalcon.io/5.0/en/routing) | [Session](https://docs.phalcon.io/5.0/en/session) | [Url](https://docs.phalcon.io/5.0/en/url) | [Validation](https://docs.phalcon.io/5.0/en/validation) | [Cookies](https://docs.phalcon.io/5.0/en/cookies) | [Request](https://docs.phalcon.io/5.0/en/request) | [Response](https://docs.phalcon.io/5.0/en/response)  
+[Crypt](https://docs.phalcon.io/5.0/en/crypt) | [Security](https://docs.phalcon.io/5.0/en/security) | [I18n](https://docs.phalcon.io/5.0/en/i18n) | [Translate](https://docs.phalcon.io/5.0/en/translate)  
+  
+[Phalcon MVC Examples](https://github.com/phalcon/mvc) | [Awesome Phalcon](https://github.com/phalcon/awesome-phalcon) | [Phalconization](https://github.com/Riu/phalconization)
 
-    var container = document.getElementById("container");
-    render(bookmarks, container);
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
 
 </body>
