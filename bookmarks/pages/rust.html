@@ -14,13 +14,16 @@
 ### Rust
 
 [https://www.rust-lang.org/](https://www.rust-lang.org/)  Rust Lang  
-[Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) | [Rust Cookbook 中文版](https://rustwiki.org/zh-CN/rust-cookbook/) | [Hands-on Rust](https://pragprog.com/titles/hwrust/hands-on-rust/) | [Rust Tutorial by Android Team](https://google.github.io/comprehensive-rust/)
+[Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/) | 
+[Rust Cookbook 中文版](https://rustwiki.org/zh-CN/rust-cookbook/) | 
+[Hands-on Rust](https://pragprog.com/titles/hwrust/hands-on-rust/) | 
+[Rust Tutorial by Android Team](https://google.github.io/comprehensive-rust/)
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

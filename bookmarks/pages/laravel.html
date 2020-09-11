@@ -13,16 +13,29 @@
 <template>
 ### Laravel
 
-[Laravel](http://laravel.com/) | [Homestead](https://laravel.com/docs/6.x/homestead) | [Lumen](https://lumen.laravel.com/) | [Spark](https://spark.laravel.com/) | [Nova](https://nova.laravel.com/) | [Horizon](https://horizon.laravel.com/) | [Vapor](https://vapor.laravel.com/) | [Laradock](http://laradock.io/) | [Envoyer](https://envoyer.io/)  
-  
-[Laracasts](https://laracasts.com/) | [Laravel Daily](https://laraveldaily.com/) | [Laravel-News](https://laravel-news.com/) | [Livewire v2](https://laravel-livewire.com/docs) | [Livewire v3](https://livewire.laravel.com/docs) | [Laravel.io](https://laravel.io/forum)  
-  
+[Laravel](http://laravel.com/) | 
+[Homestead](https://laravel.com/docs/6.x/homestead) | 
+[Lumen](https://lumen.laravel.com/) | 
+[Spark](https://spark.laravel.com/) | 
+[Nova](https://nova.laravel.com/) | 
+[Horizon](https://horizon.laravel.com/) | 
+[Vapor](https://vapor.laravel.com/) | 
+[Laradock](http://laradock.io/) | 
+[Envoyer](https://envoyer.io/)  
+
+[Laracasts](https://laracasts.com/) | 
+[Laravel Daily](https://laraveldaily.com/) | 
+[Laravel-News](https://laravel-news.com/) | 
+[Livewire v2](https://laravel-livewire.com/docs) | 
+[Livewire v3](https://livewire.laravel.com/docs) | 
+[Laravel.io](https://laravel.io/forum)  
+
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

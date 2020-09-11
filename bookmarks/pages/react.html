@@ -13,14 +13,24 @@
 <template>
 ### React
 
-[https://reactjs.org/](https://reactjs.org/)  React JS | [React.dev](https://react.dev/) | [Learn React for free](https://scrimba.com/g/glearnreact)  
-[https://preactjs.com/](https://preactjs.com/)  Preact.js | [Nerv.js](https://nerv.aotu.io/) | [Inferno.js](https://infernojs.org/)  
+[https://reactjs.org/](https://reactjs.org/)  React JS | 
+[React.dev](https://react.dev/) | 
+[Learn React for free](https://scrimba.com/g/glearnreact)  
+[https://preactjs.com/](https://preactjs.com/)  Preact.js | 
+[Nerv.js](https://nerv.aotu.io/) | 
+[Inferno.js](https://infernojs.org/)  
 [https://doc.react-china.org/](https://doc.react-china.org/)  React China  
 
 ### Components
 
-[https://ant.design/](https://ant.design/)  Ant Design | [Prime React](https://www.primefaces.org/primereact/) | [Fluent UI](https://developer.microsoft.com/en-us/fluentui) | [React UI Library](https://zarm.design/) | [React Drag Tool](https://github.com/codebdy/rxdrag)  
-[Adobe Spectrum](https://spectrum.adobe.com/) | [React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) | [Spectrum CSS](https://github.com/adobe/spectrum-css)  
+[https://ant.design/](https://ant.design/)  Ant Design | 
+[Prime React](https://www.primefaces.org/primereact/) | 
+[Fluent UI](https://developer.microsoft.com/en-us/fluentui) | 
+[React UI Library](https://zarm.design/) | 
+[React Drag Tool](https://github.com/codebdy/rxdrag)  
+[Adobe Spectrum](https://spectrum.adobe.com/) | 
+[React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html) | 
+[Spectrum CSS](https://github.com/adobe/spectrum-css)  
   
 [https://rubylouvre.github.io/anu/](https://rubylouvre.github.io/anu/)  Anu  
 [https://material-ui.com/](https://material-ui.com/)  Material UI  
@@ -33,15 +43,20 @@
 
 ### Tutorials
 
-[Intro to React](https://reactjs.org/tutorial/tutorial.html) | [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) | [React Articles](https://daveceddia.com/archives/) | [React blog](https://daveceddia.com/archives/) | [React 入门教程](https://react.docschina.org/tutorial/tutorial.html)  
-[**Build Your Own React**](https://pomb.us/build-your-own-react/) | [Github Repo](https://github.com/pomber/didact)
+[Intro to React](https://reactjs.org/tutorial/tutorial.html) | 
+[Thinking in React](https://reactjs.org/docs/thinking-in-react.html) | 
+[React Articles](https://daveceddia.com/archives/) | 
+[React blog](https://daveceddia.com/archives/) | 
+[React 入门教程](https://react.docschina.org/tutorial/tutorial.html)  
+[**Build Your Own React**](https://pomb.us/build-your-own-react/) | 
+[Github Repo](https://github.com/pomber/didact)
 
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

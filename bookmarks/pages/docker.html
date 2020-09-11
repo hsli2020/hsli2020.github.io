@@ -17,22 +17,27 @@
 
 ### Docker Tutorials
 
-[Docker — 从入门到实践](https://docker_practice.gitee.io/) | [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/) | [Docker Curriculum](https://docker-curriculum.com/)  
+[Docker — 从入门到实践](https://docker_practice.gitee.io/) | 
+[Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/) | 
+[Docker Curriculum](https://docker-curriculum.com/)  
 
 ### Microservices
 
-[微服务：从设计到部署](https://docshome.gitbooks.io/microservices/content/) | [What is Istio](https://istio.io/docs/concepts/what-is-istio/)  
+[微服务：从设计到部署](https://docshome.gitbooks.io/microservices/content/) | 
+[What is Istio](https://istio.io/docs/concepts/what-is-istio/)  
 
 ### Kubernetes
 
-[Kubernetes中文手册](https://www.kubernetes.org.cn/docs) | [Kubernetes从入门到实践](https://www.kancloud.cn/huyipow/kubernetes/531982) | [Kubernetes Academy](https://kubernetes.academy/)
+[Kubernetes中文手册](https://www.kubernetes.org.cn/docs) | 
+[Kubernetes从入门到实践](https://www.kancloud.cn/huyipow/kubernetes/531982) | 
+[Kubernetes Academy](https://kubernetes.academy/)
 
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

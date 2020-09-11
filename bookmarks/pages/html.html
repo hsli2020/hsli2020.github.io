@@ -13,7 +13,8 @@
 <template>
 ### HTML5
 
-[Mozilla Developer Network](https://developer.mozilla.org/en-US/) | [HTML5 快速指南](http://wiki.jikexueyuan.com/project/html5/quick-guide.html)  
+[Mozilla Developer Network](https://developer.mozilla.org/en-US/) | 
+[HTML5 快速指南](http://wiki.jikexueyuan.com/project/html5/quick-guide.html)  
   
 [https://html5boilerplate.com/](https://html5boilerplate.com/)  HTML5 Boilerplate  
 [http://jsfiddle.net/](http://jsfiddle.net/)  JsFiddle
@@ -23,7 +24,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

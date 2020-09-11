@@ -13,8 +13,14 @@
 <template>
 ### Todo
 
-[https://scrimba.com/](https://scrimba.com/)  Scrimba | [Learn React](https://scrimba.com/g/glearnreact) | [Learn Vue](https://scrimba.com/g/glearnvue) | [Learn Bulma](https://scrimba.com/g/gbulma) | [Learn Bootstrap4](https://scrimba.com/g/gbootstrap4)  
-[https://www.coursera.org/](https://www.coursera.org/)  Coursera | [Udacity](https://cn.udacity.com/) | [Udemy](https://www.udemy.com/)  
+[https://scrimba.com/](https://scrimba.com/)  Scrimba | 
+[Learn React](https://scrimba.com/g/glearnreact) | 
+[Learn Vue](https://scrimba.com/g/glearnvue) | 
+[Learn Bulma](https://scrimba.com/g/gbulma) | 
+[Learn Bootstrap4](https://scrimba.com/g/gbootstrap4)  
+[https://www.coursera.org/](https://www.coursera.org/)  Coursera | 
+[Udacity](https://cn.udacity.com/) | 
+[Udemy](https://www.udemy.com/)  
 
 [https://course.elementsofai.com/](https://course.elementsofai.com/)  Elements of AI (Sweden Gov)  
 [https://geektutu.com/post/gee.html](https://geektutu.com/post/gee.html)  7天用Go从零实现Web框架Gee教程  
@@ -24,7 +30,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

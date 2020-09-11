@@ -13,30 +13,67 @@
 <template>
 ## CSS3
 
-[Mozilla Developer Network](https://developer.mozilla.org/en-US/) | [CSS Tricks](https://css-tricks.com/) | [JsFiddle](https://jsfiddle.net/)  
-  
-[w3schools](http://www.w3schools.com/) | [w3.css](http://www.w3schools.com/w3css/default.asp) | [css tester](https://www.w3schools.com/cssref/trysel.asp) | [how-to](http://www.w3schools.com/howto/default.asp) | [bootstrap](http://www.w3schools.com/bootstrap/default.asp) | [icon reference](https://www.w3schools.com/icons/icons_reference.asp) | [Dingbats](https://www.w3schools.com/charsets/ref_utf_dingbats.asp)  
+[Mozilla Developer Network](https://developer.mozilla.org/en-US/) | 
+[CSS Tricks](https://css-tricks.com/) | 
+[JsFiddle](https://jsfiddle.net/)
+
+[w3schools](http://www.w3schools.com/) | 
+[w3.css](http://www.w3schools.com/w3css/default.asp) | 
+[css tester](https://www.w3schools.com/cssref/trysel.asp) | 
+[how-to](http://www.w3schools.com/howto/default.asp) | 
+[bootstrap](http://www.w3schools.com/bootstrap/default.asp) | 
+[icon reference](https://www.w3schools.com/icons/icons_reference.asp) | 
+[Dingbats](https://www.w3schools.com/charsets/ref_utf_dingbats.asp)
 
 ### Frameworks
 
-[Bootstrap](https://getbootstrap.com/) | [Bulma](https://bulma.io/) | [Foundation](https://foundation.zurb.com/) | [Skeleton](https://getskeleton.com/) | [Semantic UI](https://semantic-ui.com/) | [Pure CSS](https://purecss.io/)  
-[Framework7](http://www.idangero.us/framework7/) | [Ionic Framework](http://ionicframework.com/) | [UIkit](http://getuikit.com/) | [Gumby](http://www.gumbyframework.com/) | [Ratchet](http://goratchet.com/) | [Base](http://getbase.org/) | [Halfmoon](https://www.gethalfmoon.com/docs/introduction/)  
-  
-[Kube](https://imperavi.com/kube/docs/) | [Spectre CSS](https://picturepan2.github.io/spectre/index.html) | [Paper CSS](https://www.getpapercss.com/) | [Materialize CSS](http://materializecss.com/) | [Material Design Lite](https://getmdl.io/)  
-[Mini CSS](https://minicss.org/) | [Tailwind](https://tailwindcss.com/) | [Tachyons](https://tachyons.io/) | [Amaze UI](http://amazeui.org/) | [kissy](http://docs.kissyui.com/) | [MUI](http://dev.dcloud.net.cn/mui/) | [ZUI](http://zui.sexy/) | [Water.CSS](https://kognise.github.io/water.css/) | [MVP.css](https://andybrewer.github.io/mvp)  
-  
-[https://www.meteor.com/](https://www.meteor.com/)  Meteor | [Yui](http://yuilibrary.com/) | [JX](http://alloyteam.github.io/JX/) | [BEM](https://en.bem.info/methodology/quick-start/)  
+[Bootstrap](https://getbootstrap.com/) | 
+[Bulma](https://bulma.io/) | 
+[Foundation](https://foundation.zurb.com/) | 
+[Skeleton](https://getskeleton.com/) | 
+[Semantic UI](https://semantic-ui.com/) | 
+[Pure CSS](https://purecss.io/)  
+[Framework7](http://www.idangero.us/framework7/) | 
+[Ionic Framework](http://ionicframework.com/) | 
+[UIkit](http://getuikit.com/) | 
+[Gumby](http://www.gumbyframework.com/) | 
+[Ratchet](http://goratchet.com/) | 
+[Base](http://getbase.org/) | 
+[Halfmoon](https://www.gethalfmoon.com/docs/introduction/)
+
+[Kube](https://imperavi.com/kube/docs/) | 
+[Spectre CSS](https://picturepan2.github.io/spectre/index.html) | 
+[Paper CSS](https://www.getpapercss.com/) | 
+[Materialize CSS](http://materializecss.com/) | 
+[Material Design Lite](https://getmdl.io/)  
+[Mini CSS](https://minicss.org/) | 
+[Tailwind](https://tailwindcss.com/) | 
+[Tachyons](https://tachyons.io/) | 
+[Amaze UI](http://amazeui.org/) | 
+[kissy](http://docs.kissyui.com/) | 
+[MUI](http://dev.dcloud.net.cn/mui/) | 
+[ZUI](http://zui.sexy/) | 
+[Water.CSS](https://kognise.github.io/water.css/) | 
+[MVP.css](https://andybrewer.github.io/mvp)
+
+[https://www.meteor.com/](https://www.meteor.com/)  Meteor | 
+[Yui](http://yuilibrary.com/) | 
+[JX](http://alloyteam.github.io/JX/) | 
+[BEM](https://en.bem.info/methodology/quick-start/)
 
 ### Effects
 
-[https://github.com/STRML/strml.net](https://github.com/STRML/strml.net)  Cool Effects | [CSS3奇思妙想](https://github.com/chokcoco/magicCss) | [Hero Patterns](http://www.heropatterns.com/) | [Gradient Magic](https://www.gradientmagic.com/)
+[https://github.com/STRML/strml.net](https://github.com/STRML/strml.net) Cool Effects  
+[CSS3奇思妙想](https://github.com/chokcoco/magicCss) | 
+[Hero Patterns](http://www.heropatterns.com/) | 
+[Gradient Magic](https://www.gradientmagic.com/)
 
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

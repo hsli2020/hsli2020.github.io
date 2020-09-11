@@ -13,15 +13,24 @@
 <template>
 ### Software
 
-[https://gohugo.io/](https://gohugo.io/)  Hugo Blog | [Hexo Blog](https://hexo.io/zh-cn/docs/) | [Jekyll Blog](https://jekyllrb.com/)  
+[https://gohugo.io/](https://gohugo.io/)  Hugo Blog | 
+[Hexo Blog](https://hexo.io/zh-cn/docs/) | 
+[Jekyll Blog](https://jekyllrb.com/)  
 [https://www.sumatrapdfreader.org/free-pdf-reader.html](https://www.sumatrapdfreader.org/free-pdf-reader.html)  Sumatra PDF Reader  
 [https://wkhtmltopdf.org/](https://wkhtmltopdf.org/)  wkhtmltopdf  
-[https://tuxproject.de/projects/vim/](https://tuxproject.de/projects/vim/)  Vim Tux | [SpaceVim](https://spacevim.org/) | [spf13-vim](https://github.com/spf13/spf13-vim)  
-[https://gogs.io/](https://gogs.io/)  Gogs | [Gitea](https://gitea.io/) | [Pdfcpu](https://pdfcpu.io/) | [GitFork](https://git-fork.com/)  
+[https://tuxproject.de/projects/vim/](https://tuxproject.de/projects/vim/)  Vim Tux | 
+[SpaceVim](https://spacevim.org/) | 
+[spf13-vim](https://github.com/spf13/spf13-vim)  
+[https://gogs.io/](https://gogs.io/)  Gogs | 
+[Gitea](https://gitea.io/) | 
+[Pdfcpu](https://pdfcpu.io/) | 
+[GitFork](https://git-fork.com/)  
 [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download)  TDM GCC  
 [https://jmeubank.github.io/tdm-gcc/](https://jmeubank.github.io/tdm-gcc/)  TDM-GCC  
 [https://viewer.dadroit.com/](https://viewer.dadroit.com/)  Dadroit JSON Viewer  
-[https://dbeaver.io/](https://dbeaver.io/)  DBeaver | [SQLite Expert](http://www.sqliteexpert.com/download.html) | [TablePlus](https://tableplus.com/)  
+[https://dbeaver.io/](https://dbeaver.io/)  DBeaver | 
+[SQLite Expert](http://www.sqliteexpert.com/download.html) | 
+[TablePlus](https://tableplus.com/)  
 [https://sciter.com/](https://sciter.com/)  Sciter - Embeddable HTML/CSS/script engine  
 [https://ultralig.ht/](https://ultralig.ht/)  Ultralight - HTML UI  
 [https://androidpal.com/studio/about](https://androidpal.com/studio/about)  AP Studio IDE  
@@ -31,7 +40,8 @@
 [https://guacamole.apache.org/](https://guacamole.apache.org/)  Apache Guacamole  
 [https://httptoolkit.tech/mock/](https://httptoolkit.tech/mock/)  Http Toolkit  
 [https://www.geany.org/](https://www.geany.org/)  Geany  
-[https://www.artweaver.de/en](https://www.artweaver.de/en)  Artweaver | [日本免费开源绘画软件FireAlpaca](https://firealpaca.com/)  
+[https://www.artweaver.de/en](https://www.artweaver.de/en)  Artweaver | 
+[日本免费开源绘画软件FireAlpaca](https://firealpaca.com/)  
 [https://obsproject.com/](https://obsproject.com/)  OBS Studio  
 [http://www.videosoftdev.com/free-video-editor](http://www.videosoftdev.com/free-video-editor)  VSDC Video Editor  
 [http://xrdp.org/](http://xrdp.org/)  An open-source Remote Desktop Protocol server  
@@ -44,7 +54,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

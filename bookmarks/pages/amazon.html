@@ -13,11 +13,18 @@
 <template>
 ### Amazon
 
-[**Amazon Selling Partner API**](https://developer-docs.amazon.com/sp-api/docs) | [Amazon AWS](http://aws.amazon.com/) | [Amazon AWS Doc](http://aws.amazon.com/documentation/) | [Amazon EC2 Doc](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)  
-  
-[AWS API guide for PHP](http://docs.aws.amazon.com/aws-sdk-php/v3/guide/) | [AWS API for PHP](http://docs.aws.amazon.com/aws-sdk-php/v3/api/)  
-[Amazon SQS](https://aws.amazon.com/sqs/) | [Amazon SQS Document](https://aws.amazon.com/documentation/sqs/) | [SQS API Ref](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Welcome.html) | [SQS Guide](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/Welcome.html)  
-  
+[**Amazon Selling Partner API**](https://developer-docs.amazon.com/sp-api/docs) |
+[Amazon AWS](http://aws.amazon.com/) |
+[Amazon AWS Doc](http://aws.amazon.com/documentation/) |
+[Amazon EC2 Doc](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+
+[AWS API guide for PHP](http://docs.aws.amazon.com/aws-sdk-php/v3/guide/) | 
+[AWS API for PHP](http://docs.aws.amazon.com/aws-sdk-php/v3/api/)  
+[Amazon SQS](https://aws.amazon.com/sqs/) | 
+[Amazon SQS Document](https://aws.amazon.com/documentation/sqs/) | 
+[SQS API Ref](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Welcome.html) | 
+[SQS Guide](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/Welcome.html)
+
 [https://aws.amazon.com/whitepapers/](https://aws.amazon.com/whitepapers/)  AWS whitepapers
 
 </template>
@@ -25,7 +32,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

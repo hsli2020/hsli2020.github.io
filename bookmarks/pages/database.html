@@ -13,23 +13,25 @@
 <template>
 ### Database
 
-[http://dev.mysql.com/doc/](http://dev.mysql.com/doc/)  MySQL Doc  
-[http://www.postgresql.org/](http://www.postgresql.org/)  PostgreSQL | [Manual](http://www.postgres.cn/docs/12/index.html)  
-[https://www.sqlite.org/](https://www.sqlite.org/)  SQLite  
-[https://www.mongodb.org/](https://www.mongodb.org/)  MongoDB | [Docs](https://docs.mongodb.com/) | [Tutorial](https://www.tutorialspoint.com/mongodb/)  
-[http://redis.io/](http://redis.io/)  Redis  
-  
+[http://dev.mysql.com/doc/](http://dev.mysql.com/doc/) MySQL Doc  
+[http://www.postgresql.org/](http://www.postgresql.org/) PostgreSQL | 
+[Manual](http://www.postgres.cn/docs/12/index.html)  
+[https://www.sqlite.org/](https://www.sqlite.org/) SQLite  
+[https://www.mongodb.org/](https://www.mongodb.org/) MongoDB | 
+[Docs](https://docs.mongodb.com/) | [Tutorial](https://www.tutorialspoint.com/mongodb/)  
+[http://redis.io/](http://redis.io/) Redis  
+
 [https://www.elastic.co/products/elasticsearch](https://www.elastic.co/products/elasticsearch)  ElasticSearch  
-[http://sphinxsearch.com/](http://sphinxsearch.com/)  SphinxSearch  
-  
-[https://www.vertabelo.com/blog](https://www.vertabelo.com/blog)  Database Models  
-[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/)  Postgres Tutorial
+[http://sphinxsearch.com/](http://sphinxsearch.com/) SphinxSearch  
+
+[https://www.vertabelo.com/blog](https://www.vertabelo.com/blog) Database Models  
+[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/) Postgres Tutorial
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

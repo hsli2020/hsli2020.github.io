@@ -13,7 +13,9 @@
 <template>
 ### 常用链接
 
-[http://ejohn.org/profile-2013.40.jpg](http://ejohn.org/profile-2013.40.jpg)  jQuery作者的主页 | [优秀股票信息网站](http://softaa.com/) | [淘股论坛](http://www.taoguba.com.cn/)  
+[http://ejohn.org/profile-2013.40.jpg](http://ejohn.org/profile-2013.40.jpg)  jQuery作者的主页 | 
+[优秀股票信息网站](http://softaa.com/) | 
+[淘股论坛](http://www.taoguba.com.cn/)  
 [http://www.taoguba.com.cn/guba\_sh601998](http://www.taoguba.com.cn/guba_sh601998)  互联银行革命  
 
 [http://ejohn.org/full-profile-2013.43.jpg](http://ejohn.org/full-profile-2013.43.jpg)  jQuery作者的简介  
@@ -23,7 +25,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

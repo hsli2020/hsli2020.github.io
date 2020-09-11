@@ -13,27 +13,42 @@
 <template>
 ### Vue
 
-[https://cn.vuejs.org/](https://cn.vuejs.org/)  Vue JS | [Vue CLI](https://cli.vuejs.org/zh/) | [Vue Loader](https://vue-loader.vuejs.org/zh/) | [Vue Router](http://router.vuejs.org/zh-cn/) | [Vuex](https://vuex.vuejs.org/zh/)  
+[https://cn.vuejs.org/](https://cn.vuejs.org/)  Vue JS | 
+[Vue CLI](https://cli.vuejs.org/zh/) | 
+[Vue Loader](https://vue-loader.vuejs.org/zh/) | 
+[Vue Router](http://router.vuejs.org/zh-cn/) | 
+[Vuex](https://vuex.vuejs.org/zh/)  
 [https://nuxtjs.org/](https://nuxtjs.org/)  Nuxt JS  
 
 ### Components
 
-[http://element.eleme.io/](http://element.eleme.io/)  Element Vue | [iView](https://www.iviewui.com/) | [PrimeVue](http://primefaces.org/primevue/)  
-[https://bootstrap-vue.org](https://bootstrap-vue.org)  Bootstrap+Vue | [Vuetify JS](https://vuetifyjs.com/) | [Quasar](https://quasar.dev/)  
+[http://element.eleme.io/](http://element.eleme.io/)  Element Vue | 
+[iView](https://www.iviewui.com/) | 
+[PrimeVue](http://primefaces.org/primevue/)  
+[https://bootstrap-vue.org](https://bootstrap-vue.org)  Bootstrap+Vue | 
+[Vuetify JS](https://vuetifyjs.com/) | 
+[Quasar](https://quasar.dev/)  
   
-[Vant](https://youzan.github.io/vant/) | [Muse UI](https://muse-ui.org) | [HeyUI](https://github.com/heyui/heyui/) | [AT UI](https://at-ui.github.io/at-ui/#/en)  
-[AntDesignVue](https://github.com/vueComponent/ant-design-vue) | [Vue-beauty](https://github.com/FE-Driver/vue-beauty) | [v-dialogs](https://github.com/TerryZ/v-dialogs)  
+[Vant](https://youzan.github.io/vant/) | 
+[Muse UI](https://muse-ui.org) | 
+[HeyUI](https://github.com/heyui/heyui/) | 
+[AT UI](https://at-ui.github.io/at-ui/#/en)  
+[AntDesignVue](https://github.com/vueComponent/ant-design-vue) | 
+[Vue-beauty](https://github.com/FE-Driver/vue-beauty) | 
+[v-dialogs](https://github.com/TerryZ/v-dialogs)  
 
 ### Tutorials
 
-[Vue技术内幕](http://hcysun.me/vue-design/) | [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/) | [vue-cli-analysis](https://kuangpf.com/vue-cli-analysis/foreword/)
+[Vue技术内幕](http://hcysun.me/vue-design/) | 
+[Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/) | 
+[vue-cli-analysis](https://kuangpf.com/vue-cli-analysis/foreword/)
 
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

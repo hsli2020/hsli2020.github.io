@@ -13,14 +13,16 @@
 <template>
 ### Symfony
 
-[https://symfony.com/](https://symfony.com/)  Symfony Framework | [Symfony Reference](https://symfony.com/doc/current/reference/index.html) | [Bundles for Symfony2](http://knpbundles.com/)  
+[https://symfony.com/](https://symfony.com/)  Symfony Framework | 
+[Symfony Reference](https://symfony.com/doc/current/reference/index.html) | 
+[Bundles for Symfony2](http://knpbundles.com/)  
 [https://sylius.com/](https://sylius.com/)  Open Source eCommerce Platform on Symfony
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

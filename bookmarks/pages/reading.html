@@ -13,14 +13,32 @@
 <template>
 ### Javascript
 
-[Speaking JavaScript](http://speakingjs.com/es5/index.html) | [**Eloquent JavaScript**](http://eloquentjavascript.net/) | [Exploring ES6](http://exploringjs.com/es6/index.html) | [**Learning JavaScript Design Patterns**](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) | [TodoMVC](http://todomvc.com/)  
-[David Walsh Blog](https://davidwalsh.name/) | [最棒的 JavaScript 学习指南](https://zhuanlan.zhihu.com/p/33298555) | [现代Javascript教程](https://zh.javascript.info/) | [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)  
-[Frontend Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/) | [语雀IT百科](https://www.yuque.com/yuque/blog/yuque-info-tech-encyclopedia) | [前端面试重难点](https://github.com/yygmind/blog) | [Javascript标准参考教程](http://javascript.ruanyifeng.com/) | [Puppeteer](https://pptr.dev/#?product=Puppeteer)  
-[Javascript.Info](https://javascript.info/) | [FrontEnd Engineer](https://github.com/ljianshu/Blog) | [Morden JS Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet) | [Project Guidelines](https://github.com/wearehive/project-guidelines/blob/master/README-zh.md) | [JavaScript 教程](http://wangdoc.com/javascript/index.html)  
+[Speaking JavaScript](http://speakingjs.com/es5/index.html) | 
+[**Eloquent JavaScript**](http://eloquentjavascript.net/) | 
+[Exploring ES6](http://exploringjs.com/es6/index.html) | 
+[**Learning JavaScript Design Patterns**](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) | 
+[TodoMVC](http://todomvc.com/)  
+[David Walsh Blog](https://davidwalsh.name/) | 
+[最棒的 JavaScript 学习指南](https://zhuanlan.zhihu.com/p/33298555) | 
+[现代Javascript教程](https://zh.javascript.info/) | 
+[深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)  
+[Frontend Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/) | 
+[语雀IT百科](https://www.yuque.com/yuque/blog/yuque-info-tech-encyclopedia) | 
+[前端面试重难点](https://github.com/yygmind/blog) | 
+[Javascript标准参考教程](http://javascript.ruanyifeng.com/) | 
+[Puppeteer](https://pptr.dev/#?product=Puppeteer)  
+[Javascript.Info](https://javascript.info/) | 
+[FrontEnd Engineer](https://github.com/ljianshu/Blog) | 
+[Morden JS Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet) | 
+[Project Guidelines](https://github.com/wearehive/project-guidelines/blob/master/README-zh.md) | 
+[JavaScript 教程](http://wangdoc.com/javascript/index.html)  
   
-[Why Web Modules?](http://requirejs.org/docs/why.html) | [Why AMD?](http://requirejs.org/docs/whyamd.html) | [Relation between CommonJS, AMD and RequireJS?](http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)  
+[Why Web Modules?](http://requirejs.org/docs/why.html) | 
+[Why AMD?](http://requirejs.org/docs/whyamd.html) | 
+[Relation between CommonJS, AMD and RequireJS?](http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)  
 [Writing Modular JavaScript With AMD, CommonJS & ES Harmony](http://addyosmani.com/writing-modular-js/)  
-[Understanding AMD & RequireJS](https://www.devbridge.com/articles/understanding-amd-requirejs/) | [3 ways to define a JavaScript class](http://www.phpied.com/3-ways-to-define-a-javascript-class/)  
+[Understanding AMD & RequireJS](https://www.devbridge.com/articles/understanding-amd-requirejs/) | 
+[3 ways to define a JavaScript class](http://www.phpied.com/3-ways-to-define-a-javascript-class/)  
 
 ### Golang
 
@@ -32,8 +50,12 @@
 [https://chai2010.gitbooks.io/advanced-go-programming-book/content/](https://chai2010.gitbooks.io/advanced-go-programming-book/content/)  Go语言高级编程  
 [https://goquiz.github.io/](https://goquiz.github.io/)  Go语言经典笔试题  
   
-[《Flynn 文档中文版》](http://www.oschina.net/news/69536/flynn-doc-cn) | [Caddy中文文档](https://dengxiaolong.com/caddy/zh/) | [Hugo中文文档](http://www.gohugo.org/)  
-[Elasticsearch 权威指南](http://es.xiaoleilu.com/index.html) | [Design Patterns](https://sourcemaking.com/design_patterns) | [RESTful](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)  
+[《Flynn 文档中文版》](http://www.oschina.net/news/69536/flynn-doc-cn) | 
+[Caddy中文文档](https://dengxiaolong.com/caddy/zh/) | 
+[Hugo中文文档](http://www.gohugo.org/)  
+[Elasticsearch 权威指南](http://es.xiaoleilu.com/index.html) | 
+[Design Patterns](https://sourcemaking.com/design_patterns) | 
+[RESTful](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)  
   
 [https://cstack.github.io/db\_tutorial/](https://cstack.github.io/db_tutorial/)  Writing a sqlite clone from scratch in C  
 [https://github.com/k88hudson/git-flight-rules/blob/master/README.md](https://github.com/k88hudson/git-flight-rules/blob/master/README.md)  Git Flight Rules  
@@ -45,7 +67,7 @@
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>

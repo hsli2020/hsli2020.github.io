@@ -13,19 +13,39 @@
 <template>
 ### Google
 
-[http://www.google.com](http://www.google.com)  Google Search | [Gmail](http://mail.google.com) | [Google Map](http://map.google.com) | [Translation](http://translate.google.com/) | [汉译英](http://translate.google.com/#zh-CN/en/) | [英译汉](http://translate.google.com/#en/zh-CN/)  
-[Keep](http://drive.google.com/keep/) | [Drive](https://drive.google.com/drive/my-drive) | [Bookmarks](http://www.google.ca/bookmarks) | [Developers](https://developers.google.com/) | [Console](https://console.developers.google.com/) | [Hangouts](https://hangouts.google.com/) | [Charts](https://developers.google.com/chart/) | [Firebase](https://firebase.google.com/) | [Products](https://www.google.ca/intl/en/about/products/) | [Takeout](https://takeout.google.com/settings/takeout)  
-  
-[Dart.dev](https://dart.dev/) | [Pub.dev](https://pub.dev/) | [Flutter.io](https://flutter.io/) | [Flutter Samples](https://flutter.github.io/samples/) | [Flutter实战](https://book.flutterchina.club/) | [gRPC](https://grpc.io/)  
-  
-[Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) | [机器学习速成课程](https://developers.google.com/machine-learning/crash-course/?hl=zh-cn)
+[http://www.google.com](http://www.google.com)  Google Search | 
+[Gmail](http://mail.google.com) | 
+[Google Map](http://map.google.com) | 
+[Translation](http://translate.google.com/) | 
+[汉译英](http://translate.google.com/#zh-CN/en/) | 
+[英译汉](http://translate.google.com/#en/zh-CN/)  
+[Keep](http://drive.google.com/keep/) | 
+[Drive](https://drive.google.com/drive/my-drive) | 
+[Bookmarks](http://www.google.ca/bookmarks) | 
+[Developers](https://developers.google.com/) | 
+[Console](https://console.developers.google.com/) | 
+[Hangouts](https://hangouts.google.com/) | 
+[Charts](https://developers.google.com/chart/) | 
+[Firebase](https://firebase.google.com/) | 
+[Products](https://www.google.ca/intl/en/about/products/) | 
+[Takeout](https://takeout.google.com/settings/takeout)  
+
+[Dart.dev](https://dart.dev/) | 
+[Pub.dev](https://pub.dev/) | 
+[Flutter.io](https://flutter.io/) | 
+[Flutter Samples](https://flutter.github.io/samples/) | 
+[Flutter实战](https://book.flutterchina.club/) | 
+[gRPC](https://grpc.io/)  
+
+[Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) | 
+[机器学习速成课程](https://developers.google.com/machine-learning/crash-course/?hl=zh-cn)
 
 </template>
 
   <script>
     //let md = document.querySelector("template").innerHTML;
     let text = document.querySelector("template").content.textContent;
-    let opts = { breaks: true }; // see https://marked.js.org/using_advanced#options
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
 
     document.getElementById('content').innerHTML = marked.parse(text, opts);
   </script>
