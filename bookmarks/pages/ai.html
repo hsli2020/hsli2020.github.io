@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Bookmarks</title>
+  <base target="_blank">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="github-markdown.css">
+  <style>
+    a { border: 1px solid #ccc; padding: 5px 10px; margin-right: 10px; }
+    a:hover { background-color:#eee; color: black; }
+    .markdown-body { line-height: 2.5; }
+  </style>
+</head>
+<body class="markdown-body" style="margin-left: 2em;">
+  <div id="content"></div>
+
+<template>
+### AI Tools
+
+[ChatGPT](https://chat.openai.com/chat) 
+[AIStudio](https://aistudio.google.com/)
+[DeepSeek](https://chat.deepseek.com/)
+[Bolt.new](https://bolt.new/)
+[Qwen](https://chat.qwenlm.ai/)  
+[Devv.AI](https://devv.ai/) 
+[Lepton Search](https://search.lepton.run/)
+[grep.app](https://grep.app/) 
+[Phind](https://www.phind.com/) 
+[ThinkAny](https://thinkany.ai)
+[Replit](https://replit.com/)  
+[COZE](https://coze.com)
+[Qwen/QwQ-32B](https://huggingface.co/spaces/Qwen/QwQ-32B-preview)
+[Qwen/Qwen1.5-72B](https://huggingface.co/spaces/Qwen/Qwen1.5-72B-Chat)
+[Scrbook](https://srcbook.com/)
+
+### OpenAI / ChatGPT
+
+[ChatGPT](https://chat.openai.com/chat)
+[Examples](https://platform.openai.com/examples)
+[API Docs](https://platform.openai.com/docs/api-reference/introduction)
+[QuickStart](https://platform.openai.com/docs/quickstart)
+[OpenAI Cookbook](https://github.com/openai/openai-cookbook)
+[API](https://openai.com/api/)  
+[New Bing](https://bing.com/new#examples)
+[Bing Image Creator](https://bing.com/create)
+[Google Bard](https://bard.google.com/)
+[Adobe Firefly](https://firefly.adobe.com/)
+[Perplexity](https://www.perplexity.ai/)  
+[Poe - Sage](https://poe.com/)
+[HuggingFace](https://huggingface.co/chat/)
+
+[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)
+[Prompts.chat](https://prompts.chat/)
+[Awesome ChatGPT](https://github.com/dalinvip/Awesome-ChatGPT)
+[ChatGPT 指令大全](https://www.explainthis.io/zh-hans/chatgpt)  
+[Open Prompt](https://openprompt.co/)
+[PromptPerfect](https://promptperfect.jina.ai/)  
+[AI Code Translator](https://ai-code-translator.vercel.app/)
+[Chatbot UI](https://www.chatbotui.com/)
+[AI工具导航大全](https://ai-bot.cn/)
+[FuturePedia](https://www.futurepedia.io/)
+
+</template>
+
+  <script>
+    //let md = document.querySelector("template").innerHTML;
+    let text = document.querySelector("template").content.textContent;
+    let opts = { breaks: false }; // see https://marked.js.org/using_advanced#options
+
+    document.getElementById('content').innerHTML = marked.parse(text, opts);
+  </script>
+
+<!--
+-->
+</body>
+</html>
+
